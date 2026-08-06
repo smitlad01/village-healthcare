@@ -89,7 +89,7 @@ export default function LandingPage() {
       `}} />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+      <section className="relative pt-16 pb-12 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
         <div className="particle-bg" />
         
         <motion.div
@@ -106,23 +106,23 @@ export default function LandingPage() {
             Now Live in 15,000+ Villages
           </div>
 
-          <h1 className="font-heading text-7xl md:text-9xl font-black mb-4 tracking-tighter relative">
+          <h1 className="font-heading text-6xl md:text-8xl font-black mb-4 tracking-tighter relative">
             <span className="absolute -inset-2 blur-3xl opacity-30 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500"></span>
             <span className="relative bg-clip-text text-transparent bg-gradient-to-br from-white via-teal-50 to-teal-400 drop-shadow-[0_0_15px_rgba(45,212,191,0.5)]">
               V-HAIN
             </span>
           </h1>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500">
+          <h2 className="text-2xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">
             Village Health AI Network
           </h2>
           
-          <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
             AI-powered, offline-first healthcare platform bringing specialist care to every village in India.
           </p>
 
           {/* Demo Mode Toggle */}
-          <div className="flex items-center justify-center gap-4 mt-4 glass-panel px-6 py-3 rounded-full border border-[var(--glass-border)]">
+          <div className="flex items-center justify-center gap-4 glass-panel px-6 py-3 rounded-full border border-[var(--glass-border)] mb-12">
             <span className={`text-sm font-bold ${!isDemoMode ? 'text-white' : 'text-[var(--text-secondary)]'}`}>Live Mode (Auth)</span>
             <button 
               onClick={() => setIsDemoMode(!isDemoMode)}
@@ -136,8 +136,8 @@ export default function LandingPage() {
       </section>
 
       {/* Role Gateway Section */}
-      <section className="py-20 px-6 max-w-7xl mx-auto w-full relative z-10 -mt-20">
-        <div className="grid-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+      <section className="py-12 px-6 max-w-7xl mx-auto w-full relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {roles.map((role, idx) => (
             <motion.div
               key={role.title}

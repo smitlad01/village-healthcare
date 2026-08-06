@@ -36,12 +36,12 @@ export default function RootLayout({
           <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-[var(--primary)]/10 blur-[120px]" />
         </div>
 
-        <header className="sticky top-0 z-40 glass-panel border-b border-white/5 rounded-none px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent)] to-[var(--primary)] flex items-center justify-center text-white font-bold font-heading">
+        <header className="sticky top-0 z-40 glass-panel border-b border-white/10 rounded-none px-6 py-3.5 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[var(--primary)] flex items-center justify-center text-white font-bold font-heading shadow-md flex-shrink-0">
               V
             </div>
-            <span className="font-heading font-bold text-xl tracking-wide hidden sm:block bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+            <span className="font-heading font-bold text-xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-400">
               V-HAIN
             </span>
           </div>
@@ -51,7 +51,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="flex-1 flex flex-col">
+        <main className="flex-1 flex flex-col pb-20">
           {children}
         </main>
 

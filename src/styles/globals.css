@@ -225,22 +225,23 @@ img, video {
 /* ==========================================================================
    Cards & Panels
    ========================================================================== */
-.card, .panel, .glass-card, .glass-panel {
-  background: rgba(6, 35, 39, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  padding: 1.5rem !important;
-  box-shadow: var(--shadow-glass);
-  transition: all var(--transition-normal);
+.card, .panel, .glass-card, .glass-panel,
+div[class*="glass-card"], div[class*="glass-panel"], div[class*="-widget"] {
+  background: rgba(6, 35, 39, 0.7) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 1.75rem 1.5rem !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+  transition: all 0.25s ease !important;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-glass);
-  border-color: var(--glass-border-highlight);
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-glass) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Global Card Headers */
@@ -249,7 +250,8 @@ img, video {
   justify-content: space-between !important;
   align-items: center !important;
   margin-bottom: 1.25rem !important;
-  padding-bottom: 0.5rem !important;
+  padding-bottom: 0.75rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   width: 100% !important;
 }
 
@@ -265,7 +267,7 @@ img, video {
 .card-link, .card-action {
   font-size: 0.875rem !important;
   font-weight: 600 !important;
-  color: var(--color-brand-300, #59b6c2) !important;
+  color: #59b6c2 !important;
   text-decoration: none !important;
   background: transparent !important;
   border: none !important;

@@ -1,0 +1,328 @@
+.game-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 32px rgba(var(--primary-rgb), 0.1);
+}
+
+.game-preview {
+  height: 150px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--surface-light) 0%, var(--surface) 100%);
+  font-size: 3rem;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Healthy Plate */
+.plate-container {
+  display: flex;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.food-item {
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.food-item:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary);
+}
+
+.plate-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.the-plate {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  background: var(--surface);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.plate-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: var(--spacing-sm);
+  font-size: 1.5rem;
+  border: 1px dashed var(--border);
+}
+
+.plate-section.protein { background: rgba(255, 99, 132, 0.1); }
+.plate-section.carbs { background: rgba(255, 206, 86, 0.1); }
+.plate-section.veg { background: rgba(75, 192, 192, 0.1); }
+.plate-section.extras { background: rgba(153, 102, 255, 0.1); }
+
+/* Water Hero */
+.water-hero-game {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom, var(--surface) 0%, #0a2540 100%);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--primary);
+  cursor: crosshair;
+}
+
+.contaminant {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #ff4b4b 20%, #8b0000 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 75, 75, 0.5);
+  animation: pulse 1s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.well {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(ellipse, #00d2ff 0%, #3a7bd5 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px #00d2ff;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Medicine Match */
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  perspective: 1000px;
+}
+
+.match-card {
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.match-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.match-card.matched .card-back {
+  background: rgba(46, 204, 113, 0.2);
+  border-color: var(--success);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.card-front {
+  background: var(--surface-light);
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.card-back {
+  background: var(--surface);
+  transform: rotateY(180deg);
+  font-size: 0.9rem;
+}
+
+/* Rewards */
+.reward-wallet {
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.2) 0%, var(--surface) 100%);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.voucher-card {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.voucher-card.available {
+  border-color: var(--success);
+  border-style: solid;
+}
+
+.voucher-card.locked {
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.qr-mock {
+  width: 150px;
+  height: 150px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 10px,
+    #000 10px,
+    #000 20px
+  );
+  margin: var(--spacing-lg) auto;
+  border: 10px solid #fff;
+  border-radius: var(--radius-sm);
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: 
+    radial-gradient(circle, #ff0 5px, transparent 5px),
+    radial-gradient(circle, #f0f 5px, transparent 5px),
+    radial-gradient(circle, #0ff 5px, transparent 5px);
+  background-size: 30% 30%;
+  background-position: 0 0, 15% 15%, 30% 30%;
+  animation: confetti-fall 3s linear forwards;
+  opacity: 0;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.streak-flame {
+  color: #ff6b6b;
+  animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { text-shadow: 0 0 10px #ff6b6b; transform: scale(1); }
+  100% { text-shadow: 0 0 20px #ff9e9e, 0 0 30px #ff6b6b; transform: scale(1.1); }
+}
+
+/* Article Cards */
+.article-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.article-image {
+  height: 160px;
+  background: var(--surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.article-content {
+  padding: var(--spacing-lg);
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: var(--spacing-md);
+}
+
+.pts-badge {
+  background: rgba(var(--primary-rgb), 0.2);
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}

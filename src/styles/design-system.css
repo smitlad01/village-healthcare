@@ -1,0 +1,265 @@
+/* c:\Users\HP\Documents\Future 6.0 prototype\src\styles\design-system.css */
+
+:root {
+  /* ==========================================================================
+     Colors
+     ========================================================================== */
+  
+  /* Brand Teal Palette (Dark to Light) */
+  --color-brand-900: #041416;
+  --color-brand-800: #062327;
+  --color-brand-700: #0a353b;
+  --color-brand-600: #0f4e56;
+  --color-brand-500: #156d78; /* Primary Brand */
+  --color-brand-400: #2993a1;
+  --color-brand-300: #59b6c2;
+  --color-brand-200: #93d2db;
+  --color-brand-100: #cbedf2;
+  --color-brand-50:  #eaf8fa;
+
+  /* Accent Lime Palette */
+  --color-accent-900: #162406;
+  --color-accent-800: #284008;
+  --color-accent-700: #3b5f0b;
+  --color-accent-600: #578c10;
+  --color-accent-500: #7ebf1a; /* Primary Accent */
+  --color-accent-400: #9cdb3a;
+  --color-accent-300: #b5e86a;
+  --color-accent-200: #cff39b;
+  --color-accent-100: #e6fad1;
+
+  /* Semantic Colors */
+  --color-danger-500: #ef4444;
+  --color-danger-400: #f87171;
+  --color-danger-300: #fca5a5;
+  --color-danger-glow: rgba(239, 68, 68, 0.4);
+  
+  --color-warning-500: #f59e0b;
+  --color-warning-400: #fbbf24;
+  
+  --color-success-500: #10b981;
+  --color-success-400: #34d399;
+  
+  --color-info-500: #3b82f6;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray-50:  #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Glass Backgrounds */
+  --glass-bg-light: rgba(255, 255, 255, 0.05);
+  --glass-bg-base: rgba(255, 255, 255, 0.08);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.15);
+  
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-highlight: rgba(255, 255, 255, 0.25);
+
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  
+  /* Fonts */
+  --font-primary: 'Outfit', 'Noto Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Scale */
+  --text-display: 3.5rem;   /* 56px */
+  --text-h1: 2.25rem;       /* 36px */
+  --text-h2: 1.5rem;        /* 24px */
+  --text-body-large: 1.125rem; /* 18px */
+  --text-body: 1rem;        /* 16px */
+  --text-label: 0.875rem;   /* 14px */
+  --text-small: 0.75rem;    /* 12px */
+
+  /* Weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ==========================================================================
+     Spacing
+     ========================================================================== */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* ==========================================================================
+     Border Radius
+     ========================================================================== */
+  --radius-sm: 0.5rem;    /* 8px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Shadows
+     ========================================================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-glow-brand: 0 0 20px rgba(21, 109, 120, 0.5);
+  --shadow-glow-accent: 0 0 20px rgba(126, 191, 26, 0.4);
+  --shadow-glow-danger: 0 0 24px rgba(239, 68, 68, 0.6);
+
+  /* ==========================================================================
+     Transitions
+     ========================================================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ==========================================================================
+     Z-Index
+     ========================================================================== */
+  --z-elevated: 10;
+  --z-dropdown: 40;
+  --z-sticky: 50;
+  --z-modal-backdrop: 90;
+  --z-modal: 100;
+  --z-toast: 200;
+  --z-sos: 300;
+}
+
+/* ==========================================================================
+   Media Query Breakpoints (for reference)
+   ==========================================================================
+   --sm: 640px
+   --md: 768px
+   --lg: 1024px
+   --xl: 1280px
+   --2xl: 1536px
+*/
+
+/* ==========================================================================
+   Glassmorphism Utilities
+   ========================================================================== */
+.glass-panel {
+  background: var(--glass-bg-base);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--transition-normal);
+}
+
+.glass-nav {
+  background: rgba(6, 35, 39, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Gradients
+   ========================================================================== */
+.gradient-brand {
+  background: linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent-400) 0%, var(--color-accent-600) 100%);
+}
+
+.gradient-danger {
+  background: linear-gradient(135deg, var(--color-danger-400) 0%, var(--color-danger-500) 100%);
+}
+
+.gradient-text-brand {
+  background: linear-gradient(135deg, var(--color-brand-200) 0%, var(--color-brand-400) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--color-accent-200) 0%, var(--color-accent-400) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+.animate-fade-in { animation: fadeIn var(--transition-normal) forwards; }
+.animate-slide-up { animation: slideUp var(--transition-normal) forwards; }
+.animate-slide-right { animation: slideInRight var(--transition-normal) forwards; }
+.animate-pulse { animation: pulse 2s infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-scale-in { animation: scaleIn var(--transition-bounce) forwards; }

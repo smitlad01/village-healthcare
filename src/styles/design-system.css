@@ -2,9 +2,47 @@
 
 :root {
   /* ==========================================================================
-     Colors
+     Global Variable Aliases (Used across modules & sub-pages)
      ========================================================================== */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-xxl: 4rem;     /* 64px */
+
+  --surface: rgba(6, 35, 39, 0.65);
+  --surface-light: rgba(255, 255, 255, 0.06);
+  --surface-dark: rgba(4, 20, 22, 0.85);
+  --surface-hover: rgba(255, 255, 255, 0.1);
+  --bg-dark: #041416;
   
+  --border: rgba(255, 255, 255, 0.12);
+  --border-light: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-bg: rgba(6, 35, 39, 0.65);
+  --glass-bg-hover: rgba(255, 255, 255, 0.1);
+
+  --primary: #156d78;
+  --primary-light: #2993a1;
+  --primary-dark: #0f4e56;
+  --primary-rgb: 21, 109, 120;
+  
+  --accent: #7ebf1a;
+  --accent-cyan: #59b6c2;
+  --accent-green: #34d399;
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --success-color: #10b981;
+
+  --gradient-primary: linear-gradient(135deg, #156d78 0%, #7ebf1a 100%);
+
   /* Brand Teal Palette (Dark to Light) */
   --color-brand-900: #041416;
   --color-brand-800: #062327;

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { ChartProvider, defaultChartOptions } from '../../../components/ChartWrapper';
 import Link from 'next/link';
+import '@/styles/patient.css';
 
 export default function HistoryPage() {
   const [activeTab, setActiveTab] = useState('timeline');

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FileText, UploadCloud, Camera, Share2, Download, Eye, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import '@/styles/patient.css';
 
 export default function ReportsPage() {
   const [expandedAnalysis, setExpandedAnalysis] = useState(null);

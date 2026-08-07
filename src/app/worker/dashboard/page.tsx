@@ -47,7 +47,7 @@ export default function WorkerDashboard() {
       </div>
 
       <div className="dashboard-grid">
-        <div className="worker-glass-panel dashboard-span-2">
+        <div className="worker-glass-panel">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-semibold flex items-center gap-2"><ClipboardList /> Today's Task List</h2>
             <span className="text-slate-400">8 Tasks Remaining</span>

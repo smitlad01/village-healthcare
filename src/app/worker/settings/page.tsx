@@ -90,7 +90,7 @@ export default function WorkerSettingsPage() {
               <h2 className="settings-section-title">Assigned Village Information</h2>
               
               <div className="mh-card" style={{ padding: '1.5rem', marginBottom: '1.5rem' }}>
-                <h3 style={{ margin: '0 0 1rem 0' }}>Wardha Village</h3>
+                <h3 style={{ margin: '0 0 1rem 0' }}>Nashik Village</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', color: 'var(--text-secondary)' }}>
                   <div>
                     <strong>Total Households:</strong> 450
@@ -102,7 +102,7 @@ export default function WorkerSettingsPage() {
                     <strong>High-Risk Patients:</strong> 12
                   </div>
                   <div>
-                    <strong>PHC Center:</strong> Wardha Primary Health Center
+                    <strong>PHC Center:</strong> Nashik Primary Health Center
                   </div>
                 </div>
               </div>

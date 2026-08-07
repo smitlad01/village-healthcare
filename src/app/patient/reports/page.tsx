@@ -8,9 +8,9 @@ export default function ReportsPage() {
   const [expandedAnalysis, setExpandedAnalysis] = useState(null);
 
   const reports = [
-    { id: 1, date: 'Jul 2026', title: 'Complete Blood Count', lab: 'City Lab Wardha', doctor: 'Dr. Rajesh Patel', analysis: 'Your Hemoglobin is 13.5 g/dL (Normal). WBC count is slightly elevated, suggesting a mild recent infection, but nothing alarming. Please stay hydrated.' },
+    { id: 1, date: 'Jul 2026', title: 'Complete Blood Count', lab: 'City Lab Nashik', doctor: 'Dr. Rajesh Patel', analysis: 'Your Hemoglobin is 13.5 g/dL (Normal). WBC count is slightly elevated, suggesting a mild recent infection, but nothing alarming. Please stay hydrated.' },
     { id: 2, date: 'Jun 2026', title: 'Lipid Profile', lab: 'District Hospital Lab', doctor: 'Dr. Priya Sharma', analysis: 'Your Total Cholesterol of 192 mg/dL is within normal range. HDL has improved to 50 from 45 last quarter. Keep up the good diet!' },
-    { id: 3, date: 'Mar 2026', title: 'HbA1c Test', lab: 'City Lab Wardha', doctor: 'Dr. Patel', analysis: 'HbA1c is at 6.1% (Prediabetes range). Better than last reading of 6.4%. Continue your current medication and exercise routine.' },
+    { id: 3, date: 'Mar 2026', title: 'HbA1c Test', lab: 'City Lab Nashik', doctor: 'Dr. Patel', analysis: 'HbA1c is at 6.1% (Prediabetes range). Better than last reading of 6.4%. Continue your current medication and exercise routine.' },
     { id: 4, date: 'Dec 2025', title: 'ECG Report', lab: 'District Hospital', doctor: 'Dr. Sharma', analysis: 'Normal sinus rhythm. No acute ischemic changes detected. Heart rate is healthy at 72 BPM.' }
   ];
 

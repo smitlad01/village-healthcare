@@ -25,7 +25,7 @@ export default function ReportsPage() {
             <div>
               <label className="block text-secondary mb-2 text-sm">Administrative Level</label>
               <select className="w-full bg-black/30 border border-glass-border rounded-lg p-3 text-white">
-                <option>District (Wardha)</option>
+                <option>District (Nashik)</option>
                 <option>Block Level</option>
                 <option>Village Level</option>
               </select>
@@ -44,7 +44,7 @@ export default function ReportsPage() {
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-500">LOGO</div>
               <div>
                 <h2 className="text-xl font-bold uppercase">Ministry of Health & Family Welfare</h2>
-                <h3 className="text-lg font-semibold text-gray-700">District Health Mission, Wardha</h3>
+                <h3 className="text-lg font-semibold text-gray-700">District Health Mission, Nashik</h3>
               </div>
             </div>
             <div className="text-right text-sm text-gray-600">
@@ -59,7 +59,7 @@ export default function ReportsPage() {
             <div>
               <h4 className="font-bold text-lg mb-2">1. Executive Summary</h4>
               <p className="text-gray-700 text-sm leading-relaxed">
-                During the month of August 2024, the district of Wardha recorded a total of 4,230 outpatient checkups across all PHCs and CHCs. 
+                During the month of August 2024, the district of Nashik recorded a total of 4,230 outpatient checkups across all PHCs and CHCs. 
                 A minor outbreak of Dengue was contained in the Hinganghat block with 28 confirmed cases. 
                 Vaccination coverage remained stable at 87%, while ASHA worker field coverage improved by 2% to reach 94%.
               </p>

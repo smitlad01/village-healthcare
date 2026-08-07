@@ -50,7 +50,7 @@ export default function DiseaseMap() {
           <div className="map-container flex-grow h-96">
             <div className="map-block block-red" style={{ gridColumn: '1 / 3' }}>Hinganghat (28 cases)</div>
             <div className="map-block block-yellow">Deoli (12 cases)</div>
-            <div className="map-block block-green" style={{ gridColumn: '1 / 2' }}>Wardha (3 cases)</div>
+            <div className="map-block block-green" style={{ gridColumn: '1 / 2' }}>Nashik (3 cases)</div>
             <div className="map-block block-green">Arvi (1 case)</div>
             <div className="map-block block-yellow">Ashti (8 cases)</div>
           </div>

@@ -28,7 +28,7 @@ export default function SOSPage() {
         <MapPin size={24} className="text-danger" />
         <div className="location-details">
           <strong>Your Current Location</strong>
-          <p>Lat: 20.7453, Lng: 78.6022 — Wardha, Maharashtra</p>
+          <p>Lat: 20.7453, Lng: 78.6022 — Nashik, Maharashtra</p>
         </div>
       </div>
 
@@ -65,7 +65,7 @@ export default function SOSPage() {
         <h2 className="section-title">Nearest Facilities</h2>
         <div className="facilities-list">
           {[
-            { name: 'PHC Wardha', dist: '1.2 km', type: 'Public' },
+            { name: 'PHC Nashik', dist: '1.2 km', type: 'Public' },
             { name: 'Shri Hospital', dist: '3.1 km', type: 'Private' },
             { name: 'District Hospital', dist: '4.5 km', type: 'Public' }
           ].map((fac, idx) => (

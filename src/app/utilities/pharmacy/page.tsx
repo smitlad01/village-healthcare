@@ -6,7 +6,7 @@ import '../../../styles/utilities.css';
 
 export default function PharmacyLocator() {
   const pharmacies = [
-    { name: 'Jan Aushadhi Kendra Wardha', dist: '0.8 km', time: 'Open till 9 PM', features: 'Generic medicines', highlight: true },
+    { name: 'Jan Aushadhi Kendra Nashik', dist: '0.8 km', time: 'Open till 9 PM', features: 'Generic medicines', highlight: true },
     { name: 'MedPlus Pharmacy', dist: '1.5 km', time: 'Open 24/7', features: 'All brands', highlight: false },
     { name: 'Apollo Pharmacy', dist: '2.1 km', time: 'Open till 10 PM', features: 'Home delivery available', highlight: false },
     { name: 'Government PHC Pharmacy', dist: '1.2 km', time: 'Open till 4 PM', features: 'Free medicines (card holders)', highlight: true },

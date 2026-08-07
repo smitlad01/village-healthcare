@@ -6,7 +6,7 @@ import '../../../styles/utilities.css';
 
 export default function DiagnosticLabs() {
   const labs = [
-    { name: 'City Lab Wardha', dist: '1.2 km', rating: 4.5, tests: 'CBC ₹200, Lipid ₹350, HbA1c ₹400', home: true, free: false },
+    { name: 'City Lab Nashik', dist: '1.2 km', rating: 4.5, tests: 'CBC ₹200, Lipid ₹350, HbA1c ₹400', home: true, free: false },
     { name: 'District Hospital Lab', dist: '4.5 km', rating: 4.2, tests: 'Free for card holders', home: false, free: true },
     { name: 'SRL Diagnostics (Franchise)', dist: '6 km', rating: 4.6, tests: 'Online reports available', home: true, free: false },
     { name: 'Government Mobile Lab', dist: 'Visits Tuesdays', rating: 4.8, tests: 'Basic screening free', home: false, free: true },

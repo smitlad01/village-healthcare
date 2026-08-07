@@ -16,7 +16,7 @@ export default function AppointmentsPage() {
       doctor: 'Dr. Priya Sharma',
       specialization: 'Cardiology',
       type: 'Physical',
-      location: 'PHC Wardha',
+      location: 'PHC Nashik',
       typeColor: 'var(--teal-500)',
       icon: <Calendar className="icon" />
     },

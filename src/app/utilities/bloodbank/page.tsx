@@ -16,7 +16,7 @@ export default function BloodBank() {
         <AlertTriangle size={24} />
         <div>
           <div style={{ fontWeight: '600' }}>SOS: Urgent Blood Required</div>
-          <div>O- blood urgently needed at District Hospital Wardha. Contact: 07152-XXXXXX</div>
+          <div>O- blood urgently needed at District Hospital Nashik. Contact: 07152-XXXXXX</div>
         </div>
       </div>
 

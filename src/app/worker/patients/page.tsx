@@ -63,7 +63,7 @@ export default function PatientsDirectory() {
       </div>
 
       <div className="flex justify-between items-center mb-6">
-        <p className="text-slate-300 text-lg">142 patients in Wardha cluster</p>
+        <p className="text-slate-300 text-lg">142 patients in Nashik cluster</p>
         <div className="flex gap-4">
           <button className="btn-secondary" style={{ padding: '0.5rem 1rem', minHeight: '40px' }}>
             <MessageSquare size={18} /> Send SMS Reminders

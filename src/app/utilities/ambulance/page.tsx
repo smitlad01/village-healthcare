@@ -80,7 +80,7 @@ export default function AmbulanceEmergency() {
             <h3 style={{ color: 'var(--text-primary)', marginBottom: '16px' }}>Pre-call Information</h3>
             <div className="form-group">
               <label>Location</label>
-              <input type="text" className="form-input" defaultValue="Current Location (Wardha)" />
+              <input type="text" className="form-input" defaultValue="Current Location (Nashik)" />
             </div>
             <div className="form-group">
               <label>Emergency Type</label>

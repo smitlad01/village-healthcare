@@ -121,15 +121,15 @@ export default function DoctorProfile() {
             <h2 className="panel-title"><MapPin size={20} /> Locations</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div>
-                <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--accent-cyan)' }}>PHC Wardha (Primary)</strong>
+                <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--accent-cyan)' }}>PHC Nashik (Primary)</strong>
                 <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                  Main Road, Wardha District, Maharashtra 442001
+                  Main Road, Nashik District, Maharashtra 442001
                 </p>
               </div>
               <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem' }}>
                 <strong style={{ display: 'block', marginBottom: '0.25rem' }}>District Hospital (Tue/Thu)</strong>
                 <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                  Civil Lines, Wardha District, Maharashtra 442001
+                  Civil Lines, Nashik District, Maharashtra 442001
                 </p>
               </div>
             </div>

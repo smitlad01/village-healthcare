@@ -5,7 +5,7 @@ import '../../../../styles/admin.css';
 
 export default function AshaPerformance() {
   const workers = [
-    { rank: 1, name: 'Meera Devi', village: 'Wardha', checkups: 48, followups: '95%', satisfaction: 4.9, score: 96, badge: '🥇' },
+    { rank: 1, name: 'Meera Devi', village: 'Nashik', checkups: 48, followups: '95%', satisfaction: 4.9, score: 96, badge: '🥇' },
     { rank: 2, name: 'Anita Kumari', village: 'Deoli', checkups: 45, followups: '92%', satisfaction: 4.8, score: 93, badge: '🥈' },
     { rank: 3, name: 'Sunita Yadav', village: 'Borgaon', checkups: 42, followups: '88%', satisfaction: 4.7, score: 89, badge: '🥉' },
     { rank: 4, name: 'Priya Sharma', village: 'Hinganghat', checkups: 39, followups: '85%', satisfaction: 4.5, score: 85, badge: '⭐' },

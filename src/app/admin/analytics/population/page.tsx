@@ -18,7 +18,7 @@ export default function PopulationAnalytics() {
   };
 
   const diseaseData = {
-    labels: ['Wardha', 'Deoli', 'Hinganghat', 'Arvi', 'Ashti'],
+    labels: ['Nashik', 'Deoli', 'Hinganghat', 'Arvi', 'Ashti'],
     datasets: [
       { label: 'Hypertension', data: [400, 300, 350, 200, 150], backgroundColor: '#ef4444' },
       { label: 'Diabetes', data: [300, 250, 280, 150, 120], backgroundColor: '#f97316' },

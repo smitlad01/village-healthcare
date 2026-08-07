@@ -8,13 +8,13 @@ import Link from 'next/link';
 
 export default function WorkerDashboard() {
   const tasks = [
-    { id: 1, title: 'Routine checkup - Ramesh Kumar', location: 'Wardha', status: 'done' },
+    { id: 1, title: 'Routine checkup - Ramesh Kumar', location: 'Nashik', status: 'done' },
     { id: 2, title: 'Immunization - Baby Ananya', location: 'Borgaon', status: 'done' },
     { id: 3, title: 'Follow-up - Sunita Bai (Diabetes)', location: 'Paunar', status: 'pending' },
-    { id: 4, title: 'Home visit - Lakshmi Devi (Pregnant, 7mo)', location: 'Wardha', status: 'pending' },
+    { id: 4, title: 'Home visit - Lakshmi Devi (Pregnant, 7mo)', location: 'Nashik', status: 'pending' },
     { id: 5, title: 'BP Check - Govind Rao', location: 'Deoli', status: 'pending' },
     { id: 6, title: 'Overdue - Ratan Lal (TB follow-up)', location: 'Hinganghat - 3 days overdue!', status: 'overdue' },
-    { id: 7, title: 'New Registration - Kamala Bai', location: 'Wardha', status: 'pending' },
+    { id: 7, title: 'New Registration - Kamala Bai', location: 'Nashik', status: 'pending' },
     { id: 8, title: 'Weight check - Child Rohit (malnutrition screening)', location: 'Borgaon', status: 'pending' },
   ];
 

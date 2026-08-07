@@ -29,7 +29,7 @@ export default function ForumPage() {
         <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', fontSize: '2.5rem', marginBottom: '0.5rem' }}>
           <MessageCircle size={40} color="var(--primary-color)" /> Community Health Forum
         </h1>
-        <p className="text-secondary" style={{ fontSize: '1.2rem' }}>Wardha Village Knowledge Sharing & Support</p>
+        <p className="text-secondary" style={{ fontSize: '1.2rem' }}>Nashik Village Knowledge Sharing & Support</p>
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>

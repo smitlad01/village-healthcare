@@ -18,7 +18,7 @@ export default function AdminDashboard() {
   });
 
   const chartData = {
-    labels: ['Wardha', 'Deoli', 'Hinganghat', 'Arvi', 'Ashti'],
+    labels: ['Nashik', 'Deoli', 'Hinganghat', 'Arvi', 'Ashti'],
     datasets: [
       {
         label: 'Checkups this Month',
@@ -47,7 +47,7 @@ export default function AdminDashboard() {
     <div className="admin-dashboard-container">
       <header className="admin-header">
         <div>
-          <h1 className="text-2xl font-bold">District Health Command Center — Wardha</h1>
+          <h1 className="text-2xl font-bold">District Health Command Center — Nashik</h1>
           <p className="text-secondary mt-1">{currentDate} | Admin: Dr. Rajesh Kumar</p>
         </div>
         <div className="flex gap-4">
@@ -100,7 +100,7 @@ export default function AdminDashboard() {
         <div className="chart-container flex flex-col">
           <h3 className="font-bold text-xl mb-4">District Block Health Map</h3>
           <div className="map-container flex-grow">
-            <div className="map-block block-green" style={{ gridColumn: '1 / 3' }}>Wardha (Low Risk)</div>
+            <div className="map-block block-green" style={{ gridColumn: '1 / 3' }}>Nashik (Low Risk)</div>
             <div className="map-block block-yellow">Deoli (Medium Risk)</div>
             <div className="map-block block-red" style={{ gridColumn: '1 / 2' }}>Hinganghat (High Risk)</div>
             <div className="map-block block-green">Arvi (Low Risk)</div>

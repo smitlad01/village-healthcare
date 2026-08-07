@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AlertTriangle, MapPin, ChevronDown, BellRing } from 'lucide-react';
 
 const ALERTS = [
-  { id: 1, disease: 'Dengue', location: 'Wardha District', level: 'MODERATE', cases: 12, trend: 'increasing', color: 'var(--warning)', bg: 'rgba(255, 193, 7, 0.1)' },
+  { id: 1, disease: 'Dengue', location: 'Nashik District', level: 'MODERATE', cases: 12, trend: 'increasing', color: 'var(--warning)', bg: 'rgba(255, 193, 7, 0.1)' },
   { id: 2, disease: 'Malaria', location: 'Yavatmal District', level: 'HIGH', cases: 28, trend: 'stable', color: 'var(--danger)', bg: 'rgba(255, 75, 75, 0.1)' },
   { id: 3, disease: 'Seasonal Flu', location: 'State-wide', level: 'LOW', cases: 'N/A', trend: 'expected increase', color: 'var(--success)', bg: 'rgba(46, 204, 113, 0.1)' },
 ];
@@ -76,7 +76,7 @@ export default function AlertsPage() {
                   <div>
                     <h3 className="font-bold text-lg mb-4">Nearest Testing Center</h3>
                     <div className="bg-surface p-4 rounded-lg border border-border">
-                      <h4 className="font-bold mb-1">Wardha Civil Hospital</h4>
+                      <h4 className="font-bold mb-1">Nashik Civil Hospital</h4>
                       <p className="text-text-secondary text-sm mb-4">2.4 km away • Open 24/7</p>
                       <button className="btn btn-primary w-full">Get Directions</button>
                     </div>

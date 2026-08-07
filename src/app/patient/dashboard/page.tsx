@@ -312,7 +312,7 @@ export default function PatientDashboard() {
               </div>
               <div>
                 <h4 style={{ fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.35rem' }}>Free Eye Camp</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: 1.5 }}>Free Eye Camp at PHC Wardha on Aug 15. Comprehensive checkup and free spectacles for eligible citizens. Register now.</p>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: 1.5 }}>Free Eye Camp at PHC Nashik on Aug 15. Comprehensive checkup and free spectacles for eligible citizens. Register now.</p>
               </div>
             </div>
           </div>

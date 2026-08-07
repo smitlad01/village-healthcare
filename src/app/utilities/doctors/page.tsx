@@ -9,7 +9,7 @@ export default function DoctorDirectory() {
 
   const doctors = [
     { name: 'Dr. Suresh Nair', initials: 'SN', spec: 'Endocrinology', rating: 4.9, reviews: 203, lang: 'Hindi, English, Tamil', dist: '12 km', loc: 'District Hospital', next: 'Aug 15', fee: 'Free', tele: false },
-    { name: 'Dr. Priya Sharma', initials: 'PS', spec: 'Cardiology', rating: 4.8, reviews: 142, lang: 'Hindi, English, Marathi', dist: '2.3 km', loc: 'PHC Wardha', next: 'Aug 12', fee: 'Free', tele: false },
+    { name: 'Dr. Priya Sharma', initials: 'PS', spec: 'Cardiology', rating: 4.8, reviews: 142, lang: 'Hindi, English, Marathi', dist: '2.3 km', loc: 'PHC Nashik', next: 'Aug 12', fee: 'Free', tele: false },
     { name: 'Dr. Meena Iyer', initials: 'MI', spec: 'Gynecology', rating: 4.7, reviews: 178, lang: 'Hindi, English, Kannada', dist: '3.5 km', loc: "Women's Health Center", next: 'Aug 11', fee: '₹150', tele: false },
     { name: 'Dr. Rajesh Patel', initials: 'RP', spec: 'General Medicine', rating: 4.6, reviews: 89, lang: 'Hindi, Gujarati', dist: '5.1 km', loc: 'Private Clinic', next: 'Aug 13', fee: '₹200', tele: false },
     { name: 'Dr. Anita Desai', initials: 'AD', spec: 'General', rating: 4.5, reviews: 67, lang: 'Hindi, English, Bengali', dist: 'Tele-only', loc: 'Online', next: 'Aug 11', fee: '₹100', tele: true },
@@ -105,7 +105,7 @@ export default function DoctorDirectory() {
 
       {view === 'rankings' && (
         <div className="list-item-card" style={{ flexDirection: 'column', gap: '16px' }}>
-          <h3 style={{ color: 'var(--text-primary)' }}>Top Rated Doctors in Wardha</h3>
+          <h3 style={{ color: 'var(--text-primary)' }}>Top Rated Doctors in Nashik</h3>
           <table style={{ width: '100%', color: 'var(--text-primary)', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid var(--border-subtle)', textAlign: 'left' }}>

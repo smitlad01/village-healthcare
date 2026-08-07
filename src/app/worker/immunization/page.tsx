@@ -26,7 +26,7 @@ export default function ImmunizationTracker() {
         <div className="worker-glass-panel md:col-span-2">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h2 className="text-2xl font-bold text-white">Village Wardha</h2>
+              <h2 className="text-2xl font-bold text-white">Village Nashik</h2>
               <p className="text-slate-400">Current Cohort Coverage</p>
             </div>
             <div className="text-4xl font-bold text-emerald-400 flex items-center gap-2">

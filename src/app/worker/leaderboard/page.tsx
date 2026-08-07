@@ -10,7 +10,7 @@ export default function LeaderboardPage() {
     { rank: 1, name: 'Kavita Sharma', village: 'Deoli', checkups: 112, score: 5600, badge: '🥇 Gold' },
     { rank: 2, name: 'Sunita Patil', village: 'Hinganghat', checkups: 98, score: 4900, badge: '🥈 Silver' },
     { rank: 3, name: 'Anita Desai', village: 'Arvi', checkups: 85, score: 4250, badge: '🥉 Bronze' },
-    { rank: 4, name: 'Meera Devi', village: 'Wardha', checkups: 69, score: 3450, badge: '⭐ Champion', isMe: true },
+    { rank: 4, name: 'Meera Devi', village: 'Nashik', checkups: 69, score: 3450, badge: '⭐ Champion', isMe: true },
     { rank: 5, name: 'Lata Mangeshkar', village: 'Ashti', checkups: 65, score: 3250, badge: '⭐ Champion' },
   ];
 
@@ -25,7 +25,7 @@ export default function LeaderboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         <div className="lg:col-span-2 worker-glass-panel p-0 overflow-hidden">
           <div className="p-6 bg-slate-800/50 border-b border-slate-700 flex justify-between items-center">
-            <h2 className="text-xl font-bold">Top ASHAs in Wardha District</h2>
+            <h2 className="text-xl font-bold">Top ASHAs in Nashik District</h2>
             <div className="text-sm px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full border border-blue-500/30">
               August 2024
             </div>

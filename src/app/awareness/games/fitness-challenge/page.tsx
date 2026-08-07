@@ -94,7 +94,7 @@ export default function FitnessChallenge() {
                 <span className="text-primary font-bold">12,450 pts</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-primary/20 border border-primary rounded">
-                <span className="font-bold text-white">2. Wardha (You)</span>
+                <span className="font-bold text-white">2. Nashik (You)</span>
                 <span className="text-primary font-bold">11,200 pts</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-surface rounded">

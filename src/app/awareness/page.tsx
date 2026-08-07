@@ -23,7 +23,7 @@ export default function AwarenessHub() {
             </div>
           </div>
           <div className="stat-value">2 Active</div>
-          <p className="stat-change negative">Moderate Risk in Wardha</p>
+          <p className="stat-change negative">Moderate Risk in Nashik</p>
           <div className="mt-4 flex items-center text-primary text-sm">
             View Alerts <ArrowRight size={16} className="ml-1" />
           </div>

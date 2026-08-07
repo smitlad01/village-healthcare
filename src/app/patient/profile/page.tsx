@@ -29,7 +29,7 @@ export default function PatientProfile() {
         <div>
           <h1 className="profile-title">Ramesh Kumar</h1>
           <p className="profile-subtitle">
-            <MapPin size={18} /> 54 yrs • Wardha District, Maharashtra
+            <MapPin size={18} /> 54 yrs • Nashik District, Maharashtra
           </p>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function PatientProfile() {
             <div className="w-full">
               <div className="text-xs text-primary font-bold mb-1 uppercase tracking-wider">Assigned ASHA Worker</div>
               <h4 className="text-lg font-bold">Meera Devi</h4>
-              <p className="text-secondary text-sm mb-3">Village: Wardha</p>
+              <p className="text-secondary text-sm mb-3">Village: Nashik</p>
               
               <div className="flex gap-2 w-full">
                 <button className="btn btn-outline flex-1 py-2"><Phone size={16} /> Call</button>

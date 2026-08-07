@@ -69,12 +69,12 @@ export default function ReportsGenerator() {
             <div className="text-center border-b-2 border-slate-300 pb-6 mb-6">
               <h2 className="text-2xl font-bold uppercase tracking-widest text-slate-900">National Health Mission</h2>
               <h3 className="text-xl font-semibold mt-2">ASHA Worker Monthly Report</h3>
-              <p className="text-slate-500 mt-2">Format NO: ASHA-MH-04 | District: Wardha</p>
+              <p className="text-slate-500 mt-2">Format NO: ASHA-MH-04 | District: Nashik</p>
             </div>
             
             <div className="grid grid-cols-2 gap-4 mb-8 text-sm">
               <div><strong>Name of ASHA:</strong> Meera Devi</div>
-              <div><strong>Village/Ward:</strong> Wardha, Cluster A</div>
+              <div><strong>Village/Ward:</strong> Nashik, Cluster A</div>
               <div><strong>Reporting Month:</strong> August 2024</div>
               <div><strong>Population Covered:</strong> 1,245</div>
             </div>

@@ -5,7 +5,7 @@ import '../../../styles/admin.css';
 
 export default function InventoryPage() {
   const inventoryData = [
-    { phc: 'PHC Wardha', para: 450, met: 120, amlo: 85, ors: 200, vax: 150, status: 'Adequate', statusClass: 'status-adequate' },
+    { phc: 'PHC Nashik', para: 450, met: 120, amlo: 85, ors: 200, vax: 150, status: 'Adequate', statusClass: 'status-adequate' },
     { phc: 'PHC Deoli', para: 30, met: 15, amlo: 8, ors: 50, vax: 20, status: 'Critical', statusClass: 'status-critical' },
     { phc: 'CHC Hinganghat', para: 200, met: 80, amlo: 45, ors: 100, vax: 80, status: 'Low', statusClass: 'status-low' },
     { phc: 'PHC Arvi', para: 350, met: 100, amlo: 60, ors: 150, vax: 100, status: 'Adequate', statusClass: 'status-adequate' },

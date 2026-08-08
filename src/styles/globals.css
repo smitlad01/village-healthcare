@@ -226,13 +226,11 @@ img, video {
    Cards & Panels Design System
    ========================================================================== */
 .card, .panel, .glass-card, .glass-panel {
-  background: rgba(6, 35, 39, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #072529;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -774,8 +772,8 @@ label {
   position: fixed;
   inset: 0;
   background: rgba(4, 20, 22, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  
+  -webkit-
   z-index: var(--z-modal-backdrop);
   display: flex;
   align-items: center;
@@ -812,7 +810,7 @@ label {
   gap: var(--space-3);
   padding: var(--space-4);
   background: var(--glass-bg-heavy);
-  backdrop-filter: blur(12px);
+  
   border: 1px solid var(--glass-border-highlight);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-glass);

@@ -196,8 +196,8 @@
    ========================================================================== */
 .glass-panel {
   background: var(--glass-bg-base);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  
+  -webkit-
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   padding: 1.5rem;
@@ -206,8 +206,8 @@
 
 .glass-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  
+  -webkit-
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   padding: 1.5rem;
@@ -219,8 +219,8 @@
 
 .glass-nav {
   background: rgba(6, 35, 39, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  -webkit-
   border-bottom: 1px solid var(--glass-border);
   box-shadow: var(--shadow-sm);
 }

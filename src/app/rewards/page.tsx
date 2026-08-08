@@ -18,78 +18,87 @@ export default function RewardsPage() {
       </header>
 
       {/* Hero Banner */}
-      <div className="reward-wallet grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
-        <div>
-          <p className="text-text-secondary uppercase tracking-widest text-sm mb-2 font-bold">Total Balance</p>
-          <div className="text-5xl font-bold text-white mb-4 flex items-center gap-3">
-            2,450 <span className="text-primary text-2xl">pts</span>
-          </div>
-          <div className="flex items-center gap-4 text-sm font-bold">
-            <span className="bg-success/20 text-success px-3 py-1 rounded-full flex items-center gap-1">Level: Tree 🌳</span>
-            <span className="text-text-secondary">Next: Forest 🌲 (5,000 pts)</span>
-          </div>
-          <div className="w-full bg-surface-light h-3 rounded-full mt-4 overflow-hidden border border-border">
-            <div className="bg-primary h-full" style={{ width: '49%' }}></div>
-          </div>
-        </div>
-
-        <div className="bg-surface p-6 rounded-xl border border-border">
-          <div className="flex justify-between items-start mb-4">
-            <div>
-              <h3 className="font-bold text-lg flex items-center gap-2">Health Streak <Flame className="streak-flame" size={20} /></h3>
-              <p className="text-sm text-text-secondary">Log vitals or meds daily</p>
+      <div className="glass-card mb-10 p-6 md:p-8 border border-white/10 rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="text-xs uppercase tracking-widest mb-2 font-bold text-gray-400">Total Balance</p>
+            <div className="text-5xl font-black text-white mb-3 flex items-center gap-3">
+              2,450 <span className="text-[#59b6c2] text-2xl font-bold">pts</span>
             </div>
-            <div className="text-3xl font-bold text-white">12 <span className="text-sm text-text-secondary">days</span></div>
+            <div className="flex items-center gap-3 text-sm font-bold mb-3">
+              <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/30">Level: Tree 🌳</span>
+              <span className="text-gray-300">Next: Forest 🌲 (5,000 pts)</span>
+            </div>
+            <div className="w-full bg-white/10 h-3 rounded-full overflow-hidden border border-white/10">
+              <div className="bg-gradient-to-r from-[#156d78] to-[#7ebf1a] h-full" style={{ width: '49%' }}></div>
+            </div>
           </div>
-          <div className="flex gap-2 mb-4">
-            {[1,2,3,4,5,6,7].map(i => (
-              <div key={i} className={`h-2 flex-1 rounded-full ${i <= 5 ? 'bg-primary' : 'bg-surface-light'}`}></div>
-            ))}
+
+          <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="font-bold text-lg text-white flex items-center gap-2">Health Streak <Flame className="text-amber-400 animate-pulse" size={20} /></h3>
+                <p className="text-sm text-gray-300">Log vitals or meds daily</p>
+              </div>
+              <div className="text-3xl font-black text-white">12 <span className="text-sm font-normal text-gray-400">days</span></div>
+            </div>
+            <div className="flex gap-2 mb-3">
+              {[1,2,3,4,5,6,7].map(i => (
+                <div key={i} className={`h-2 flex-1 rounded-full ${i <= 5 ? 'bg-[#7ebf1a]' : 'bg-white/10'}`}></div>
+              ))}
+            </div>
+            <p className="text-xs text-gray-400 font-medium">2 more days until +200 bonus pts!</p>
           </div>
-          <p className="text-xs text-text-secondary">2 more days until +200 bonus pts!</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           {/* Vouchers Section */}
-          <section>
-            <div className="flex justify-between items-end mb-6">
-              <h2 className="text-2xl font-bold flex items-center gap-2"><Gift size={24}/> Your Vouchers</h2>
-              <Link href="/rewards/redeem" className="btn btn-secondary text-sm">Redeem Points <ArrowRight size={16} className="inline ml-1"/></Link>
+          <section className="glass-card p-6 rounded-2xl border border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2"><Gift size={24} className="text-[#59b6c2]" /> Your Vouchers</h2>
+              <Link href="/rewards/redeem" className="btn-action-primary inline-flex items-center gap-2 self-start sm:self-auto">
+                Redeem Points <ArrowRight size={16} />
+              </Link>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="voucher-card available">
-                <div className="absolute top-4 right-4 text-success"><CheckCircle size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">20% off Grocery Bill</h3>
-                <p className="text-sm text-text-secondary mb-4">Local Kirana & Partner Supermarkets</p>
-                <div className="mt-auto">
-                  <Link href="/rewards/redeem" className="btn btn-primary w-full">Use Voucher</Link>
+              <div className="voucher-card available bg-white/5 p-6 rounded-xl border border-emerald-500/30 relative flex flex-col justify-between">
+                <div className="absolute top-4 right-4 text-emerald-400"><CheckCircle size={20} /></div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1 pr-6">20% off Grocery Bill</h3>
+                  <p className="text-sm text-gray-300 mb-6">Local Kirana & Partner Supermarkets</p>
                 </div>
+                <Link href="/rewards/redeem" className="btn-action-primary w-full text-center">Use Voucher</Link>
               </div>
-              <div className="voucher-card available">
-                <div className="absolute top-4 right-4 text-success"><CheckCircle size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">20% off Electricity Bill</h3>
-                <p className="text-sm text-text-secondary mb-4">State Electricity Board Payment</p>
-                <div className="mt-auto">
-                  <Link href="/rewards/redeem" className="btn btn-primary w-full">Use Voucher</Link>
+
+              <div className="voucher-card available bg-white/5 p-6 rounded-xl border border-emerald-500/30 relative flex flex-col justify-between">
+                <div className="absolute top-4 right-4 text-emerald-400"><CheckCircle size={20} /></div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1 pr-6">20% off Electricity Bill</h3>
+                  <p className="text-sm text-gray-300 mb-6">State Electricity Board Payment</p>
                 </div>
+                <Link href="/rewards/redeem" className="btn-action-primary w-full text-center">Use Voucher</Link>
               </div>
-              <div className="voucher-card available">
-                <div className="absolute top-4 right-4 text-success"><CheckCircle size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">20% off Internet & Recharge</h3>
-                <p className="text-sm text-text-secondary mb-4">Broadband & Mobile Data Plans</p>
-                <div className="mt-auto">
-                  <Link href="/rewards/redeem" className="btn btn-primary w-full">Use Voucher</Link>
+
+              <div className="voucher-card available bg-white/5 p-6 rounded-xl border border-emerald-500/30 relative flex flex-col justify-between">
+                <div className="absolute top-4 right-4 text-emerald-400"><CheckCircle size={20} /></div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1 pr-6">20% off Internet & Recharge</h3>
+                  <p className="text-sm text-gray-300 mb-6">Broadband & Mobile Data Plans</p>
                 </div>
+                <Link href="/rewards/redeem" className="btn-action-primary w-full text-center">Use Voucher</Link>
               </div>
-              <div className="voucher-card locked">
-                <div className="absolute top-4 right-4 text-text-secondary"><Lock size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">20% Bus Transport Discount</h3>
-                <p className="text-sm text-text-secondary mb-4">State Transport (MSRTC) Bus Tickets</p>
-                <div className="mt-auto pt-4 border-t border-border">
-                  <span className="text-sm font-bold">Needs 3,000 pts (550 more)</span>
+
+              <div className="voucher-card locked bg-white/5 p-6 rounded-xl border border-white/10 relative opacity-60 flex flex-col justify-between">
+                <div className="absolute top-4 right-4 text-gray-400"><Lock size={20} /></div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1 pr-6">20% Bus Transport Discount</h3>
+                  <p className="text-sm text-gray-300 mb-6">State Transport (MSRTC) Bus Tickets</p>
+                </div>
+                <div className="pt-3 border-t border-white/10 text-xs font-bold text-amber-400">
+                  Needs 3,000 pts (550 more)
                 </div>
               </div>
             </div>

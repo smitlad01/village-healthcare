@@ -1,10 +1,12 @@
 /* c:\Users\HP\Documents\Future 6.0 prototype\src\styles\patient.css */
 
 .patient-dashboard-container {
-  padding: 2rem 1.5rem 6rem;
-  max-width: 1400px;
+  padding: 2rem 2rem 6rem;
+  max-width: 1600px;
   margin: 0 auto;
   color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dashboard-header {
@@ -86,28 +88,91 @@
   transform: scale(1.05);
 }
 
-.dashboard-grid {
+/* =================================================================
+   Full-Width Dashboard Row Layouts
+   ================================================================= */
+
+/* Two-column rows (50/50 split) */
+.dash-row-two {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  align-items: start;
 }
 
-/* Specific Grid Placements */
-.hero-widget { grid-column: span 12; }
-.vitals-widget { grid-column: span 12; }
-.appointments-widget { grid-column: span 12; }
-.medications-widget { grid-column: span 12; }
-.streak-widget { grid-column: span 12; }
-.quick-actions-widget { grid-column: span 12; }
-.news-widget { grid-column: span 12; }
+/* Three-column rows (equal thirds) */
+.dash-row-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
 
-@media (min-width: 1024px) {
-  .hero-widget { grid-column: span 4; }
-  .vitals-widget { grid-column: span 8; }
-  .appointments-widget { grid-column: span 6; }
-  .medications-widget { grid-column: span 6; }
-  .streak-widget { grid-column: span 4; }
-  .quick-actions-widget { grid-column: span 8; }
+/* AI score card: side-by-side ring + info */
+.ai-score-card .ai-score-body {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 0;
+}
+
+.ai-score-card .ai-ring-wrap {
+  flex-shrink: 0;
+}
+
+.ai-score-card .ai-score-info {
+  flex: 1;
+}
+
+.ai-score-info h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
+}
+
+.ai-score-info p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.875rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+/* Vitals card full width inside its column */
+.vitals-card .vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+/* Vital unit span */
+.unit {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Responsive stacking */
+@media (max-width: 1100px) {
+  .dash-row-two {
+    grid-template-columns: 1fr;
+  }
+  .dash-row-three {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vitals-card .vitals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dash-row-two,
+  .dash-row-three {
+    grid-template-columns: 1fr;
+  }
+  .vitals-card .vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Card Header Formatting */

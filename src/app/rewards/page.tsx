@@ -62,24 +62,32 @@ export default function RewardsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="voucher-card available">
                 <div className="absolute top-4 right-4 text-success"><CheckCircle size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">50% off Pharmacy</h3>
-                <p className="text-sm text-text-secondary mb-4">Jan Aushadhi Kendra</p>
+                <h3 className="text-lg font-bold mb-2">20% off Grocery Bill</h3>
+                <p className="text-sm text-text-secondary mb-4">Local Kirana & Partner Supermarkets</p>
                 <div className="mt-auto">
                   <Link href="/rewards/redeem" className="btn btn-primary w-full">Use Voucher</Link>
                 </div>
               </div>
               <div className="voucher-card available">
                 <div className="absolute top-4 right-4 text-success"><CheckCircle size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">Free Basic Blood Test</h3>
-                <p className="text-sm text-text-secondary mb-4">City Diagnostics Lab</p>
+                <h3 className="text-lg font-bold mb-2">20% off Electricity Bill</h3>
+                <p className="text-sm text-text-secondary mb-4">State Electricity Board Payment</p>
+                <div className="mt-auto">
+                  <Link href="/rewards/redeem" className="btn btn-primary w-full">Use Voucher</Link>
+                </div>
+              </div>
+              <div className="voucher-card available">
+                <div className="absolute top-4 right-4 text-success"><CheckCircle size={20} /></div>
+                <h3 className="text-lg font-bold mb-2">20% off Internet & Recharge</h3>
+                <p className="text-sm text-text-secondary mb-4">Broadband & Mobile Data Plans</p>
                 <div className="mt-auto">
                   <Link href="/rewards/redeem" className="btn btn-primary w-full">Use Voucher</Link>
                 </div>
               </div>
               <div className="voucher-card locked">
                 <div className="absolute top-4 right-4 text-text-secondary"><Lock size={20} /></div>
-                <h3 className="text-lg font-bold mb-2">Free GP Consultation</h3>
-                <p className="text-sm text-text-secondary mb-4">Any local clinic</p>
+                <h3 className="text-lg font-bold mb-2">20% Bus Transport Discount</h3>
+                <p className="text-sm text-text-secondary mb-4">State Transport (MSRTC) Bus Tickets</p>
                 <div className="mt-auto pt-4 border-t border-border">
                   <span className="text-sm font-bold">Needs 3,000 pts (550 more)</span>
                 </div>

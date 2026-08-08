@@ -5,11 +5,12 @@ import { ChevronLeft, QrCode, Tag, CheckCircle } from 'lucide-react';
 import '@/styles/games.css';
 
 const CATALOG = [
-  { id: 1, title: '50% off Pharmacy Bill', category: 'Pharmacy', pts: 500, desc: 'Valid at Jan Aushadhi Kendra for generic medicines up to ₹500 discount.' },
-  { id: 2, title: 'Free Basic Blood Test', category: 'Diagnostics', pts: 1000, desc: 'CBC and Sugar test at City Diagnostics Lab.' },
-  { id: 3, title: '₹100 Ambulance Discount', category: 'Transport', pts: 2000, desc: 'Discount on private ambulance service within district.' },
-  { id: 4, title: 'Free GP Consultation', category: 'Consultation', pts: 3000, desc: 'One free visit to any participating general physician.' },
-  { id: 5, title: 'Free Specialist Teleconsult', category: 'Consultation', pts: 5000, desc: 'Video consult with top specialists from metro hospitals.' },
+  { id: 1, title: '20% off Grocery Bill', category: 'Grocery', pts: 500, desc: 'Get 20% discount on monthly groceries at local kirana stores & partner supermarkets up to ₹200.' },
+  { id: 2, title: '20% off Internet & Mobile Recharge', category: 'Internet & Mobile', pts: 800, desc: 'Get 20% instant discount on broadband, Wi-Fi, or mobile prepaid/postpaid recharges.' },
+  { id: 3, title: '20% off Electricity Bill', category: 'Electricity Bill', pts: 1000, desc: 'Save 20% on monthly state electricity bill payment up to ₹250.' },
+  { id: 4, title: '20% State Transport Bus Discount', category: 'Bus Transport', pts: 1200, desc: 'Valid for 20% discount on MSRTC & State Transport bus ticket bookings.' },
+  { id: 5, title: '50% off Pharmacy Bill', category: 'Healthcare', pts: 1500, desc: 'Valid at Jan Aushadhi Kendra for generic medicines up to ₹500 discount.' },
+  { id: 6, title: 'Free Basic Blood Test', category: 'Healthcare', pts: 2000, desc: 'Complete Blood Count (CBC) & Sugar test at City Diagnostics Lab.' },
 ];
 
 export default function RedeemPage() {

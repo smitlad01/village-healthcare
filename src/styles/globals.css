@@ -283,14 +283,24 @@ div[class*="glass-card"], div[class*="glass-panel"], div[class*="-widget"] {
 }
 
 /* ==========================================================================
-   Page Containers & Sub-Page Utilities
+   Page Containers & Full-Width Responsive Layouts
    ========================================================================== */
+
+/* Universal page wrapper — used by ALL sub-pages */
 .page-container {
-  padding: 2rem 1.5rem 6rem;
-  max-width: 1400px;
+  padding: 2rem 2rem 6rem;
+  max-width: 1600px;
   margin: 0 auto;
   color: #ffffff;
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tighter on very small screens */
+@media (max-width: 640px) {
+  .page-container {
+    padding: 1.25rem 1rem 5rem;
+  }
 }
 
 .page-header {
@@ -309,10 +319,116 @@ div[class*="glass-card"], div[class*="glass-panel"], div[class*="-widget"] {
   letter-spacing: -0.02em !important;
 }
 
+@media (max-width: 640px) {
+  .page-header h1, .page-title {
+    font-size: 1.65rem !important;
+  }
+}
+
 .subtitle, .page-subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Grid Utilities (Full-width, mobile-first)
+   ========================================================================== */
+
+/* Two equal columns */
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Three equal columns */
+.grid-col-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Four equal columns */
+.grid-col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Stat row — auto-fill minimum 200px, grows to fill */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Asymmetric 2:1 split */
+.grid-col-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Asymmetric 1:2 split */
+.grid-col-1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Section margin helper */
+.section-gap { margin-bottom: 1.75rem; }
+.section-gap-sm { margin-bottom: 1.25rem; }
+
+/* Responsive collapsing */
+@media (max-width: 1100px) {
+  .grid-col-3, .grid-col-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-col-2-1, .grid-col-1-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-col-2,
+  .grid-col-3,
+  .grid-col-4,
+  .grid-col-2-1,
+  .grid-col-1-2 {
+    grid-template-columns: 1fr;
+  }
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem;
+  }
+}
+
+/* Full-span utility inside a grid */
+.col-span-all { grid-column: 1 / -1; }
+
+/* Scrollable list containers (no overflow-hidden on mobile) */
+.scroll-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+@media (max-width: 640px) {
+  .scroll-list {
+    max-height: none;
+    overflow-y: visible;
+  }
 }
 
 /* Upload Dropzone & Section */
@@ -995,5 +1111,126 @@ label {
   .md\:inline { display: inline !important; }
   .md\:flex { display: flex !important; }
 }
+
+/* ==========================================================================
+   Global Mobile Responsive Rules
+   ========================================================================== */
+
+/* Cards: always fill their container on mobile */
+@media (max-width: 640px) {
+  .glass-card,
+  .glass-panel,
+  .panel,
+  .card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* Prevent card titles from overflowing */
+  .card-title, .panel-title {
+    font-size: 1.1rem !important;
+    white-space: normal !important;
+  }
+
+  /* Stack card header row on tiny screens */
+  .card-header-row, .panel-header {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* List items: stack icon + text + action vertically on small screens */
+@media (max-width: 480px) {
+  .list-item {
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+  }
+
+  .list-item .btn-action-primary,
+  .list-item .btn-action-outline {
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Buttons: ensure touch-friendly minimum tap size everywhere */
+.btn-action-primary,
+.btn-action-outline,
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  min-height: 42px;
+}
+
+/* Vitals grid: 2 columns on very small screens */
+@media (max-width: 480px) {
+  .vitals-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+
+  .action-card-item {
+    padding: 0.875rem 0.5rem !important;
+  }
+
+  .action-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .action-card-item span {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Reports grid: 1 column on mobile */
+@media (max-width: 640px) {
+  .reports-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Upload dropzone: compact on mobile */
+@media (max-width: 640px) {
+  .upload-dropzone {
+    padding: 2rem 1rem !important;
+  }
+
+  .upload-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .upload-actions button {
+    width: 100% !important;
+  }
+}
+
+/* Section headings: smaller on mobile */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* General overflow prevention */
+* {
+  max-width: 100%;
+}
+
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Body: prevent horizontal scroll */
+html, body {
+  overflow-x: hidden !important;
+}
+
 
 

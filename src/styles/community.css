@@ -1,5 +1,43 @@
 /* c:\Users\HP\Documents\Future 6.0 prototype\src\styles\community.css */
 
+/* ==========================================================================
+   Community & Forum Page Layout
+   ========================================================================== */
+.community-page-wrapper,
+.community-page {
+  padding: 2rem 2rem 6rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .community-page-wrapper,
+  .community-page { padding: 1.25rem 1rem 5rem; }
+}
+
+/* Forum two-column grid: posts (2/3) + sidebar (1/3) */
+.forum-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .forum-grid { grid-template-columns: 1fr; }
+}
+
+/* Thread list */
+.thread-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+
+
 /* Mental Health Assessment Card Styles */
 .mh-card {
   background: var(--glass-bg);

@@ -518,3 +518,101 @@
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
+/* ==========================================================================
+   Games / Awareness / Rewards — Full-Width Responsive Layout
+   ========================================================================== */
+
+/* Main page wrapper for games, awareness and rewards */
+.games-page-wrapper,
+.awareness-page-wrapper,
+.rewards-page-wrapper {
+  padding: 2rem 2rem 6rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .games-page-wrapper,
+  .awareness-page-wrapper,
+  .rewards-page-wrapper {
+    padding: 1.25rem 1rem 5rem;
+  }
+}
+
+/* Stats row for game hub and awareness hub */
+.stat-card {
+  background: rgba(0, 20, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stat-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2993a1, #7ebf1a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Game cards grid */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .games-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem;
+  }
+}
+
+/* Rewards page two-column: main + sidebar */
+.rewards-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .rewards-layout { grid-template-columns: 1fr; }
+}
+
+/* Badge grid in rewards/achievements */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .badge-grid { grid-template-columns: repeat(2, 1fr); }
+}
+

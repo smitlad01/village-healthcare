@@ -14,7 +14,7 @@ export default function ReportsPage() {
           <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div>
               <label className="text-secondary text-xs" style={{ display: 'block', marginBottom: '0.5rem' }}>Report Type</label>
-              <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', padding: '0.75rem', color: '#fff' }}>
+              <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid var(--border)', borderRadius: '0.5rem', padding: '0.75rem', color: 'var(--text-primary)' }}>
                 <option>Monthly Health Summary</option>
                 <option>Disease Burden Analysis</option>
                 <option>Vaccination Coverage</option>
@@ -24,7 +24,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <label className="text-secondary text-xs" style={{ display: 'block', marginBottom: '0.5rem' }}>Administrative Level</label>
-              <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', padding: '0.75rem', color: '#fff' }}>
+              <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid var(--border)', borderRadius: '0.5rem', padding: '0.75rem', color: 'var(--text-primary)' }}>
                 <option>District (Nashik)</option>
                 <option>Block Level</option>
                 <option>Village Level</option>
@@ -32,7 +32,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <label className="text-secondary text-xs" style={{ display: 'block', marginBottom: '0.5rem' }}>Time Period</label>
-              <input type="month" style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', padding: '0.75rem', color: '#fff' }} defaultValue="2024-08" />
+              <input type="month" style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid var(--border)', borderRadius: '0.5rem', padding: '0.75rem', color: 'var(--text-primary)' }} defaultValue="2024-08" />
             </div>
             <button type="button" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem', padding: '0.75rem' }}>Generate Preview</button>
           </form>

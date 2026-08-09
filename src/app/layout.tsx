@@ -3,6 +3,7 @@ import { Outfit, Noto_Sans } from 'next/font/google';
 import '../styles/globals.css';
 import SOSButton from '@/components/SOSButton';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const outfit = Outfit({ 
   subsets: ['latin'],
@@ -53,10 +54,10 @@ export default function RootLayout({
             position: 'sticky',
             top: 0,
             zIndex: 40,
-            background: 'rgba(4, 20, 22, 0.92)',
+            background: 'var(--surface-dark)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
-            borderBottom: '1px solid rgba(255,255,255,0.1)',
+            borderBottom: '1px solid var(--border)',
             padding: '0.75rem 1.5rem',
             display: 'flex',
             alignItems: 'center',
@@ -92,7 +93,7 @@ export default function RootLayout({
                 fontWeight: 900,
                 fontSize: '1.5rem',
                 letterSpacing: '0.05em',
-                color: '#ffffff',
+                color: 'var(--text-primary)',
               }}
             >
               V-HAIN
@@ -101,6 +102,7 @@ export default function RootLayout({
           
           {/* Right Action Bar */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </header>

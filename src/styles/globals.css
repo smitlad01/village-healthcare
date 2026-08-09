@@ -216,8 +216,8 @@ img, video {
    Cards & Panels Design System
    ========================================================================== */
 .card, .panel, .glass-card, .glass-panel {
-  background: #072529;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
@@ -239,14 +239,14 @@ img, video {
   align-items: center;
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border);
   width: 100%;
 }
 
 .card-title, .panel-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
   line-height: 1.3;

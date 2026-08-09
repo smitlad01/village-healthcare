@@ -24,8 +24,8 @@
   gap: 1rem;
   margin-bottom: 0;
   padding: 1.25rem 1.5rem;
-  background: rgba(6, 35, 39, 0.65);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
@@ -52,8 +52,8 @@
 
 /* ── KPI Card ── */
 .kpi-card {
-  background: #072529;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
   display: flex;
@@ -71,7 +71,7 @@
 .kpi-value {
   font-size: 2.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   line-height: 1.1;
 }
 
@@ -100,8 +100,8 @@
 
 /* ── Chart Container ── */
 .chart-container {
-  background: #072529;
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   min-height: 380px;
@@ -109,8 +109,8 @@
 
 /* ── Data Tables ── */
 .admin-table-wrapper {
-  background: #072529;
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
 }
@@ -121,12 +121,12 @@
 }
 
 .admin-table th {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-hover);
   padding: 0.875rem 1.25rem;
   text-align: left;
   font-weight: 600;
-  color: rgba(255,255,255,0.7);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -134,8 +134,8 @@
 
 .admin-table td {
   padding: 0.875rem 1.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
   font-size: 0.9rem;
 }
 
@@ -157,8 +157,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 6px;
-  background: rgba(4, 20, 22, 0.6);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--surface-dark);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
   height: 380px;
@@ -233,8 +233,8 @@
 
 /* ── Scheme Cards ── */
 .scheme-card {
-  background: #072529;
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
 }

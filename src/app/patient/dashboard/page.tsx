@@ -246,7 +246,7 @@ export default function PatientDashboard() {
             <div className="progress-bar-bg" style={{ marginBottom: '0.5rem' }}>
               <div className="progress-bar-fill"></div>
             </div>
-            <div style={{ fontSize: '0.75rem', textAlign: 'right', color: 'rgba(255,255,255,0.6)' }}>2,450 / 5,000 pts to Forest</div>
+            <div style={{ fontSize: '0.75rem', textAlign: 'right', color: 'var(--text-secondary)' }}>2,450 / 5,000 pts to Forest</div>
           </div>
         </div>
 
@@ -293,21 +293,21 @@ export default function PatientDashboard() {
               <div className="news-icon alert"><Bug size={20} /></div>
               <div>
                 <h4 style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '0.3rem' }}>Dengue Alert</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: 1.5 }}>12 cases in Nashik this week. Avoid stagnant water, use mosquito nets.</p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: 1.5 }}>12 cases in Nashik this week. Avoid stagnant water, use mosquito nets.</p>
               </div>
             </div>
             <div className="news-card">
               <div className="news-icon info"><Eye size={20} /></div>
               <div>
                 <h4 style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '0.3rem' }}>Free Eye Camp</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: 1.5 }}>Free Eye Camp at PHC Nashik on Aug 15. Free spectacles for eligible citizens.</p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: 1.5 }}>Free Eye Camp at PHC Nashik on Aug 15. Free spectacles for eligible citizens.</p>
               </div>
             </div>
             <div className="news-card">
               <div className="news-icon" style={{ background: 'rgba(126,191,26,0.15)', color: '#a3e635' }}><Stethoscope size={20} /></div>
               <div>
                 <h4 style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '0.3rem' }}>Health Camp Aug 22</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: 1.5 }}>Community health camp with free diabetes & BP screening in Nashik district.</p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: 1.5 }}>Community health camp with free diabetes & BP screening in Nashik district.</p>
               </div>
             </div>
           </div>

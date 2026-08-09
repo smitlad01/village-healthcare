@@ -83,7 +83,7 @@ export default function LandingPage() {
   const [hoveredRole, setHoveredRole] = useState<string | null>(null);
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#041416' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--background)' }}>
       {/* ── Compact Hero Section (Above the Fold Sizing) ── */}
       <section className="relative flex flex-col items-center justify-center text-center" style={{ paddingTop: '2rem', paddingBottom: '1rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', overflow: 'hidden' }}>
         
@@ -135,13 +135,13 @@ export default function LandingPage() {
           {/* ── Refined Mode Toggle Switch ── */}
           <div 
             className="flex items-center justify-center gap-3 rounded-full mb-4"
-            style={{ padding: '10px 20px', backgroundColor: '#072529', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
+            style={{ padding: '10px 20px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
           >
             <span 
               className="text-xs font-bold"
               style={{
                 transition: 'all 0.2s',
-                ...(!isDemoMode ? { color: '#ffffff', backgroundColor: 'rgba(20, 184, 166, 0.3)', padding: '4px 10px', borderRadius: '9999px', border: '1px solid rgba(20, 184, 166, 0.4)' } : { color: '#9ca3af', padding: '4px 10px', border: '1px solid transparent' })
+                ...(!isDemoMode ? { color: 'var(--text-primary)', backgroundColor: 'rgba(20, 184, 166, 0.3)', padding: '4px 10px', borderRadius: '9999px', border: '1px solid rgba(20, 184, 166, 0.4)' } : { color: '#9ca3af', padding: '4px 10px', border: '1px solid transparent' })
               }}
             >
               Live Mode (Auth)
@@ -210,7 +210,7 @@ export default function LandingPage() {
                 <div 
                   className="p-6 h-full flex flex-col justify-between rounded-2xl relative overflow-hidden"
                   style={{ 
-                    backgroundColor: '#072529',
+                    backgroundColor: 'var(--surface)',
                     border: `1px solid ${hoveredRole === role.title ? 'rgba(255, 255, 255, 0.4)' : role.borderColor}`,
                     boxShadow: hoveredRole === role.title ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none',
                     transform: hoveredRole === role.title ? 'translateY(-6px)' : 'none',
@@ -252,7 +252,7 @@ export default function LandingPage() {
                     <h3 
                       className="text-xl font-black mb-2"
                       style={{ 
-                        color: hoveredRole === role.title ? '#59b6c2' : '#ffffff',
+                        color: hoveredRole === role.title ? '#59b6c2' : 'var(--text-primary)',
                         transition: 'color 0.3s'
                       }}
                     >
@@ -267,8 +267,8 @@ export default function LandingPage() {
                   <div 
                     className="pt-3 flex items-center justify-between text-xs font-bold"
                     style={{ 
-                      borderTop: '1px solid rgba(255, 255, 255, 0.1)', 
-                      color: hoveredRole === role.title ? '#ffffff' : '#59b6c2',
+                      borderTop: '1px solid var(--border)', 
+                      color: hoveredRole === role.title ? 'var(--text-primary)' : '#59b6c2',
                       transition: 'color 0.3s'
                     }}
                   >
@@ -289,14 +289,14 @@ export default function LandingPage() {
       </section>
 
       {/* ── Stats Section ── */}
-      <section className="p-6 mt-6" style={{ paddingBottom: '3rem', paddingTop: '3rem', backgroundColor: 'rgba(0, 0, 0, 0.4)', borderTop: '1px solid rgba(255, 255, 255, 0.1)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+      <section className="p-6 mt-6" style={{ paddingBottom: '3rem', paddingTop: '3rem', backgroundColor: 'rgba(0, 0, 0, 0.4)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="mx-auto grid grid-cols-2 gap-6" style={{ maxWidth: '80rem' }}>
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center p-4 rounded-2xl" style={{ border: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
+            <div key={stat.label} className="text-center p-4 rounded-2xl" style={{ border: '1px solid var(--border)', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
               <div className="flex justify-center mb-3">
                 <stat.icon style={{ width: '28px', height: '28px', color: '#59b6c2' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-black mb-1" style={{ color: '#ffffff' }}>
+              <div className="text-2xl sm:text-3xl font-black mb-1" style={{ color: 'var(--text-primary)' }}>
                 {stat.value}
               </div>
               <div className="text-xs font-bold" style={{ textTransform: 'uppercase', letterSpacing: '0.05em', color: '#9ca3af' }}>
@@ -310,7 +310,7 @@ export default function LandingPage() {
       {/* ── Features Section ── */}
       <section className="p-6 mx-auto w-full" style={{ paddingBottom: '4rem', paddingTop: '4rem', maxWidth: '80rem' }}>
         <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>Comprehensive Care Platform</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Comprehensive Care Platform</h2>
           <p className="text-sm mx-auto" style={{ color: '#d1d5db', maxWidth: '36rem' }}>Built from the ground up to solve rural healthcare challenges in India.</p>
         </div>
         
@@ -319,7 +319,7 @@ export default function LandingPage() {
             <div 
               key={feature.title} 
               className="p-6 rounded-2xl" 
-              style={{ border: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(255, 255, 255, 0.03)', transition: 'border-color 0.3s' }}
+              style={{ border: '1px solid var(--border)', backgroundColor: 'rgba(255, 255, 255, 0.03)', transition: 'border-color 0.3s' }}
               onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)'} 
               onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
             >
@@ -329,7 +329,7 @@ export default function LandingPage() {
               >
                 <feature.icon style={{ width: '24px', height: '24px', strokeWidth: 2 }} />
               </div>
-              <h3 className="text-lg font-bold mb-2" style={{ color: '#ffffff' }}>{feature.title}</h3>
+              <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{feature.title}</h3>
               <p className="text-xs" style={{ color: '#d1d5db', lineHeight: '1.625' }}>
                 {feature.description}
               </p>
@@ -339,21 +339,21 @@ export default function LandingPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="p-6" style={{ paddingBottom: '4rem', paddingTop: '4rem', background: 'linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6))', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+      <section className="p-6" style={{ paddingBottom: '4rem', paddingTop: '4rem', background: 'linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6))', borderTop: '1px solid var(--border)' }}>
         <div className="mx-auto" style={{ maxWidth: '80rem' }}>
           <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>Voices from the Villages</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Voices from the Villages</h2>
             <p className="text-sm" style={{ color: '#d1d5db' }}>How V-HAIN is transforming healthcare access across India.</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {testimonials.map((t) => (
-              <div key={t.name} className="p-6 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
+              <div key={t.name} className="p-6 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid var(--border)', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
                 <p className="text-sm italic mb-6" style={{ color: '#e5e7eb', lineHeight: '1.625' }}>
                   "{t.quote}"
                 </p>
-                <div className="pt-3" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                  <div className="font-bold text-sm" style={{ color: '#ffffff' }}>{t.name}</div>
+                <div className="pt-3" style={{ borderTop: '1px solid var(--border)' }}>
+                  <div className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>{t.name}</div>
                   <div className="text-xs" style={{ color: '#59b6c2' }}>{t.role}</div>
                 </div>
               </div>
@@ -363,7 +363,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="p-6 mt-auto" style={{ paddingBottom: '2rem', paddingTop: '3rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
+      <footer className="p-6 mt-auto" style={{ paddingBottom: '2rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
         <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" style={{ maxWidth: '80rem' }}>
           <div className="sm:col-span-2">
             <div className="flex items-center gap-3 mb-4">
@@ -373,7 +373,7 @@ export default function LandingPage() {
               >
                 <HeartPulse size={20} />
               </div>
-              <span className="font-black text-xl" style={{ letterSpacing: '0.05em', color: '#ffffff' }}>
+              <span className="font-black text-xl" style={{ letterSpacing: '0.05em', color: 'var(--text-primary)' }}>
                 V-HAIN
               </span>
             </div>
@@ -386,13 +386,13 @@ export default function LandingPage() {
                 style={{ border: '1px solid rgba(239, 68, 68, 0.3)', backgroundColor: 'rgba(239, 68, 68, 0.1)' }}
               >
                 <Siren style={{ width: '16px', height: '16px', color: '#f87171' }} />
-                <span className="font-bold text-xs" style={{ color: '#ffffff' }}>National Health Helpline: 108</span>
+                <span className="font-bold text-xs" style={{ color: 'var(--text-primary)' }}>National Health Helpline: 108</span>
               </div>
             </div>
           </div>
           
           <div>
-            <h4 className="font-bold text-sm mb-3" style={{ color: '#ffffff' }}>Portals</h4>
+            <h4 className="font-bold text-sm mb-3" style={{ color: 'var(--text-primary)' }}>Portals</h4>
             <ul className="text-xs" style={{ color: '#9ca3af', listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <li><Link href="/auth/patient" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Patient Portal</Link></li>
               <li><Link href="/auth/health-worker" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Health Worker Dashboard</Link></li>
@@ -402,7 +402,7 @@ export default function LandingPage() {
           </div>
           
           <div>
-            <h4 className="font-bold text-sm mb-3" style={{ color: '#ffffff' }}>Resources</h4>
+            <h4 className="font-bold text-sm mb-3" style={{ color: 'var(--text-primary)' }}>Resources</h4>
             <ul className="text-xs" style={{ color: '#9ca3af', listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <li><a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>About Us</a></li>
               <li><a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Help Center</a></li>
@@ -412,7 +412,7 @@ export default function LandingPage() {
           </div>
         </div>
         
-        <div className="mx-auto flex flex-col md:flex-row justify-between items-center text-xs" style={{ paddingTop: '1.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', color: '#6b7280', maxWidth: '80rem' }}>
+        <div className="mx-auto flex flex-col md:flex-row justify-between items-center text-xs" style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)', color: '#6b7280', maxWidth: '80rem' }}>
           <p>© 2026 V-HAIN (Village Health AI Network). All rights reserved.</p>
           <div className="flex items-center gap-2 mt-2 md:mt-0">
             <span>Built for Rural India</span>

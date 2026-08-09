@@ -74,7 +74,7 @@ export default function SOSButton() {
               </div>
 
               <div className="p-6 flex flex-col gap-4">
-                <p className="text-sm text-center mb-2" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+                <p className="text-sm text-center mb-2" style={{ color: 'var(--text-secondary)' }}>
                   Select an emergency service to contact immediately.
                 </p>
 

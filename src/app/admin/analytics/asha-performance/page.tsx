@@ -75,7 +75,7 @@ export default function AshaPerformancePage() {
       `}</style>
       
       {/* ── Top Navigation Bar ── */}
-      <div className="flex justify-between items-center mb-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="flex justify-between items-center mb-6" style={{ borderBottom: '1px solid var(--border)', paddingBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <div className="flex items-center mb-1 gap-2" style={{ color: '#9ca3af' }}>
             <Link href="/admin/dashboard" className="text-sm flex items-center gap-2" style={{ color: '#9ca3af', textDecoration: 'none' }}>
@@ -84,7 +84,7 @@ export default function AshaPerformancePage() {
             <span className="text-sm" style={{ color: '#4b5563' }}>•</span>
             <span className="text-sm font-bold" style={{ color: '#59b6c2' }}>Human Resources & Field Incentives</span>
           </div>
-          <h1 className="text-3xl font-black flex items-center gap-4" style={{ color: '#ffffff' }}>
+          <h1 className="text-3xl font-black flex items-center gap-4" style={{ color: 'var(--text-primary)' }}>
             <Award size={32} style={{ color: '#7ebf1a' }} />
             ASHA Worker Performance & DBT Incentives
           </h1>
@@ -109,12 +109,12 @@ export default function AshaPerformancePage() {
             <span className="text-xs font-black" style={{ color: '#fbbf24', background: 'rgba(251, 191, 36, 0.2)', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid rgba(251, 191, 36, 0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               #1 District Champion
             </span>
-            <h3 className="text-2xl font-black mb-1" style={{ color: '#ffffff', marginTop: '0.75rem' }}>Meera Devi</h3>
+            <h3 className="text-2xl font-black mb-1" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>Meera Devi</h3>
             <p className="text-sm mb-4" style={{ color: '#d1d5db' }}>Nashik Village Cluster</p>
 
             <div className="mb-6 flex" style={{ flexDirection: 'column', gap: '0.5rem' }}>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
-                <span>Monthly Checkups:</span> <strong style={{ color: '#ffffff' }}>48 Patients</strong>
+                <span>Monthly Checkups:</span> <strong style={{ color: 'var(--text-primary)' }}>48 Patients</strong>
               </div>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
                 <span>Maternal Care Follow-up:</span> <strong style={{ color: '#34d399' }}>98%</strong>
@@ -125,7 +125,7 @@ export default function AshaPerformancePage() {
             </div>
           </div>
 
-          <div className="flex justify-between items-center" style={{ paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex justify-between items-center" style={{ paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
             <div>
               <span style={{ fontSize: '11px', color: '#9ca3af', display: 'block' }}>Total Incentives</span>
               <strong className="text-lg font-black" style={{ color: '#34d399' }}>₹8,500</strong>
@@ -146,12 +146,12 @@ export default function AshaPerformancePage() {
             <span className="text-xs font-black" style={{ color: '#cbd5e1', background: 'rgba(255, 255, 255, 0.1)', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid rgba(255, 255, 255, 0.2)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               #2 Rank Runner-up
             </span>
-            <h3 className="text-2xl font-black mb-1" style={{ color: '#ffffff', marginTop: '0.75rem' }}>Anita Kumari</h3>
+            <h3 className="text-2xl font-black mb-1" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>Anita Kumari</h3>
             <p className="text-sm mb-4" style={{ color: '#d1d5db' }}>Deoli Block Sector 2</p>
 
             <div className="mb-6 flex" style={{ flexDirection: 'column', gap: '0.5rem' }}>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
-                <span>Monthly Checkups:</span> <strong style={{ color: '#ffffff' }}>45 Patients</strong>
+                <span>Monthly Checkups:</span> <strong style={{ color: 'var(--text-primary)' }}>45 Patients</strong>
               </div>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
                 <span>Maternal Care Follow-up:</span> <strong style={{ color: '#34d399' }}>94%</strong>
@@ -162,7 +162,7 @@ export default function AshaPerformancePage() {
             </div>
           </div>
 
-          <div className="flex justify-between items-center" style={{ paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex justify-between items-center" style={{ paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
             <div>
               <span style={{ fontSize: '11px', color: '#9ca3af', display: 'block' }}>Total Incentives</span>
               <strong className="text-lg font-black" style={{ color: '#34d399' }}>₹7,800</strong>
@@ -183,12 +183,12 @@ export default function AshaPerformancePage() {
             <span className="text-xs font-black" style={{ color: '#f59e0b', background: 'rgba(180, 83, 9, 0.3)', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid rgba(180, 83, 9, 0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               #3 Rank Bronze
             </span>
-            <h3 className="text-2xl font-black mb-1" style={{ color: '#ffffff', marginTop: '0.75rem' }}>Sunita Yadav</h3>
+            <h3 className="text-2xl font-black mb-1" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>Sunita Yadav</h3>
             <p className="text-sm mb-4" style={{ color: '#d1d5db' }}>Borgaon Health Cluster</p>
 
             <div className="mb-6 flex" style={{ flexDirection: 'column', gap: '0.5rem' }}>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
-                <span>Monthly Checkups:</span> <strong style={{ color: '#ffffff' }}>42 Patients</strong>
+                <span>Monthly Checkups:</span> <strong style={{ color: 'var(--text-primary)' }}>42 Patients</strong>
               </div>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
                 <span>Maternal Care Follow-up:</span> <strong style={{ color: '#34d399' }}>90%</strong>
@@ -199,7 +199,7 @@ export default function AshaPerformancePage() {
             </div>
           </div>
 
-          <div className="flex justify-between items-center" style={{ paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex justify-between items-center" style={{ paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
             <div>
               <span style={{ fontSize: '11px', color: '#9ca3af', display: 'block' }}>Total Incentives</span>
               <strong className="text-lg font-black" style={{ color: '#34d399' }}>₹7,200</strong>
@@ -216,30 +216,30 @@ export default function AshaPerformancePage() {
 
       {/* ── KPI Grid Summary ── */}
       <div className="grid gap-6 mb-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-        <div className="kpi-card p-5 rounded-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#072529' }}>
+        <div className="kpi-card p-5 rounded-2xl" style={{ border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'var(--surface)' }}>
           <div className="flex justify-between mb-2" style={{ alignItems: 'flex-start' }}>
             <span className="text-xs font-bold" style={{ color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Active Field ASHAs</span>
             <UserCheck size={20} style={{ color: '#59b6c2' }} />
           </div>
-          <div className="text-3xl font-black" style={{ color: '#ffffff' }}>84 <span className="text-xs font-bold" style={{ color: '#34d399' }}>Workers</span></div>
+          <div className="text-3xl font-black" style={{ color: 'var(--text-primary)' }}>84 <span className="text-xs font-bold" style={{ color: '#34d399' }}>Workers</span></div>
           <p className="text-xs" style={{ color: '#9ca3af', marginTop: '0.5rem' }}>100% Coverage in Nashik District</p>
         </div>
 
-        <div className="kpi-card p-5 rounded-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#072529' }}>
+        <div className="kpi-card p-5 rounded-2xl" style={{ border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'var(--surface)' }}>
           <div className="flex justify-between mb-2" style={{ alignItems: 'flex-start' }}>
             <span className="text-xs font-bold" style={{ color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>District Quality Score</span>
             <TrendingUp size={20} style={{ color: '#34d399' }} />
           </div>
-          <div className="text-3xl font-black" style={{ color: '#ffffff' }}>84.2<span className="text-sm" style={{ color: '#9ca3af' }}>/100</span></div>
+          <div className="text-3xl font-black" style={{ color: 'var(--text-primary)' }}>84.2<span className="text-sm" style={{ color: '#9ca3af' }}>/100</span></div>
           <p className="text-xs font-bold" style={{ color: '#34d399', marginTop: '0.5rem' }}>↑ +4.8 pts higher than last quarter</p>
         </div>
 
-        <div className="kpi-card p-5 rounded-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#072529' }}>
+        <div className="kpi-card p-5 rounded-2xl" style={{ border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'var(--surface)' }}>
           <div className="flex justify-between mb-2" style={{ alignItems: 'flex-start' }}>
             <span className="text-xs font-bold" style={{ color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>DBT Disbursed (Aug)</span>
             <IndianRupee size={20} style={{ color: '#fbbf24' }} />
           </div>
-          <div className="text-3xl font-black" style={{ color: '#ffffff' }}>₹4.85L</div>
+          <div className="text-3xl font-black" style={{ color: 'var(--text-primary)' }}>₹4.85L</div>
           <p className="text-xs" style={{ color: '#9ca3af', marginTop: '0.5rem' }}>Pending Disbursal: ₹48,500</p>
         </div>
 
@@ -254,10 +254,10 @@ export default function AshaPerformancePage() {
       </div>
 
       {/* ── Main Performance Table & Search Filter ── */}
-      <div className="glass-card p-6 rounded-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)', background: '#072529' }}>
-        <div className="flex justify-between items-center mb-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-card p-6 rounded-2xl" style={{ border: '1px solid var(--border)', background: 'var(--surface)' }}>
+        <div className="flex justify-between items-center mb-6" style={{ borderBottom: '1px solid var(--border)', paddingBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <h2 className="text-xl font-bold flex items-center gap-2 mb-1" style={{ color: '#ffffff' }}>
+            <h2 className="text-xl font-bold flex items-center gap-2 mb-1" style={{ color: 'var(--text-primary)' }}>
               <ShieldCheck size={20} style={{ color: '#59b6c2' }} />
               ASHA Worker Performance Directory & Direct Benefit Transfer (DBT)
             </h2>
@@ -265,7 +265,7 @@ export default function AshaPerformancePage() {
           </div>
 
           <div className="flex items-center gap-4" style={{ flexWrap: 'wrap' }}>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
               <Search size={16} style={{ color: '#9ca3af' }} />
               <input 
                 type="text" 
@@ -273,25 +273,25 @@ export default function AshaPerformancePage() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="text-sm"
-                style={{ background: 'transparent', color: '#ffffff', outline: 'none', border: 'none', width: '11rem' }}
+                style={{ background: 'transparent', color: 'var(--text-primary)', outline: 'none', border: 'none', width: '11rem' }}
               />
             </div>
 
-            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
               <Filter size={16} style={{ color: '#9ca3af' }} />
               <select 
                 value={selectedVillage}
                 onChange={(e) => setSelectedVillage(e.target.value)}
                 className="text-xs"
-                style={{ background: 'transparent', color: '#ffffff', outline: 'none', border: 'none', cursor: 'pointer' }}
+                style={{ background: 'transparent', color: 'var(--text-primary)', outline: 'none', border: 'none', cursor: 'pointer' }}
               >
-                <option value="All" style={{ background: '#041416' }}>All Villages</option>
-                <option value="Nashik" style={{ background: '#041416' }}>Nashik</option>
-                <option value="Deoli" style={{ background: '#041416' }}>Deoli</option>
-                <option value="Borgaon" style={{ background: '#041416' }}>Borgaon</option>
-                <option value="Hinganghat" style={{ background: '#041416' }}>Hinganghat</option>
-                <option value="Arvi" style={{ background: '#041416' }}>Arvi</option>
-                <option value="Ashti" style={{ background: '#041416' }}>Ashti</option>
+                <option value="All" style={{ background: 'var(--background)' }}>All Villages</option>
+                <option value="Nashik" style={{ background: 'var(--background)' }}>Nashik</option>
+                <option value="Deoli" style={{ background: 'var(--background)' }}>Deoli</option>
+                <option value="Borgaon" style={{ background: 'var(--background)' }}>Borgaon</option>
+                <option value="Hinganghat" style={{ background: 'var(--background)' }}>Hinganghat</option>
+                <option value="Arvi" style={{ background: 'var(--background)' }}>Arvi</option>
+                <option value="Ashti" style={{ background: 'var(--background)' }}>Ashti</option>
               </select>
             </div>
           </div>
@@ -300,7 +300,7 @@ export default function AshaPerformancePage() {
         <div style={{ overflowX: 'auto' }}>
           <table className="w-full" style={{ textAlign: 'left', borderCollapse: 'collapse', minWidth: '800px' }}>
             <thead>
-              <tr className="text-xs" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <tr className="text-xs" style={{ borderBottom: '1px solid var(--border)', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Rank</th>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>ASHA Worker Name</th>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Village / Cluster</th>
@@ -319,13 +319,13 @@ export default function AshaPerformancePage() {
                     <td className="font-bold" style={{ padding: '1rem 0.75rem', fontSize: '1rem' }}>
                       {w.badge} #{w.rank}
                     </td>
-                    <td className="font-bold" style={{ padding: '1rem 0.75rem', color: '#ffffff' }}>
+                    <td className="font-bold" style={{ padding: '1rem 0.75rem', color: 'var(--text-primary)' }}>
                       {w.name}
                     </td>
                     <td style={{ padding: '1rem 0.75rem', color: '#d1d5db' }}>
                       {w.village}
                     </td>
-                    <td className="font-bold" style={{ padding: '1rem 0.75rem', color: '#ffffff' }}>
+                    <td className="font-bold" style={{ padding: '1rem 0.75rem', color: 'var(--text-primary)' }}>
                       {w.checkups} checkups
                     </td>
                     <td className="font-bold" style={{ padding: '1rem 0.75rem', color: '#34d399' }}>
@@ -346,7 +346,7 @@ export default function AshaPerformancePage() {
                             }}
                           ></div>
                         </div>
-                        <span className="text-xs font-bold" style={{ color: '#ffffff' }}>{w.score}/100</span>
+                        <span className="text-xs font-bold" style={{ color: 'var(--text-primary)' }}>{w.score}/100</span>
                       </div>
                     </td>
                     <td style={{ padding: '1rem 0.75rem', textAlign: 'right' }}>

@@ -68,7 +68,7 @@ export default function InventoryPage() {
   return (
     <div className="admin-dashboard-container">
       {/* ── Top Navigation Bar ── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b" style={{ borderColor: 'var(--border)' }}>
         <div>
           <div className="flex items-center gap-2 mb-1">
             <Link href="/admin/dashboard" className="text-sm flex items-center gap-1 transition-colors" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -77,7 +77,7 @@ export default function InventoryPage() {
             <span className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>•</span>
             <span className="text-sm font-semibold" style={{ color: '#59b6c2' }}>Pharmaceuticals & Supply Chain</span>
           </div>
-          <h1 className="text-3xl font-black flex items-center gap-3" style={{ color: '#ffffff' }}>
+          <h1 className="text-3xl font-black flex items-center gap-3" style={{ color: 'var(--text-primary)' }}>
             <Package size={32} style={{ color: '#59b6c2' }} />
             Medicine & Medical Supply Inventory
           </h1>
@@ -104,7 +104,7 @@ export default function InventoryPage() {
               </span>
               <span className="text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>PHC Deoli Center</span>
             </div>
-            <h3 className="text-lg font-bold mb-1" style={{ color: '#ffffff' }}>Metformin & Amlodipine Supply Critically Low</h3>
+            <h3 className="text-lg font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Metformin & Amlodipine Supply Critically Low</h3>
             <p className="text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
               PHC Deoli has only <strong>15 units of Metformin 500mg</strong> remaining (4-day reserve). Weekly demand is 50 units. Immediate procurement required.
             </p>
@@ -151,34 +151,34 @@ export default function InventoryPage() {
 
       {/* ── KPI Inventory Metrics ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid var(--border)' }}>
           <div className="flex justify-between items-start mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.7)' }}>Total Supply Reserve</span>
+            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Total Supply Reserve</span>
             <IndianRupee size={20} style={{ color: '#59b6c2' }} />
           </div>
-          <div className="text-3xl font-black" style={{ color: '#ffffff' }}>₹18.4L</div>
-          <p className="text-xs mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>6 District PHC Warehouses</p>
+          <div className="text-3xl font-black" style={{ color: 'var(--text-primary)' }}>₹18.4L</div>
+          <p className="text-xs mt-2" style={{ color: 'var(--text-secondary)' }}>6 District PHC Warehouses</p>
         </div>
 
-        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid var(--border)' }}>
           <div className="flex justify-between items-start mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.7)' }}>Stockout Risk Alerts</span>
+            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Stockout Risk Alerts</span>
             <AlertTriangle size={20} style={{ color: '#ef4444' }} />
           </div>
           <div className="text-3xl font-black" style={{ color: '#ef4444' }}>1 Critical <span className="text-xs font-bold" style={{ color: '#f59e0b' }}>/ 2 Low</span></div>
-          <p className="text-xs mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>Action needed for Deoli & Ashti</p>
+          <p className="text-xs mt-2" style={{ color: 'var(--text-secondary)' }}>Action needed for Deoli & Ashti</p>
         </div>
 
-        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid var(--border)' }}>
           <div className="flex justify-between items-start mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.7)' }}>Expiring Watchlist</span>
+            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Expiring Watchlist</span>
             <Clock size={20} style={{ color: '#f59e0b' }} />
           </div>
           <div className="text-3xl font-black" style={{ color: '#f59e0b' }}>3 Batches</div>
-          <p className="text-xs mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>Expiring within 30 days (&lt;Aug 31)</p>
+          <p className="text-xs mt-2" style={{ color: 'var(--text-secondary)' }}>Expiring within 30 days (&lt;Aug 31)</p>
         </div>
 
-        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="kpi-card glass-card p-5 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid var(--border)' }}>
           <div className="flex justify-between items-start mb-2">
             <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.7)' }}>Shipments In Transit</span>
             <Truck size={20} style={{ color: '#10b981' }} />
@@ -189,18 +189,18 @@ export default function InventoryPage() {
       </div>
 
       {/* ── Main PHC Stock Table ── */}
-      <div className="glass-card p-6 rounded-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+      <div className="glass-card p-6 rounded-2xl" style={{ border: '1px solid var(--border)' }}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b" style={{ borderColor: 'var(--border)' }}>
           <div>
-            <h2 className="text-xl font-bold flex items-center gap-2" style={{ color: '#ffffff' }}>
+            <h2 className="text-xl font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
               <Layers size={20} style={{ color: '#59b6c2' }} />
               PHC Facility Supply Matrix & Medicine Balances
             </h2>
-            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>Real-time stock audit across Paracetamol, Metformin, Amlodipine, ORS, and Cold-Chain Vaccines.</p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Real-time stock audit across Paracetamol, Metformin, Amlodipine, ORS, and Cold-Chain Vaccines.</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ backgroundColor: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ backgroundColor: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
               <Search size={16} style={{ color: 'rgba(255,255,255,0.7)' }} />
               <input 
                 type="text" 
@@ -208,22 +208,22 @@ export default function InventoryPage() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="text-sm outline-none w-44"
-                style={{ backgroundColor: 'transparent', color: '#ffffff' }}
+                style={{ backgroundColor: 'transparent', color: 'var(--text-primary)' }}
               />
             </div>
 
-            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ backgroundColor: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ backgroundColor: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
               <Filter size={16} style={{ color: 'rgba(255,255,255,0.7)' }} />
               <select 
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="text-xs outline-none cursor-pointer"
-                style={{ backgroundColor: 'transparent', color: '#ffffff' }}
+                style={{ backgroundColor: 'transparent', color: 'var(--text-primary)' }}
               >
-                <option value="All" style={{ backgroundColor: '#072529' }}>All Categories</option>
-                <option value="Essential" style={{ backgroundColor: '#072529' }}>Essential Medicines</option>
-                <option value="Vaccines" style={{ backgroundColor: '#072529' }}>Cold Chain Vaccines</option>
-                <option value="ORS" style={{ backgroundColor: '#072529' }}>ORS & Hydration</option>
+                <option value="All" style={{ backgroundColor: 'var(--surface)' }}>All Categories</option>
+                <option value="Essential" style={{ backgroundColor: 'var(--surface)' }}>Essential Medicines</option>
+                <option value="Vaccines" style={{ backgroundColor: 'var(--surface)' }}>Cold Chain Vaccines</option>
+                <option value="ORS" style={{ backgroundColor: 'var(--surface)' }}>ORS & Hydration</option>
               </select>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function InventoryPage() {
         <div style={{ overflowX: 'auto' }}>
           <table className="w-full text-left" style={{ borderCollapse: 'collapse' }}>
             <thead>
-              <tr className="text-xs uppercase tracking-wider border-b" style={{ borderColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)' }}>
+              <tr className="text-xs uppercase tracking-wider border-b" style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }}>
                 <th className="pb-3 px-3">Facility Name</th>
                 <th className="pb-3 px-3">Paracetamol 500mg</th>
                 <th className="pb-3 px-3">Metformin 500mg</th>
@@ -249,15 +249,15 @@ export default function InventoryPage() {
                 return (
                   <tr key={row.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td className="py-4 px-3">
-                      <strong className="block" style={{ color: '#ffffff' }}>{row.phc}</strong>
+                      <strong className="block" style={{ color: 'var(--text-primary)' }}>{row.phc}</strong>
                       <span className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>Restocked: {row.lastRestocked}</span>
                     </td>
-                    <td className="py-4 px-3 font-bold" style={{ color: '#ffffff' }}>
+                    <td className="py-4 px-3 font-bold" style={{ color: 'var(--text-primary)' }}>
                       {row.para} <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.5)' }}>units</span>
                     </td>
                     <td className="py-4 px-3 font-bold">
                       <span style={{ 
-                        color: row.met < 20 ? '#ef4444' : '#ffffff', 
+                        color: row.met < 20 ? '#ef4444' : 'var(--text-primary)', 
                         backgroundColor: row.met < 20 ? 'rgba(239,68,68,0.1)' : 'transparent',
                         padding: row.met < 20 ? '4px 8px' : '0',
                         borderRadius: row.met < 20 ? '4px' : '0'
@@ -267,7 +267,7 @@ export default function InventoryPage() {
                     </td>
                     <td className="py-4 px-3 font-bold">
                       <span style={{ 
-                        color: row.amlo < 20 ? '#ef4444' : '#ffffff', 
+                        color: row.amlo < 20 ? '#ef4444' : 'var(--text-primary)', 
                         backgroundColor: row.amlo < 20 ? 'rgba(239,68,68,0.1)' : 'transparent',
                         padding: row.amlo < 20 ? '4px 8px' : '0',
                         borderRadius: row.amlo < 20 ? '4px' : '0'
@@ -275,10 +275,10 @@ export default function InventoryPage() {
                         {row.amlo} <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.5)' }}>units</span>
                       </span>
                     </td>
-                    <td className="py-4 px-3 font-bold" style={{ color: '#ffffff' }}>
+                    <td className="py-4 px-3 font-bold" style={{ color: 'var(--text-primary)' }}>
                       {row.ors} <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.5)' }}>pkts</span>
                     </td>
-                    <td className="py-4 px-3 font-bold" style={{ color: '#ffffff' }}>
+                    <td className="py-4 px-3 font-bold" style={{ color: 'var(--text-primary)' }}>
                       {row.vax} <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.5)' }}>vials</span>
                     </td>
                     <td className="py-4 px-3">

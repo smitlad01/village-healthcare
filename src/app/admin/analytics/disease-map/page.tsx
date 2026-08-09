@@ -176,7 +176,7 @@ export default function DiseaseMapPage() {
   return (
     <div className="admin-dashboard-container">
       {/* ── Top Navigation Bar ── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4" style={{ borderBottom: '1px solid var(--border)' }}>
         <div>
           <div className="flex items-center gap-2 mb-1">
             <Link href="/admin/dashboard" className="text-sm flex items-center gap-1" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
@@ -185,7 +185,7 @@ export default function DiseaseMapPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>•</span>
             <span className="text-sm font-bold" style={{ color: '#59b6c2' }}>Epidemiology & Surveillance</span>
           </div>
-          <h1 className="text-3xl font-black flex items-center gap-3" style={{ color: '#ffffff' }}>
+          <h1 className="text-3xl font-black flex items-center gap-3" style={{ color: 'var(--text-primary)' }}>
             <ShieldAlert size={32} style={{ color: '#ef4444' }} />
             Disease Outbreak Map & GIS Surveillance
           </h1>
@@ -204,26 +204,26 @@ export default function DiseaseMapPage() {
       {/* ── Control Toolbar ── */}
       <div className="glass-card p-4 rounded-xl flex flex-wrap items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-2 p-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex items-center gap-2 p-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
             <Filter size={16} style={{ color: '#59b6c2' }} />
-            <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>Disease Type:</span>
+            <span className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Disease Type:</span>
             <select 
               value={selectedDisease}
               onChange={(e) => setSelectedDisease(e.target.value)}
               className="text-sm font-bold"
-              style={{ background: 'transparent', color: '#ffffff', border: 'none', outline: 'none', cursor: 'pointer' }}
+              style={{ background: 'transparent', color: 'var(--text-primary)', border: 'none', outline: 'none', cursor: 'pointer' }}
             >
-              <option value="Dengue" style={{ background: '#041416' }}>Dengue Viral Fever</option>
-              <option value="Malaria" style={{ background: '#041416' }}>Malaria (P. vivax / falciparum)</option>
-              <option value="Tuberculosis" style={{ background: '#041416' }}>Tuberculosis (TB)</option>
-              <option value="Cholera" style={{ background: '#041416' }}>Gastroenteritis / Cholera</option>
-              <option value="COVID-19" style={{ background: '#041416' }}>COVID-19 Variants</option>
+              <option value="Dengue" style={{ background: 'var(--background)' }}>Dengue Viral Fever</option>
+              <option value="Malaria" style={{ background: 'var(--background)' }}>Malaria (P. vivax / falciparum)</option>
+              <option value="Tuberculosis" style={{ background: 'var(--background)' }}>Tuberculosis (TB)</option>
+              <option value="Cholera" style={{ background: 'var(--background)' }}>Gastroenteritis / Cholera</option>
+              <option value="COVID-19" style={{ background: 'var(--background)' }}>COVID-19 Variants</option>
             </select>
           </div>
 
-          <div className="flex items-center gap-2 p-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex items-center gap-2 p-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
             <Radio size={16} style={{ color: '#ef4444' }} />
-            <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>Live Status:</span>
+            <span className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Live Status:</span>
             <span className="text-xs font-bold px-2" style={{ borderRadius: '9999px', background: 'rgba(239,68,68,0.2)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)', padding: '2px 8px' }}>
               Active Outbreak Alert
             </span>
@@ -253,13 +253,13 @@ export default function DiseaseMapPage() {
           <div className="glass-card p-6 mb-6">
             <div className="flex justify-between items-center mb-4">
               <div>
-                <h2 className="text-xl font-bold flex items-center gap-2" style={{ color: '#ffffff' }}>
+                <h2 className="text-xl font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
                   <MapPin size={20} style={{ color: '#59b6c2' }} />
                   Nashik District Spatial Heatmap — {selectedDisease}
                 </h2>
                 <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>Click any block to inspect live caseload, vector index, and trigger emergency response.</p>
               </div>
-              <div className="flex items-center gap-3 text-xs font-bold" style={{ color: '#ffffff' }}>
+              <div className="flex items-center gap-3 text-xs font-bold" style={{ color: 'var(--text-primary)' }}>
                 <span className="flex items-center gap-1"><span style={{ width: '12px', height: '12px', borderRadius: '4px', background: '#ef4444', display: 'inline-block' }}></span> High Risk (&gt;20 cases)</span>
                 <span className="flex items-center gap-1"><span style={{ width: '12px', height: '12px', borderRadius: '4px', background: '#f59e0b', display: 'inline-block' }}></span> Moderate (&gt;5 cases)</span>
                 <span className="flex items-center gap-1"><span style={{ width: '12px', height: '12px', borderRadius: '4px', background: '#10b981', display: 'inline-block' }}></span> Low Risk</span>
@@ -291,11 +291,11 @@ export default function DiseaseMapPage() {
                         <span className="text-xs font-bold" style={{ textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8 }}>{block.risk} Risk</span>
                         <MapPin size={16} />
                       </div>
-                      <h3 className="font-bold text-lg mb-1" style={{ color: '#ffffff' }}>{block.name}</h3>
-                      <p className="text-2xl font-black" style={{ color: '#ffffff' }}>{block.cases} <span className="text-xs" style={{ fontWeight: 'normal', opacity: 0.7 }}>cases</span></p>
+                      <h3 className="font-bold text-lg mb-1" style={{ color: 'var(--text-primary)' }}>{block.name}</h3>
+                      <p className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{block.cases} <span className="text-xs" style={{ fontWeight: 'normal', opacity: 0.7 }}>cases</span></p>
                     </div>
 
-                    <div className="mt-4 pt-3 text-xs flex justify-between items-center" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', opacity: 0.9 }}>
+                    <div className="mt-4 pt-3 text-xs flex justify-between items-center" style={{ borderTop: '1px solid var(--border)', opacity: 0.9 }}>
                       <span>ASHA Teams: {block.ashaTeams}</span>
                       <span className="font-bold">Inspect →</span>
                     </div>
@@ -305,9 +305,9 @@ export default function DiseaseMapPage() {
             </div>
 
             {/* Outbreak Timeline Slider */}
-            <div className="p-4 rounded-xl" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="p-4 rounded-xl" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid var(--border)' }}>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>Timeline Slider: {months[timeStep - 1]} 2024</span>
+                <span className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Timeline Slider: {months[timeStep - 1]} 2024</span>
                 <span className="text-xs font-bold" style={{ color: '#59b6c2' }}>Cumulative Cases Recorded: {[10, 14, 18, 25, 42, 78, 115, 95][timeStep - 1]}</span>
               </div>
               <input 
@@ -332,8 +332,8 @@ export default function DiseaseMapPage() {
             <div className="flex gap-4">
               <Sparkles size={28} style={{ color: '#f59e0b', flexShrink: 0, marginTop: '4px' }} />
               <div>
-                <h3 className="text-lg font-bold mb-1" style={{ color: '#ffffff' }}>AI Vector Outbreak Intelligence & Protocol</h3>
-                <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.5 }}>
+                <h3 className="text-lg font-bold mb-1" style={{ color: 'var(--text-primary)' }}>AI Vector Outbreak Intelligence & Protocol</h3>
+                <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                   Stagnant rainwater accumulation detected around <strong>{selectedBlock.name} ({selectedBlock.recentLocation})</strong>. Vector Larval Index is at <strong>{selectedBlock.vectorScore}/100</strong> (Critical). Secondary wave predicted within 7 days if anti-larval spraying is delayed.
                 </p>
                 <div className="flex flex-wrap items-center gap-3">
@@ -359,10 +359,10 @@ export default function DiseaseMapPage() {
           
           {/* Selected Block Live Inspector Card */}
           <div className="glass-card p-6 mb-6">
-            <div className="flex justify-between items-center mb-4 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="flex justify-between items-center mb-4 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
               <div>
                 <span className="font-bold" style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)' }}>Zone Inspector</span>
-                <h3 className="text-xl font-black" style={{ color: '#ffffff' }}>{selectedBlock.name}</h3>
+                <h3 className="text-xl font-black" style={{ color: 'var(--text-primary)' }}>{selectedBlock.name}</h3>
               </div>
               <span className="text-xs font-bold px-2" style={{ 
                 borderRadius: '9999px', padding: '4px 10px',
@@ -376,30 +376,30 @@ export default function DiseaseMapPage() {
 
             <div className="mb-6 flex flex-col gap-3">
               <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Active Cases</span>
-                <span className="text-lg font-black" style={{ color: '#ffffff' }}>{selectedBlock.cases}</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Active Cases</span>
+                <span className="text-lg font-black" style={{ color: 'var(--text-primary)' }}>{selectedBlock.cases}</span>
               </div>
               <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Hospitalized (IPD)</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Hospitalized (IPD)</span>
                 <span className="text-lg font-black" style={{ color: '#fbbf24' }}>{selectedBlock.hospitalized}</span>
               </div>
               <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Recovered Discharges</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Recovered Discharges</span>
                 <span className="text-lg font-black" style={{ color: '#10b981' }}>{selectedBlock.recovered}</span>
               </div>
               <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Larval Vector Index</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Larval Vector Index</span>
                 <span className="text-lg font-black" style={{ color: '#ef4444' }}>{selectedBlock.vectorScore}/100</span>
               </div>
               <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>ASHA Field Staff</span>
-                <span className="text-sm font-bold" style={{ color: '#ffffff' }}>{selectedBlock.ashaTeams} Workers On Duty</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>ASHA Field Staff</span>
+                <span className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>{selectedBlock.ashaTeams} Workers On Duty</span>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl mb-4" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="p-4 rounded-xl mb-4" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
               <p className="text-xs font-bold mb-1" style={{ color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Fogging & Mosquito Control</p>
-              <p className="text-sm font-bold" style={{ color: '#ffffff' }}>{selectedBlock.foggingStatus}</p>
+              <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>{selectedBlock.foggingStatus}</p>
             </div>
 
             <button 
@@ -412,7 +412,7 @@ export default function DiseaseMapPage() {
 
           {/* Trend Line Chart */}
           <div className="glass-card p-6">
-            <h3 className="text-lg font-bold mb-1 flex items-center gap-2" style={{ color: '#ffffff' }}>
+            <h3 className="text-lg font-bold mb-1 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
               <TrendingUp size={18} style={{ color: '#ef4444' }} />
               Epidemic Trend ({selectedDisease})
             </h3>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Globe, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const languages = [
@@ -11,7 +10,7 @@ const languages = [
   { code: 'bn', name: 'Bengali', script: 'বাংলা' },
   { code: 'ta', name: 'Tamil', script: 'தமிழ்' },
   { code: 'te', name: 'Telugu', script: 'తెలుగు' },
-  { code: 'kn', name: 'Kannada', script: 'कन्नड' },
+  { code: 'kn', name: 'Kannada', script: 'ಕನ್ನಡ' },
   { code: 'gu', name: 'Gujarati', script: 'ગુજરાતી' },
 ];
 
@@ -45,37 +44,84 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div style={{ position: 'relative' }} ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white font-bold text-sm shadow-md transition-all backdrop-blur-md cursor-pointer"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          padding: '0.5rem 0.875rem',
+          borderRadius: '9999px',
+          background: 'rgba(255,255,255,0.12)',
+          border: '1px solid rgba(255,255,255,0.2)',
+          color: '#ffffff',
+          fontWeight: 700,
+          fontSize: '0.875rem',
+          cursor: 'pointer',
+          transition: 'background 0.2s ease',
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.2)')}
+        onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.12)')}
         aria-label="Select Language"
       >
-        <Globe className="w-4 h-4 text-[#7ebf1a]" />
-        <span className="text-sm font-bold text-white hidden sm:inline">{selected.script}</span>
-        <span className="text-sm font-bold text-white sm:hidden">{selected.code.toUpperCase()}</span>
-        <ChevronDown className="w-4 h-4 text-gray-200" />
+        {/* Globe icon */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7ebf1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+        </svg>
+        <span>{selected.script}</span>
+        {/* Chevron */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute right-0 top-full mt-2 w-48 bg-[#072529] border border-white/20 rounded-2xl shadow-2xl overflow-hidden z-50 flex flex-col"
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.15 }}
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: '100%',
+              marginTop: '0.5rem',
+              width: '12rem',
+              background: '#072529',
+              border: '1px solid rgba(255,255,255,0.15)',
+              borderRadius: '16px',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.5)',
+              overflow: 'hidden',
+              zIndex: 50,
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => selectLanguage(lang)}
-                className={`text-left px-4 py-3 hover:bg-white/15 transition-colors flex items-center justify-between
-                  ${selected.code === lang.code ? 'bg-[#7ebf1a]/20 text-[#7ebf1a] font-bold' : 'text-white'}
-                `}
+                style={{
+                  textAlign: 'left',
+                  padding: '0.75rem 1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  background: selected.code === lang.code ? 'rgba(126,191,26,0.15)' : 'transparent',
+                  color: selected.code === lang.code ? '#7ebf1a' : '#ffffff',
+                  fontWeight: selected.code === lang.code ? 700 : 500,
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  transition: 'background 0.15s ease',
+                }}
+                onMouseEnter={(e) => { if (selected.code !== lang.code) e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; }}
+                onMouseLeave={(e) => { if (selected.code !== lang.code) e.currentTarget.style.background = 'transparent'; }}
               >
-                <span className="font-semibold">{lang.script}</span>
-                <span className="text-xs text-gray-400">{lang.name}</span>
+                <span>{lang.script}</span>
+                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>{lang.name}</span>
               </button>
             ))}
           </motion.div>

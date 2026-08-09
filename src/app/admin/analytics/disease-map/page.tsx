@@ -170,57 +170,61 @@ export default function DiseaseMapPage() {
     setTimeout(() => setAlertSent(false), 4000);
   };
 
+  const btnActionPrimaryStyle = { background: 'linear-gradient(135deg, #156d78, #2993a1)', color: '#fff', border: 'none', borderRadius: '9999px', padding: '0.5rem 1.25rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' };
+  const btnActionOutlineStyle = { background: 'rgba(255,255,255,0.06)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '9999px', padding: '0.5rem 1.25rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' };
+
   return (
     <div className="admin-dashboard-container">
       {/* ── Top Navigation Bar ── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Link href="/admin/dashboard" className="text-sm text-gray-400 hover:text-white flex items-center gap-1 transition-colors">
+            <Link href="/admin/dashboard" className="text-sm flex items-center gap-1" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
               <ArrowLeft size={16} /> Admin Command Center
             </Link>
-            <span className="text-gray-600">•</span>
-            <span className="text-sm text-[#59b6c2] font-semibold">Epidemiology & Surveillance</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>•</span>
+            <span className="text-sm font-bold" style={{ color: '#59b6c2' }}>Epidemiology & Surveillance</span>
           </div>
-          <h1 className="text-3xl font-black text-white flex items-center gap-3">
-            <ShieldAlert className="text-red-400" size={32} />
+          <h1 className="text-3xl font-black flex items-center gap-3" style={{ color: '#ffffff' }}>
+            <ShieldAlert size={32} style={{ color: '#ef4444' }} />
             Disease Outbreak Map & GIS Surveillance
           </h1>
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="/admin/analytics/asha-performance" className="btn-action-outline text-xs">
+          <Link href="/admin/analytics/asha-performance" style={{ ...btnActionOutlineStyle, textDecoration: 'none' }}>
             ASHA Performance →
           </Link>
-          <Link href="/admin/inventory" className="btn-action-primary text-xs">
+          <Link href="/admin/inventory" style={{ ...btnActionPrimaryStyle, textDecoration: 'none' }}>
             Inventory Stock →
           </Link>
         </div>
       </div>
 
       {/* ── Control Toolbar ── */}
-      <div className="glass-card p-4 rounded-xl flex flex-wrap items-center justify-between gap-4 border border-white/10">
+      <div className="glass-card p-4 rounded-xl flex flex-wrap items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-2 bg-black/40 px-3 py-2 rounded-lg border border-white/10">
-            <Filter size={16} className="text-[#59b6c2]" />
-            <span className="text-xs font-bold text-gray-300">Disease Type:</span>
+          <div className="flex items-center gap-2 p-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <Filter size={16} style={{ color: '#59b6c2' }} />
+            <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>Disease Type:</span>
             <select 
               value={selectedDisease}
               onChange={(e) => setSelectedDisease(e.target.value)}
-              className="bg-transparent text-white font-bold text-sm outline-none cursor-pointer"
+              className="text-sm font-bold"
+              style={{ background: 'transparent', color: '#ffffff', border: 'none', outline: 'none', cursor: 'pointer' }}
             >
-              <option value="Dengue" className="bg-[#041416]">Dengue Viral Fever</option>
-              <option value="Malaria" className="bg-[#041416]">Malaria (P. vivax / falciparum)</option>
-              <option value="Tuberculosis" className="bg-[#041416]">Tuberculosis (TB)</option>
-              <option value="Cholera" className="bg-[#041416]">Gastroenteritis / Cholera</option>
-              <option value="COVID-19" className="bg-[#041416]">COVID-19 Variants</option>
+              <option value="Dengue" style={{ background: '#041416' }}>Dengue Viral Fever</option>
+              <option value="Malaria" style={{ background: '#041416' }}>Malaria (P. vivax / falciparum)</option>
+              <option value="Tuberculosis" style={{ background: '#041416' }}>Tuberculosis (TB)</option>
+              <option value="Cholera" style={{ background: '#041416' }}>Gastroenteritis / Cholera</option>
+              <option value="COVID-19" style={{ background: '#041416' }}>COVID-19 Variants</option>
             </select>
           </div>
 
-          <div className="flex items-center gap-2 bg-black/40 px-3 py-2 rounded-lg border border-white/10">
-            <Radio size={16} className="text-red-400 animate-pulse" />
-            <span className="text-xs font-bold text-gray-300">Live Status:</span>
-            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
+          <div className="flex items-center gap-2 p-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <Radio size={16} style={{ color: '#ef4444' }} />
+            <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>Live Status:</span>
+            <span className="text-xs font-bold px-2" style={{ borderRadius: '9999px', background: 'rgba(239,68,68,0.2)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)', padding: '2px 8px' }}>
               Active Outbreak Alert
             </span>
           </div>
@@ -229,68 +233,69 @@ export default function DiseaseMapPage() {
         <div className="flex items-center gap-3">
           <button 
             onClick={togglePlayback}
-            className="btn-action-outline text-xs flex items-center gap-2"
+            style={{ ...btnActionOutlineStyle, gap: '8px' }}
           >
-            <RefreshCw size={14} className={isPlaying ? 'animate-spin' : ''} />
+            <RefreshCw size={14} />
             {isPlaying ? 'Simulating Timeline...' : 'Play Epidemic Simulation'}
           </button>
 
-          <button className="btn-action-primary text-xs flex items-center gap-2">
+          <button style={{ ...btnActionPrimaryStyle, gap: '8px' }}>
             <FileSpreadsheet size={14} /> Export GIS Data (CSV)
           </button>
         </div>
       </div>
 
       {/* ── Main GIS Map + Inspector Layout ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
         
         {/* Left Column: Spatial Interactive Grid Map (2 Cols) */}
-        <div className="lg:col-span-2 space-y-6">
-          <div className="glass-card p-6 rounded-2xl border border-white/10">
+        <div style={{ gridColumn: 'span 2' }}>
+          <div className="glass-card p-6 mb-6">
             <div className="flex justify-between items-center mb-4">
               <div>
-                <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <MapPin className="text-[#59b6c2]" size={20} />
+                <h2 className="text-xl font-bold flex items-center gap-2" style={{ color: '#ffffff' }}>
+                  <MapPin size={20} style={{ color: '#59b6c2' }} />
                   Nashik District Spatial Heatmap — {selectedDisease}
                 </h2>
-                <p className="text-xs text-gray-400">Click any block to inspect live caseload, vector index, and trigger emergency response.</p>
+                <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>Click any block to inspect live caseload, vector index, and trigger emergency response.</p>
               </div>
-              <div className="flex items-center gap-3 text-xs font-bold">
-                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-red-500 inline-block"></span> High Risk (&gt;20 cases)</span>
-                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-amber-500 inline-block"></span> Moderate (&gt;5 cases)</span>
-                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Low Risk</span>
+              <div className="flex items-center gap-3 text-xs font-bold" style={{ color: '#ffffff' }}>
+                <span className="flex items-center gap-1"><span style={{ width: '12px', height: '12px', borderRadius: '4px', background: '#ef4444', display: 'inline-block' }}></span> High Risk (&gt;20 cases)</span>
+                <span className="flex items-center gap-1"><span style={{ width: '12px', height: '12px', borderRadius: '4px', background: '#f59e0b', display: 'inline-block' }}></span> Moderate (&gt;5 cases)</span>
+                <span className="flex items-center gap-1"><span style={{ width: '12px', height: '12px', borderRadius: '4px', background: '#10b981', display: 'inline-block' }}></span> Low Risk</span>
               </div>
             </div>
 
             {/* Simulated Interactive GIS Blocks */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div className="grid gap-4 mb-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))' }}>
               {blocks.map(block => {
                 const isSelected = block.id === selectedBlockId;
-                let bgStyle = 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300';
-                if (block.risk === 'High') bgStyle = 'bg-red-500/20 border-red-500/40 text-red-300';
-                if (block.risk === 'Moderate') bgStyle = 'bg-amber-500/20 border-amber-500/40 text-amber-300';
+                let bgStyle = { background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', color: '#34d399' };
+                if (block.risk === 'High') bgStyle = { background: 'rgba(239,68,68,0.2)', border: '1px solid rgba(239,68,68,0.4)', color: '#ef4444' };
+                if (block.risk === 'Moderate') bgStyle = { background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.4)', color: '#fbbf24' };
 
                 return (
                   <div
                     key={block.id}
                     onClick={() => setSelectedBlockId(block.id)}
-                    className={`p-5 rounded-xl border transition-all cursor-pointer relative flex flex-col justify-between ${bgStyle} ${isSelected ? 'ring-2 ring-white scale-[1.02] shadow-lg' : 'hover:scale-[1.01]'}`}
+                    className="p-5 rounded-xl flex flex-col justify-between"
+                    style={{ ...bgStyle, cursor: 'pointer', position: 'relative', transition: 'all 0.2s ease', transform: isSelected ? 'scale(1.02)' : 'none', boxShadow: isSelected ? '0 0 0 2px #ffffff, 0 10px 15px -3px rgba(0,0,0,0.5)' : 'none' }}
                   >
                     {isSelected && (
-                      <span className="absolute -top-2 -right-2 bg-white text-black text-[10px] font-black px-2 py-0.5 rounded-full shadow">
+                      <span style={{ position: 'absolute', top: '-8px', right: '-8px', background: '#ffffff', color: '#000000', fontSize: '10px', fontWeight: 900, padding: '2px 8px', borderRadius: '9999px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
                         SELECTED
                       </span>
                     )}
                     <div>
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="text-xs font-bold uppercase tracking-wider opacity-80">{block.risk} Risk</span>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-xs font-bold" style={{ textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8 }}>{block.risk} Risk</span>
                         <MapPin size={16} />
                       </div>
-                      <h3 className="font-bold text-lg text-white mb-1">{block.name}</h3>
-                      <p className="text-2xl font-black text-white">{block.cases} <span className="text-xs font-normal opacity-70">cases</span></p>
+                      <h3 className="font-bold text-lg mb-1" style={{ color: '#ffffff' }}>{block.name}</h3>
+                      <p className="text-2xl font-black" style={{ color: '#ffffff' }}>{block.cases} <span className="text-xs" style={{ fontWeight: 'normal', opacity: 0.7 }}>cases</span></p>
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-white/10 text-xs flex justify-between items-center opacity-90">
+                    <div className="mt-4 pt-3 text-xs flex justify-between items-center" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', opacity: 0.9 }}>
                       <span>ASHA Teams: {block.ashaTeams}</span>
                       <span className="font-bold">Inspect →</span>
                     </div>
@@ -300,10 +305,10 @@ export default function DiseaseMapPage() {
             </div>
 
             {/* Outbreak Timeline Slider */}
-            <div className="bg-black/30 p-4 rounded-xl border border-white/10">
+            <div className="p-4 rounded-xl" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-xs font-bold text-gray-300">Timeline Slider: {months[timeStep - 1]} 2024</span>
-                <span className="text-xs text-[#59b6c2] font-semibold">Cumulative Cases Recorded: {[10, 14, 18, 25, 42, 78, 115, 95][timeStep - 1]}</span>
+                <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>Timeline Slider: {months[timeStep - 1]} 2024</span>
+                <span className="text-xs font-bold" style={{ color: '#59b6c2' }}>Cumulative Cases Recorded: {[10, 14, 18, 25, 42, 78, 115, 95][timeStep - 1]}</span>
               </div>
               <input 
                 type="range" 
@@ -311,34 +316,35 @@ export default function DiseaseMapPage() {
                 max="8" 
                 value={timeStep} 
                 onChange={(e) => setTimeStep(parseInt(e.target.value))}
-                className="w-full accent-[#59b6c2] cursor-pointer" 
+                className="w-full cursor-pointer" 
+                style={{ accentColor: '#59b6c2' }}
               />
-              <div className="flex justify-between text-[11px] text-gray-500 mt-1 font-mono">
+              <div className="flex justify-between mt-1" style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>
                 {months.map((m, i) => (
-                  <span key={m} className={i + 1 === timeStep ? 'text-[#59b6c2] font-bold' : ''}>{m}</span>
+                  <span key={m} style={i + 1 === timeStep ? { color: '#59b6c2', fontWeight: 'bold' } : {}}>{m}</span>
                 ))}
               </div>
             </div>
           </div>
 
           {/* AI Outbreak Early Warning Recommendations */}
-          <div className="glass-card p-6 rounded-2xl border border-amber-500/30 bg-amber-500/5">
-            <div className="flex items-start gap-4">
-              <Sparkles size={28} className="text-amber-400 flex-shrink-0 mt-1" />
+          <div className="glass-card p-6" style={{ border: '1px solid rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.05)' }}>
+            <div className="flex gap-4">
+              <Sparkles size={28} style={{ color: '#f59e0b', flexShrink: 0, marginTop: '4px' }} />
               <div>
-                <h3 className="text-lg font-bold text-white mb-1">AI Vector Outbreak Intelligence & Protocol</h3>
-                <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                <h3 className="text-lg font-bold mb-1" style={{ color: '#ffffff' }}>AI Vector Outbreak Intelligence & Protocol</h3>
+                <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.5 }}>
                   Stagnant rainwater accumulation detected around <strong>{selectedBlock.name} ({selectedBlock.recentLocation})</strong>. Vector Larval Index is at <strong>{selectedBlock.vectorScore}/100</strong> (Critical). Secondary wave predicted within 7 days if anti-larval spraying is delayed.
                 </p>
                 <div className="flex flex-wrap items-center gap-3">
                   <button 
                     onClick={triggerVectorControl}
-                    className="btn-action-primary text-xs flex items-center gap-2"
+                    style={{ ...btnActionPrimaryStyle, gap: '8px' }}
                   >
                     <Send size={14} /> Dispatch Fogging Squad to {selectedBlock.name}
                   </button>
                   {alertSent && (
-                    <span className="text-xs text-emerald-400 font-bold flex items-center gap-1 animate-pulse">
+                    <span className="text-xs font-bold flex items-center gap-1" style={{ color: '#10b981' }}>
                       <CheckCircle2 size={14} /> Emergency Unit Dispatched to {selectedBlock.name}!
                     </span>
                   )}
@@ -349,65 +355,70 @@ export default function DiseaseMapPage() {
         </div>
 
         {/* Right Column: Live Inspector & Trend Graph (1 Col) */}
-        <div className="space-y-6">
+        <div>
           
           {/* Selected Block Live Inspector Card */}
-          <div className="glass-card p-6 rounded-2xl border border-white/10">
-            <div className="flex justify-between items-center mb-4 pb-3 border-b border-white/10">
+          <div className="glass-card p-6 mb-6">
+            <div className="flex justify-between items-center mb-4 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div>
-                <span className="text-[11px] uppercase tracking-widest text-gray-400 font-bold">Zone Inspector</span>
-                <h3 className="text-xl font-black text-white">{selectedBlock.name}</h3>
+                <span className="font-bold" style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)' }}>Zone Inspector</span>
+                <h3 className="text-xl font-black" style={{ color: '#ffffff' }}>{selectedBlock.name}</h3>
               </div>
-              <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${selectedBlock.risk === 'High' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : selectedBlock.risk === 'Moderate' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'}`}>
+              <span className="text-xs font-bold px-2" style={{ 
+                borderRadius: '9999px', padding: '4px 10px',
+                background: selectedBlock.risk === 'High' ? 'rgba(239,68,68,0.2)' : selectedBlock.risk === 'Moderate' ? 'rgba(245,158,11,0.2)' : 'rgba(16,185,129,0.2)', 
+                color: selectedBlock.risk === 'High' ? '#ef4444' : selectedBlock.risk === 'Moderate' ? '#fbbf24' : '#10b981', 
+                border: `1px solid ${selectedBlock.risk === 'High' ? 'rgba(239,68,68,0.3)' : selectedBlock.risk === 'Moderate' ? 'rgba(245,158,11,0.3)' : 'rgba(16,185,129,0.3)'}` 
+              }}>
                 {selectedBlock.risk} Risk
               </span>
             </div>
 
-            <div className="space-y-3 mb-6">
-              <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
-                <span className="text-sm text-gray-300">Active Cases</span>
-                <span className="text-lg font-black text-white">{selectedBlock.cases}</span>
+            <div className="mb-6 flex flex-col gap-3">
+              <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Active Cases</span>
+                <span className="text-lg font-black" style={{ color: '#ffffff' }}>{selectedBlock.cases}</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
-                <span className="text-sm text-gray-300">Hospitalized (IPD)</span>
-                <span className="text-lg font-black text-amber-400">{selectedBlock.hospitalized}</span>
+              <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Hospitalized (IPD)</span>
+                <span className="text-lg font-black" style={{ color: '#fbbf24' }}>{selectedBlock.hospitalized}</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
-                <span className="text-sm text-gray-300">Recovered Discharges</span>
-                <span className="text-lg font-black text-emerald-400">{selectedBlock.recovered}</span>
+              <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Recovered Discharges</span>
+                <span className="text-lg font-black" style={{ color: '#10b981' }}>{selectedBlock.recovered}</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
-                <span className="text-sm text-gray-300">Larval Vector Index</span>
-                <span className="text-lg font-black text-red-400">{selectedBlock.vectorScore}/100</span>
+              <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Larval Vector Index</span>
+                <span className="text-lg font-black" style={{ color: '#ef4444' }}>{selectedBlock.vectorScore}/100</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
-                <span className="text-sm text-gray-300">ASHA Field Staff</span>
-                <span className="text-sm font-bold text-white">{selectedBlock.ashaTeams} Workers On Duty</span>
+              <div className="flex justify-between items-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>ASHA Field Staff</span>
+                <span className="text-sm font-bold" style={{ color: '#ffffff' }}>{selectedBlock.ashaTeams} Workers On Duty</span>
               </div>
             </div>
 
-            <div className="p-4 bg-black/40 rounded-xl border border-white/10 mb-4">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Fogging & Mosquito Control</p>
-              <p className="text-sm font-bold text-white">{selectedBlock.foggingStatus}</p>
+            <div className="p-4 rounded-xl mb-4" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <p className="text-xs font-bold mb-1" style={{ color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Fogging & Mosquito Control</p>
+              <p className="text-sm font-bold" style={{ color: '#ffffff' }}>{selectedBlock.foggingStatus}</p>
             </div>
 
             <button 
               onClick={triggerVectorControl}
-              className="btn-action-primary w-full text-center text-xs py-3"
+              style={{ ...btnActionPrimaryStyle, width: '100%', padding: '12px', boxSizing: 'border-box' }}
             >
               Issue Citizen Advisory for {selectedBlock.name}
             </button>
           </div>
 
           {/* Trend Line Chart */}
-          <div className="glass-card p-6 rounded-2xl border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2">
-              <TrendingUp size={18} className="text-red-400" />
+          <div className="glass-card p-6">
+            <h3 className="text-lg font-bold mb-1 flex items-center gap-2" style={{ color: '#ffffff' }}>
+              <TrendingUp size={18} style={{ color: '#ef4444' }} />
               Epidemic Trend ({selectedDisease})
             </h3>
-            <p className="text-xs text-gray-400 mb-4">Monthly outbreak trajectory for Nashik district.</p>
+            <p className="text-xs mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>Monthly outbreak trajectory for Nashik district.</p>
 
-            <div className="h-56">
+            <div style={{ height: '224px' }}>
               <Line 
                 data={trendData} 
                 options={{

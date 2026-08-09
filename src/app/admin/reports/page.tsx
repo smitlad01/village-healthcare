@@ -6,15 +6,15 @@ import '../../../styles/admin.css';
 export default function ReportsPage() {
   return (
     <div className="admin-dashboard-container">
-      <h1 className="text-3xl font-bold mb-6">Government Reports Generation</h1>
+      <h1 className="font-bold mb-6" style={{ fontSize: '1.875rem', lineHeight: '2.25rem' }}>Government Reports Generation</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="chart-container lg:col-span-1">
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+        <div className="chart-container" style={{ flex: '1 1 300px' }}>
           <h3 className="font-bold text-xl mb-6">Report Parameters</h3>
-          <form className="space-y-4">
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div>
-              <label className="block text-secondary mb-2 text-sm">Report Type</label>
-              <select className="w-full bg-black/30 border border-glass-border rounded-lg p-3 text-white">
+              <label className="text-secondary text-xs" style={{ display: 'block', marginBottom: '0.5rem' }}>Report Type</label>
+              <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', padding: '0.75rem', color: '#fff' }}>
                 <option>Monthly Health Summary</option>
                 <option>Disease Burden Analysis</option>
                 <option>Vaccination Coverage</option>
@@ -23,79 +23,79 @@ export default function ReportsPage() {
               </select>
             </div>
             <div>
-              <label className="block text-secondary mb-2 text-sm">Administrative Level</label>
-              <select className="w-full bg-black/30 border border-glass-border rounded-lg p-3 text-white">
+              <label className="text-secondary text-xs" style={{ display: 'block', marginBottom: '0.5rem' }}>Administrative Level</label>
+              <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', padding: '0.75rem', color: '#fff' }}>
                 <option>District (Nashik)</option>
                 <option>Block Level</option>
                 <option>Village Level</option>
               </select>
             </div>
             <div>
-              <label className="block text-secondary mb-2 text-sm">Time Period</label>
-              <input type="month" className="w-full bg-black/30 border border-glass-border rounded-lg p-3 text-white" defaultValue="2024-08" />
+              <label className="text-secondary text-xs" style={{ display: 'block', marginBottom: '0.5rem' }}>Time Period</label>
+              <input type="month" style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', padding: '0.75rem', color: '#fff' }} defaultValue="2024-08" />
             </div>
-            <button type="button" className="btn btn-primary w-full mt-4 py-3">Generate Preview</button>
+            <button type="button" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem', padding: '0.75rem' }}>Generate Preview</button>
           </form>
         </div>
 
-        <div className="chart-container lg:col-span-2 bg-white text-black p-8 rounded-lg">
-          <div className="flex justify-between items-start border-b border-gray-300 pb-4 mb-6">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-500">LOGO</div>
+        <div className="chart-container" style={{ flex: '2 1 600px', backgroundColor: '#fff', color: '#000', padding: '2rem', borderRadius: '0.5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #d1d5db', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ width: '4rem', height: '4rem', backgroundColor: '#e5e7eb', borderRadius: '9999px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 'bold', color: '#6b7280' }}>LOGO</div>
               <div>
-                <h2 className="text-xl font-bold uppercase">Ministry of Health & Family Welfare</h2>
-                <h3 className="text-lg font-semibold text-gray-700">District Health Mission, Nashik</h3>
+                <h2 className="text-xl font-bold" style={{ textTransform: 'uppercase' }}>Ministry of Health & Family Welfare</h2>
+                <h3 className="text-lg" style={{ fontWeight: 600, color: '#374151' }}>District Health Mission, Nashik</h3>
               </div>
             </div>
-            <div className="text-right text-sm text-gray-600">
+            <div className="text-xs" style={{ textAlign: 'right', color: '#4b5563' }}>
               <p>Date: August 7, 2024</p>
               <p>Ref: DHM/WRD/2024/08</p>
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-center underline mb-8">MONTHLY HEALTH SUMMARY REPORT</h2>
+          <h2 className="font-bold text-center mb-6" style={{ fontSize: '1.5rem', textDecoration: 'underline' }}>MONTHLY HEALTH SUMMARY REPORT</h2>
           
-          <div className="space-y-6">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div>
               <h4 className="font-bold text-lg mb-2">1. Executive Summary</h4>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-xs" style={{ color: '#374151', lineHeight: '1.625' }}>
                 During the month of August 2024, the district of Nashik recorded a total of 4,230 outpatient checkups across all PHCs and CHCs. 
                 A minor outbreak of Dengue was contained in the Hinganghat block with 28 confirmed cases. 
                 Vaccination coverage remained stable at 87%, while ASHA worker field coverage improved by 2% to reach 94%.
               </p>
             </div>
 
-            <table className="w-full border-collapse border border-gray-400 text-sm">
+            <table className="text-xs" style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #9ca3af' }}>
               <thead>
-                <tr className="bg-gray-100">
-                  <th className="border border-gray-400 p-2 text-left">Key Metric</th>
-                  <th className="border border-gray-400 p-2 text-right">Target</th>
-                  <th className="border border-gray-400 p-2 text-right">Achieved</th>
-                  <th className="border border-gray-400 p-2 text-center">Status</th>
+                <tr style={{ backgroundColor: '#f3f4f6' }}>
+                  <th style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'left' }}>Key Metric</th>
+                  <th style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'right' }}>Target</th>
+                  <th style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'right' }}>Achieved</th>
+                  <th style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'center' }}>Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-400 p-2">OPD Consultations</td>
-                  <td className="border border-gray-400 p-2 text-right">5,000</td>
-                  <td className="border border-gray-400 p-2 text-right">4,230</td>
-                  <td className="border border-gray-400 p-2 text-center text-orange-600 font-bold">84%</td>
+                  <td style={{ border: '1px solid #9ca3af', padding: '0.5rem' }}>OPD Consultations</td>
+                  <td style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'right' }}>5,000</td>
+                  <td style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'right' }}>4,230</td>
+                  <td className="font-bold" style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'center', color: '#ea580c' }}>84%</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-400 p-2">Institutional Deliveries</td>
-                  <td className="border border-gray-400 p-2 text-right">450</td>
-                  <td className="border border-gray-400 p-2 text-right">432</td>
-                  <td className="border border-gray-400 p-2 text-center text-green-600 font-bold">96%</td>
+                  <td style={{ border: '1px solid #9ca3af', padding: '0.5rem' }}>Institutional Deliveries</td>
+                  <td style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'right' }}>450</td>
+                  <td style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'right' }}>432</td>
+                  <td className="font-bold" style={{ border: '1px solid #9ca3af', padding: '0.5rem', textAlign: 'center', color: '#16a34a' }}>96%</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div className="mt-12 flex gap-4 justify-end">
-            <button className="flex items-center gap-2 px-4 py-2 border border-gray-400 rounded hover:bg-gray-100 text-black">
+          <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
+            <button style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', border: '1px solid #9ca3af', borderRadius: '0.25rem', color: '#000', backgroundColor: 'transparent', cursor: 'pointer' }}>
               <Download size={18} /> Download PDF
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            <button className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem' }}>
               <UploadCloud size={18} /> Submit to MoHFW Portal
             </button>
           </div>

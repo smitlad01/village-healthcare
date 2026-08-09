@@ -49,28 +49,28 @@ export default function AdminDashboard() {
       <header className="admin-header">
         <div>
           <h1 className="text-2xl font-bold">District Health Command Center — Nashik</h1>
-          <p className="text-secondary mt-1">{currentDate} | Admin: Dr. Rajesh Kumar</p>
+          <p className="text-secondary" style={{ marginTop: '0.25rem' }}>{currentDate} | Admin: Dr. Rajesh Kumar</p>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <Link href="/admin/analytics/disease-map" className="btn btn-secondary flex items-center gap-2 text-xs">
+        <div className="flex flex-wrap items-center" style={{ gap: '0.75rem' }}>
+          <Link href="/admin/analytics/disease-map" className="btn btn-secondary flex items-center text-xs" style={{ gap: '0.5rem' }}>
             <MapIcon size={16} /> View Disease Map
           </Link>
-          <Link href="/admin/analytics/asha-performance" className="btn btn-secondary flex items-center gap-2 text-xs">
+          <Link href="/admin/analytics/asha-performance" className="btn btn-secondary flex items-center text-xs" style={{ gap: '0.5rem' }}>
             <Award size={16} /> ASHA Performance
           </Link>
-          <Link href="/admin/reports" className="btn btn-secondary flex items-center gap-2 text-xs">
+          <Link href="/admin/reports" className="btn btn-secondary flex items-center text-xs" style={{ gap: '0.5rem' }}>
             <FileText size={16} /> Reports
           </Link>
-          <Link href="/admin/inventory" className="btn btn-primary flex items-center gap-2 text-xs">
+          <Link href="/admin/inventory" className="btn btn-primary flex items-center text-xs" style={{ gap: '0.5rem' }}>
             <Package size={16} /> Inventory Check
           </Link>
         </div>
       </header>
 
       <div className="ai-alert-panel">
-        <AlertTriangle className="text-danger flex-shrink-0" size={24} />
+        <AlertTriangle className="flex-shrink-0" style={{ color: '#ef4444' }} size={24} />
         <div>
-          <h3 className="font-bold text-danger text-lg">Outbreak Early Warning</h3>
+          <h3 className="font-bold text-lg" style={{ color: '#ef4444' }}>Outbreak Early Warning</h3>
           <p>⚠️ Cluster of 8 fever cases in Hinganghat block in last 48 hours. Possible Dengue outbreak. Recommend investigation team deployment.</p>
         </div>
       </div>
@@ -85,9 +85,9 @@ export default function AdminDashboard() {
           { title: 'Avg Health Score', val: '72/100', trend: '↑ 3', icon: HeartPulse, up: true },
         ].map((kpi, i) => (
           <div key={i} className="kpi-card">
-            <div className="flex justify-between items-start">
-              <span className="text-secondary font-medium">{kpi.title}</span>
-              <kpi.icon className="text-primary" size={24} />
+            <div className="flex" style={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <span className="text-secondary" style={{ fontWeight: 500 }}>{kpi.title}</span>
+              <kpi.icon style={{ color: '#156d78' }} size={24} />
             </div>
             <div className="kpi-value">{kpi.val}</div>
             <div className={`kpi-trend ${kpi.noColor ? 'text-secondary' : kpi.up ? 'up' : 'down'}`}>
@@ -98,9 +98,9 @@ export default function AdminDashboard() {
       </div>
 
       <div className="analytics-grid">
-        <div className="chart-container flex flex-col">
+        <div className="chart-container flex" style={{ flexDirection: 'column' }}>
           <h3 className="font-bold text-xl mb-4">District Block Health Map</h3>
-          <div className="map-container flex-grow">
+          <div className="map-container" style={{ flexGrow: 1 }}>
             <div className="map-block block-green" style={{ gridColumn: '1 / 3' }}>Nashik (Low Risk)</div>
             <div className="map-block block-yellow">Deoli (Medium Risk)</div>
             <div className="map-block block-red" style={{ gridColumn: '1 / 2' }}>Hinganghat (High Risk)</div>

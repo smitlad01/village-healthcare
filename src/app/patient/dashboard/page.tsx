@@ -50,8 +50,8 @@ export default function PatientDashboard() {
 
       {/* ── Risk Banner (full width) ── */}
       <div className="risk-banner glass-card" style={{ marginBottom: '1.75rem' }}>
-        <AlertTriangle size={32} className="flex-shrink-0" style={{ color: '#fbbf24' }} />
-        <div className="risk-content flex-grow">
+        <AlertTriangle size={32} style={{ color: '#fbbf24', flexShrink: 0 }} />
+        <div className="risk-content" style={{ flexGrow: 1 }}>
           <h4>Moderate risk of Hypertension detected</h4>
           <p>Your BP readings have been slightly elevated for the past 3 weeks. Schedule a checkup with Dr. Priya Sharma to discuss this.</p>
           <div className="risk-actions">
@@ -243,7 +243,7 @@ export default function PatientDashboard() {
               <span style={{ fontWeight: 700 }}>Level: Tree 🌳</span>
               <span style={{ color: '#59b6c2', fontSize: '0.775rem' }}>+350 pts this week</span>
             </div>
-            <div className="progress-bar-bg mb-2">
+            <div className="progress-bar-bg" style={{ marginBottom: '0.5rem' }}>
               <div className="progress-bar-fill"></div>
             </div>
             <div style={{ fontSize: '0.75rem', textAlign: 'right', color: 'rgba(255,255,255,0.6)' }}>2,450 / 5,000 pts to Forest</div>

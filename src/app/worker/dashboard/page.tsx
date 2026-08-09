@@ -19,9 +19,9 @@ export default function WorkerDashboard() {
   ];
 
   const getStatusIcon = (status: string) => {
-    if (status === 'done') return <CheckCircle2 className="text-emerald-500" size={20} />;
-    if (status === 'overdue') return <XCircle className="text-red-500" size={20} />;
-    return <Clock className="text-amber-500" size={20} />;
+    if (status === 'done') return <CheckCircle2 style={{ color: '#7ebf1a' }} size={20} />;
+    if (status === 'overdue') return <XCircle style={{ color: '#ef4444' }} size={20} />;
+    return <Clock style={{ color: '#f59e0b' }} size={20} />;
   };
 
   return (
@@ -29,7 +29,7 @@ export default function WorkerDashboard() {
       <div className="worker-header">
         <div>
           <h1 className="worker-title">Good Morning, Meera Devi</h1>
-          <p className="text-slate-400 mt-2" style={{ fontSize: '1.2rem' }}>Ready for today's fieldwork?</p>
+          <p className="mt-2" style={{ fontSize: '1.2rem', color: '#94a3b8' }}>Ready for today's fieldwork?</p>
         </div>
         <div className="flex gap-4">
           <div className="worker-badge">
@@ -50,7 +50,7 @@ export default function WorkerDashboard() {
         <div className="worker-glass-panel">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-semibold flex items-center gap-2"><ClipboardList /> Today's Task List</h2>
-            <span className="text-slate-400">8 Tasks Remaining</span>
+            <span style={{ color: '#94a3b8' }}>8 Tasks Remaining</span>
           </div>
           <div className="task-list">
             {tasks.map(task => (
@@ -77,7 +77,7 @@ export default function WorkerDashboard() {
         <div className="flex flex-col gap-6">
           <div className="worker-glass-panel">
             <h2 className="text-xl font-semibold mb-4">Monthly Progress</h2>
-            <div className="flex justify-between text-slate-300 mb-2">
+            <div className="flex justify-between mb-2" style={{ color: '#cbd5e1' }}>
               <span>34 / 50 Checkups</span>
               <span>68%</span>
             </div>
@@ -89,22 +89,22 @@ export default function WorkerDashboard() {
           <div className="worker-glass-panel">
             <h2 className="text-xl font-semibold mb-4">Village Health Map</h2>
             <div className="map-container">
-              <div className="map-dot text-emerald-500" style={{ top: '20%', left: '30%', color: '#10b981' }}></div>
-              <div className="map-dot text-emerald-500" style={{ top: '40%', left: '50%', color: '#10b981' }}></div>
-              <div className="map-dot text-emerald-500" style={{ top: '60%', left: '20%', color: '#10b981' }}></div>
-              <div className="map-dot text-amber-500" style={{ top: '35%', left: '70%', color: '#f59e0b' }}></div>
-              <div className="map-dot text-amber-500" style={{ top: '75%', left: '60%', color: '#f59e0b' }}></div>
-              <div className="map-dot text-red-500" style={{ top: '50%', left: '80%', color: '#ef4444' }}></div>
-              <div className="map-dot text-red-500" style={{ top: '15%', left: '55%', color: '#ef4444' }}></div>
+              <div className="map-dot" style={{ top: '20%', left: '30%', color: '#10b981' }}></div>
+              <div className="map-dot" style={{ top: '40%', left: '50%', color: '#10b981' }}></div>
+              <div className="map-dot" style={{ top: '60%', left: '20%', color: '#10b981' }}></div>
+              <div className="map-dot" style={{ top: '35%', left: '70%', color: '#f59e0b' }}></div>
+              <div className="map-dot" style={{ top: '75%', left: '60%', color: '#f59e0b' }}></div>
+              <div className="map-dot" style={{ top: '50%', left: '80%', color: '#ef4444' }}></div>
+              <div className="map-dot" style={{ top: '15%', left: '55%', color: '#ef4444' }}></div>
             </div>
           </div>
 
           <div className="worker-glass-panel flex items-center justify-between" style={{ background: 'rgba(59, 130, 246, 0.15)', borderColor: 'rgba(59, 130, 246, 0.3)' }}>
             <div className="flex items-center gap-3">
-              <CloudOff size={24} className="text-blue-400" />
+              <CloudOff size={24} style={{ color: '#60a5fa' }} />
               <div>
-                <h3 className="font-semibold text-blue-100">Pending Syncs</h3>
-                <p className="text-blue-300 text-sm">3 records waiting to upload</p>
+                <h3 className="font-semibold" style={{ color: '#dbeafe' }}>Pending Syncs</h3>
+                <p className="text-sm" style={{ color: '#93c5fd' }}>3 records waiting to upload</p>
               </div>
             </div>
             <button className="btn-primary" style={{ padding: '0.5rem 1rem', minHeight: '40px' }}>Sync Now</button>

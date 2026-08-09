@@ -168,17 +168,7 @@ img, video {
   transform: none;
 }
 
-.btn-primary {
-  background: var(--color-brand-500);
-  color: var(--color-white);
-  box-shadow: 0 4px 14px rgba(21, 109, 120, 0.4);
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: var(--color-brand-400);
-  box-shadow: var(--shadow-glow-brand);
-  transform: translateY(-2px);
-}
+/* .btn-primary is defined in the Sub-Pages section below (line ~607) with gradient styling */
 
 .btn-accent {
   background: var(--color-accent-500);
@@ -228,13 +218,12 @@ img, video {
 .card, .panel, .glass-card, .glass-panel {
   background: #072529;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .card-hover:hover {

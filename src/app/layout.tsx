@@ -3,7 +3,6 @@ import { Outfit, Noto_Sans } from 'next/font/google';
 import '../styles/globals.css';
 import SOSButton from '@/components/SOSButton';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { HeartPulse } from 'lucide-react';
 
 const outfit = Outfit({ 
   subsets: ['latin'],
@@ -30,32 +29,83 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${outfit.variable} ${notoSans.variable}`}>
-      <body className="min-h-screen flex flex-col relative bg-[var(--background)] text-[var(--text-primary)] font-body antialiased selection:bg-[var(--accent)] selection:text-white overflow-x-hidden">
-        {/* Background Gradients */}
-        <div className="fixed inset-0 pointer-events-none z-[-1]">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[var(--accent)]/10 blur-[120px]" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-[var(--primary)]/10 blur-[120px]" />
+      <body
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative',
+          background: 'var(--background)',
+          color: 'var(--text-primary)',
+          fontFamily: 'var(--font-body), sans-serif',
+          overflowX: 'hidden',
+        }}
+      >
+        {/* Background Ambient Glow */}
+        <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: -1 }}>
+          <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '40%', height: '40%', borderRadius: '50%', background: 'rgba(126,191,26,0.08)', filter: 'blur(120px)' }} />
+          <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '30%', height: '30%', borderRadius: '50%', background: 'rgba(21,109,120,0.08)', filter: 'blur(120px)' }} />
         </div>
 
-        {/* ── Top Fixed Header with Clean Edge Spacing ── */}
-        <header className="sticky top-0 z-40 bg-[#041416]/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3 flex items-center justify-between shadow-lg">
+        {/* ── Sticky Header ── */}
+        <header
+          style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 40,
+            background: 'rgba(4, 20, 22, 0.92)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
+            padding: '0.75rem 1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+          }}
+        >
           {/* Logo Lockup */}
-          <div className="flex items-center gap-3 pl-1">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7ebf1a] via-[#156d78] to-[#2993a1] flex items-center justify-center text-white shadow-md flex-shrink-0 border border-white/20">
-              <HeartPulse size={22} className="text-white animate-pulse" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #7ebf1a, #156d78, #2993a1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                flexShrink: 0,
+                border: '1px solid rgba(255,255,255,0.2)',
+                boxShadow: '0 4px 12px rgba(21,109,120,0.4)',
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+              </svg>
             </div>
-            <span className="font-heading font-black text-2xl tracking-wider text-white drop-shadow">
+            <span
+              style={{
+                fontFamily: 'var(--font-heading), sans-serif',
+                fontWeight: 900,
+                fontSize: '1.5rem',
+                letterSpacing: '0.05em',
+                color: '#ffffff',
+              }}
+            >
               V-HAIN
             </span>
           </div>
           
           {/* Right Action Bar */}
-          <div className="flex items-center gap-4 pr-1">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <LanguageSwitcher />
           </div>
         </header>
 
-        <main className="flex-1 flex flex-col pb-16">
+        <main style={{ flex: 1, display: 'flex', flexDirection: 'column', paddingBottom: '4rem' }}>
           {children}
         </main>
 

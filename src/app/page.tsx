@@ -22,9 +22,8 @@ const roles = [
     title: 'Patient Portal',
     roleTag: 'Citizens & Families',
     icon: User,
-    color: 'from-teal-400 to-teal-600',
-    borderColor: 'border-teal-500/40',
-    glowColor: 'shadow-teal-500/20',
+    gradient: 'linear-gradient(to bottom right, #2dd4bf, #0d9488)',
+    borderColor: 'rgba(20, 184, 166, 0.4)',
     description: 'Access health records, book PHC appointments, and redeem health reward vouchers.',
     href: '/auth/patient'
   },
@@ -32,9 +31,8 @@ const roles = [
     title: 'ASHA / ANM Worker',
     roleTag: 'Field Healthcare',
     icon: HeartPulse,
-    color: 'from-emerald-400 to-emerald-600',
-    borderColor: 'border-emerald-500/40',
-    glowColor: 'shadow-emerald-500/20',
+    gradient: 'linear-gradient(to bottom right, #34d399, #059669)',
+    borderColor: 'rgba(16, 185, 129, 0.4)',
     description: 'Conduct home visits, log offline vital records, and earn direct benefit transfer bonuses.',
     href: '/auth/health-worker'
   },
@@ -42,9 +40,8 @@ const roles = [
     title: 'Doctor Console',
     roleTag: 'Remote Consultation',
     icon: Stethoscope,
-    color: 'from-blue-400 to-blue-600',
-    borderColor: 'border-blue-500/40',
-    glowColor: 'shadow-blue-500/20',
+    gradient: 'linear-gradient(to bottom right, #60a5fa, #2563eb)',
+    borderColor: 'rgba(59, 130, 246, 0.4)',
     description: 'Conduct Tele-consultations, issue AI e-prescriptions, and manage OPD patient queues.',
     href: '/auth/doctor'
   },
@@ -52,9 +49,8 @@ const roles = [
     title: 'Government Admin',
     roleTag: 'District Surveillance',
     icon: ShieldCheck,
-    color: 'from-purple-400 to-purple-600',
-    borderColor: 'border-purple-500/40',
-    glowColor: 'shadow-purple-500/20',
+    gradient: 'linear-gradient(to bottom right, #c084fc, #9333ea)',
+    borderColor: 'rgba(168, 85, 247, 0.4)',
     description: 'Monitor GIS disease maps, track ASHA performance, and manage PHC medicine stock.',
     href: '/auth/admin'
   }
@@ -84,58 +80,103 @@ const testimonials = [
 
 export default function LandingPage() {
   const [isDemoMode, setIsDemoMode] = useState(true);
+  const [hoveredRole, setHoveredRole] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#041416]">
+    <div style={{ minHeight: '100vh', backgroundColor: '#041416' }}>
       {/* ── Compact Hero Section (Above the Fold Sizing) ── */}
-      <section className="relative pt-6 sm:pt-8 pb-4 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center text-center" style={{ paddingTop: '2rem', paddingBottom: '1rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', overflow: 'hidden' }}>
         
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="max-w-4xl mx-auto flex flex-col items-center"
+          className="mx-auto flex flex-col items-center"
+          style={{ maxWidth: '56rem' }}
         >
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-3">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          <div 
+            className="flex items-center gap-2 rounded-full text-xs font-bold mb-3"
+            style={{ padding: '6px 14px', backgroundColor: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', color: '#6ee7b7' }}
+          >
+            <span className="relative flex" style={{ height: '8px', width: '8px' }}>
+              <span className="absolute flex h-full w-full rounded-full" style={{ backgroundColor: '#34d399', opacity: 0.75, animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite' }}></span>
+              <span className="relative flex rounded-full h-full w-full" style={{ backgroundColor: '#34d399' }}></span>
             </span>
             Live Operational Network Across 15,000+ Indian Villages
           </div>
 
           {/* Main Brand Heading */}
-          <h1 className="font-heading text-5xl sm:text-7xl font-black tracking-tight text-white mb-2">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-teal-100 to-[#59b6c2]">
+          <h1 className="font-black mb-2" style={{ fontSize: '3rem', letterSpacing: '-0.025em', lineHeight: 1 }}>
+            <span style={{ 
+              background: 'linear-gradient(to right, #ffffff, #ccfbf1, #59b6c2)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
               V-HAIN
             </span>
           </h1>
           
-          <h2 className="text-xl sm:text-3xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-200 to-gray-400">
+          <h2 className="text-xl font-bold mb-3" style={{ 
+            background: 'linear-gradient(to right, #f3f4f6, #e5e7eb, #9ca3af)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
             Village Health AI Network
           </h2>
           
           {/* Subheadline (High Contrast & Readable) */}
-          <p className="text-base sm:text-lg text-gray-200 font-medium max-w-2xl mx-auto leading-relaxed mb-5">
+          <p className="text-sm sm:text-lg font-medium mx-auto mb-5" style={{ color: '#e5e7eb', lineHeight: '1.625', maxWidth: '42rem' }}>
             AI-powered, offline-first healthcare platform bringing specialist care, diagnostics, and district surveillance to every village.
           </p>
 
           {/* ── Refined Mode Toggle Switch ── */}
-          <div className="flex items-center justify-center gap-3 bg-[#072529] px-5 py-2.5 rounded-full border border-white/20 shadow-lg mb-4">
-            <span className={`text-xs font-bold transition-colors ${!isDemoMode ? 'text-white bg-teal-500/30 px-2.5 py-1 rounded-full border border-teal-500/40' : 'text-gray-400'}`}>
+          <div 
+            className="flex items-center justify-center gap-3 rounded-full mb-4"
+            style={{ padding: '10px 20px', backgroundColor: '#072529', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
+          >
+            <span 
+              className="text-xs font-bold"
+              style={{
+                transition: 'all 0.2s',
+                ...(!isDemoMode ? { color: '#ffffff', backgroundColor: 'rgba(20, 184, 166, 0.3)', padding: '4px 10px', borderRadius: '9999px', border: '1px solid rgba(20, 184, 166, 0.4)' } : { color: '#9ca3af', padding: '4px 10px', border: '1px solid transparent' })
+              }}
+            >
               Live Mode (Auth)
             </span>
             
             <button 
               onClick={() => setIsDemoMode(!isDemoMode)}
-              className={`w-14 h-7 rounded-full p-1 transition-all shadow-inner flex items-center cursor-pointer ${isDemoMode ? 'bg-[#7ebf1a]' : 'bg-teal-600'}`}
+              className="rounded-full p-1 flex items-center"
+              style={{ 
+                width: '56px', height: '28px',
+                transition: 'all 0.3s',
+                cursor: 'pointer',
+                backgroundColor: isDemoMode ? '#7ebf1a' : '#0d9488',
+                boxShadow: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                border: 'none'
+              }}
               aria-label="Toggle Demo Mode"
             >
-              <div className={`w-5 h-5 rounded-full bg-white transition-transform transform shadow-md ${isDemoMode ? 'translate-x-7' : 'translate-x-0'}`} />
+              <div 
+                className="rounded-full"
+                style={{ 
+                  width: '20px', height: '20px', backgroundColor: '#ffffff', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                  transition: 'transform 0.3s',
+                  transform: isDemoMode ? 'translateX(28px)' : 'translateX(0)'
+                }}
+              />
             </button>
 
-            <span className={`text-xs font-bold transition-colors ${isDemoMode ? 'text-[#7ebf1a] bg-[#7ebf1a]/20 px-2.5 py-1 rounded-full border border-[#7ebf1a]/40 shadow-sm' : 'text-gray-400'}`}>
+            <span 
+              className="text-xs font-bold"
+              style={{
+                transition: 'all 0.2s',
+                ...(isDemoMode ? { color: '#7ebf1a', backgroundColor: 'rgba(126, 191, 26, 0.2)', padding: '4px 10px', borderRadius: '9999px', border: '1px solid rgba(126, 191, 26, 0.4)', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' } : { color: '#9ca3af', padding: '4px 10px', border: '1px solid transparent' })
+              }}
+            >
               Demo Mode (1-Click Login)
             </span>
           </div>
@@ -143,8 +184,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Role Gateway Section (Pulled Up Above the Fold) ── */}
-      <section className="py-4 px-6 max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <section className="p-4 mx-auto w-full relative z-10" style={{ maxWidth: '80rem' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {roles.map((role, idx) => (
             <motion.div
               key={role.title}
@@ -161,33 +202,84 @@ export default function LandingPage() {
                       : '/worker/dashboard')
                     : role.href
                 } 
-                className="block group h-full"
+                className="block h-full"
+                style={{ textDecoration: 'none' }}
+                onMouseEnter={() => setHoveredRole(role.title)}
+                onMouseLeave={() => setHoveredRole(null)}
               >
-                <div className={`glass-card p-6 h-full flex flex-col justify-between rounded-2xl border ${role.borderColor} hover:border-white/40 hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-1.5 relative overflow-hidden bg-[#072529]`}>
-                  <div className={`absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl ${role.color} rounded-bl-full opacity-10 group-hover:opacity-25 transition-opacity`} />
+                <div 
+                  className="p-6 h-full flex flex-col justify-between rounded-2xl relative overflow-hidden"
+                  style={{ 
+                    backgroundColor: '#072529',
+                    border: `1px solid ${hoveredRole === role.title ? 'rgba(255, 255, 255, 0.4)' : role.borderColor}`,
+                    boxShadow: hoveredRole === role.title ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none',
+                    transform: hoveredRole === role.title ? 'translateY(-6px)' : 'none',
+                    transition: 'all 0.3s ease-in-out'
+                  }}
+                >
+                  <div 
+                    className="absolute top-0 right-0 rounded-bl-full" 
+                    style={{ 
+                      width: '112px', height: '112px', 
+                      background: role.gradient, 
+                      opacity: hoveredRole === role.title ? 0.25 : 0.1,
+                      transition: 'opacity 0.3s ease-in-out'
+                    }} 
+                  />
                   
                   <div>
                     <div className="flex justify-between items-start mb-4">
-                      <div className={`w-13 h-13 rounded-xl flex items-center justify-center bg-gradient-to-br ${role.color} text-white shadow-lg border border-white/20 p-3`}>
-                        <role.icon className="w-7 h-7 stroke-[2.25]" />
+                      <div 
+                        className="rounded-xl flex items-center justify-center p-3"
+                        style={{ 
+                          width: '52px', height: '52px', 
+                          background: role.gradient,
+                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                          color: '#ffffff',
+                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+                        }}
+                      >
+                        <role.icon style={{ width: '28px', height: '28px', strokeWidth: 2.25 }} />
                       </div>
-                      <span className="text-[10px] uppercase font-black tracking-widest text-gray-300 bg-white/10 px-2 py-0.5 rounded-md border border-white/10">
+                      <span 
+                        className="text-xs font-black rounded-md"
+                        style={{ textTransform: 'uppercase', letterSpacing: '0.1em', color: '#d1d5db', backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '2px 8px', border: '1px solid rgba(255, 255, 255, 0.1)' }}
+                      >
                         {role.roleTag}
                       </span>
                     </div>
                     
-                    <h3 className="text-xl font-black font-heading mb-2 text-white group-hover:text-[#59b6c2] transition-colors">
+                    <h3 
+                      className="text-xl font-black mb-2"
+                      style={{ 
+                        color: hoveredRole === role.title ? '#59b6c2' : '#ffffff',
+                        transition: 'color 0.3s'
+                      }}
+                    >
                       {role.title}
                     </h3>
                     
-                    <p className="text-xs text-gray-300 leading-relaxed mb-4">
+                    <p className="text-xs mb-4" style={{ color: '#d1d5db', lineHeight: '1.625' }}>
                       {role.description}
                     </p>
                   </div>
                   
-                  <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#59b6c2] group-hover:text-white transition-colors">
+                  <div 
+                    className="pt-3 flex items-center justify-between text-xs font-bold"
+                    style={{ 
+                      borderTop: '1px solid rgba(255, 255, 255, 0.1)', 
+                      color: hoveredRole === role.title ? '#ffffff' : '#59b6c2',
+                      transition: 'color 0.3s'
+                    }}
+                  >
                     <span>Access Portal</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight 
+                      style={{ 
+                        width: '16px', height: '16px',
+                        transform: hoveredRole === role.title ? 'translateX(4px)' : 'none',
+                        transition: 'transform 0.3s'
+                      }} 
+                    />
                   </div>
                 </div>
               </Link>
@@ -197,17 +289,17 @@ export default function LandingPage() {
       </section>
 
       {/* ── Stats Section ── */}
-      <section className="py-12 px-6 mt-6 bg-black/40 border-y border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="p-6 mt-6" style={{ paddingBottom: '3rem', paddingTop: '3rem', backgroundColor: 'rgba(0, 0, 0, 0.4)', borderTop: '1px solid rgba(255, 255, 255, 0.1)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+        <div className="mx-auto grid grid-cols-2 gap-6" style={{ maxWidth: '80rem' }}>
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center p-5 glass-card rounded-2xl border border-white/10">
+            <div key={stat.label} className="text-center p-4 rounded-2xl" style={{ border: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
               <div className="flex justify-center mb-3">
-                <stat.icon className="w-7 h-7 text-[#59b6c2]" />
+                <stat.icon style={{ width: '28px', height: '28px', color: '#59b6c2' }} />
               </div>
-              <div className="text-3xl md:text-4xl font-black font-heading text-white mb-1">
+              <div className="text-2xl sm:text-3xl font-black mb-1" style={{ color: '#ffffff' }}>
                 {stat.value}
               </div>
-              <div className="text-gray-400 font-semibold text-xs uppercase tracking-wider">
+              <div className="text-xs font-bold" style={{ textTransform: 'uppercase', letterSpacing: '0.05em', color: '#9ca3af' }}>
                 {stat.label}
               </div>
             </div>
@@ -216,20 +308,29 @@ export default function LandingPage() {
       </section>
 
       {/* ── Features Section ── */}
-      <section className="py-16 px-6 max-w-7xl mx-auto w-full">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-2 text-white">Comprehensive Care Platform</h2>
-          <p className="text-base text-gray-300 max-w-xl mx-auto">Built from the ground up to solve rural healthcare challenges in India.</p>
+      <section className="p-6 mx-auto w-full" style={{ paddingBottom: '4rem', paddingTop: '4rem', maxWidth: '80rem' }}>
+        <div className="text-center mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>Comprehensive Care Platform</h2>
+          <p className="text-sm mx-auto" style={{ color: '#d1d5db', maxWidth: '36rem' }}>Built from the ground up to solve rural healthcare challenges in India.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {features.map((feature) => (
-            <div key={feature.title} className="glass-card p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="w-11 h-11 rounded-xl bg-[#156d78]/30 border border-[#156d78]/50 flex items-center justify-center mb-4 text-[#59b6c2]">
-                <feature.icon className="w-6 h-6 stroke-[2]" />
+            <div 
+              key={feature.title} 
+              className="p-6 rounded-2xl" 
+              style={{ border: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(255, 255, 255, 0.03)', transition: 'border-color 0.3s' }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)'} 
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
+            >
+              <div 
+                className="rounded-xl flex items-center justify-center mb-4"
+                style={{ width: '44px', height: '44px', backgroundColor: 'rgba(21, 109, 120, 0.3)', border: '1px solid rgba(21, 109, 120, 0.5)', color: '#59b6c2' }}
+              >
+                <feature.icon style={{ width: '24px', height: '24px', strokeWidth: 2 }} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-              <p className="text-xs text-gray-300 leading-relaxed">
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#ffffff' }}>{feature.title}</h3>
+              <p className="text-xs" style={{ color: '#d1d5db', lineHeight: '1.625' }}>
                 {feature.description}
               </p>
             </div>
@@ -238,22 +339,22 @@ export default function LandingPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="py-16 px-6 bg-gradient-to-b from-transparent to-black/60 border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-2 text-white">Voices from the Villages</h2>
-            <p className="text-base text-gray-300">How V-HAIN is transforming healthcare access across India.</p>
+      <section className="p-6" style={{ paddingBottom: '4rem', paddingTop: '4rem', background: 'linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6))', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+        <div className="mx-auto" style={{ maxWidth: '80rem' }}>
+          <div className="text-center mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>Voices from the Villages</h2>
+            <p className="text-sm" style={{ color: '#d1d5db' }}>How V-HAIN is transforming healthcare access across India.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {testimonials.map((t) => (
-              <div key={t.name} className="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
-                <p className="text-sm text-gray-200 italic mb-6 leading-relaxed">
+              <div key={t.name} className="p-6 rounded-2xl flex flex-col justify-between" style={{ border: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
+                <p className="text-sm italic mb-6" style={{ color: '#e5e7eb', lineHeight: '1.625' }}>
                   "{t.quote}"
                 </p>
-                <div className="pt-3 border-t border-white/10">
-                  <div className="font-bold text-white text-sm">{t.name}</div>
-                  <div className="text-xs text-[#59b6c2]">{t.role}</div>
+                <div className="pt-3" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <div className="font-bold text-sm" style={{ color: '#ffffff' }}>{t.name}</div>
+                  <div className="text-xs" style={{ color: '#59b6c2' }}>{t.role}</div>
                 </div>
               </div>
             ))}
@@ -262,54 +363,60 @@ export default function LandingPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/10 bg-black/80 pt-12 pb-8 px-6 mt-auto">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2">
+      <footer className="p-6 mt-auto" style={{ paddingBottom: '2rem', paddingTop: '3rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
+        <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" style={{ maxWidth: '80rem' }}>
+          <div className="sm:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#7ebf1a] to-[#156d78] flex items-center justify-center text-white font-bold font-heading shadow-md">
+              <div 
+                className="rounded-xl flex items-center justify-center font-bold"
+                style={{ width: '36px', height: '36px', background: 'linear-gradient(to bottom right, #7ebf1a, #156d78)', color: '#ffffff', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
+              >
                 <HeartPulse size={20} />
               </div>
-              <span className="font-heading font-black text-xl tracking-wider text-white">
+              <span className="font-black text-xl" style={{ letterSpacing: '0.05em', color: '#ffffff' }}>
                 V-HAIN
               </span>
             </div>
-            <p className="text-xs text-gray-400 max-w-sm mb-4">
+            <p className="text-xs mb-4" style={{ color: '#9ca3af', maxWidth: '24rem' }}>
               Empowering rural India with accessible, AI-driven, and offline-capable healthcare solutions.
             </p>
             <div className="flex gap-4">
-              <div className="glass-card px-4 py-2 rounded-lg flex items-center gap-2 border border-red-500/30 bg-red-500/10">
-                <Siren className="w-4 h-4 text-red-400" />
-                <span className="font-bold text-xs text-white">National Health Helpline: 108</span>
+              <div 
+                className="p-2 rounded-lg flex items-center gap-2"
+                style={{ border: '1px solid rgba(239, 68, 68, 0.3)', backgroundColor: 'rgba(239, 68, 68, 0.1)' }}
+              >
+                <Siren style={{ width: '16px', height: '16px', color: '#f87171' }} />
+                <span className="font-bold text-xs" style={{ color: '#ffffff' }}>National Health Helpline: 108</span>
               </div>
             </div>
           </div>
           
           <div>
-            <h4 className="font-bold text-sm text-white mb-3">Portals</h4>
-            <ul className="space-y-2 text-xs text-gray-400">
-              <li><Link href="/auth/patient" className="hover:text-white transition-colors">Patient Portal</Link></li>
-              <li><Link href="/auth/health-worker" className="hover:text-white transition-colors">Health Worker Dashboard</Link></li>
-              <li><Link href="/auth/doctor" className="hover:text-white transition-colors">Doctor Console</Link></li>
-              <li><Link href="/auth/admin" className="hover:text-white transition-colors">Admin Panel</Link></li>
+            <h4 className="font-bold text-sm mb-3" style={{ color: '#ffffff' }}>Portals</h4>
+            <ul className="text-xs" style={{ color: '#9ca3af', listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <li><Link href="/auth/patient" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Patient Portal</Link></li>
+              <li><Link href="/auth/health-worker" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Health Worker Dashboard</Link></li>
+              <li><Link href="/auth/doctor" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Doctor Console</Link></li>
+              <li><Link href="/auth/admin" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Admin Panel</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold text-sm text-white mb-3">Resources</h4>
-            <ul className="space-y-2 text-xs text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+            <h4 className="font-bold text-sm mb-3" style={{ color: '#ffffff' }}>Resources</h4>
+            <ul className="text-xs" style={{ color: '#9ca3af', listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>About Us</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Help Center</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Privacy Policy</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}>Terms of Service</a></li>
             </ul>
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto pt-6 border-t border-white/10 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+        <div className="mx-auto flex flex-col md:flex-row justify-between items-center text-xs" style={{ paddingTop: '1.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', color: '#6b7280', maxWidth: '80rem' }}>
           <p>© 2026 V-HAIN (Village Health AI Network). All rights reserved.</p>
           <div className="flex items-center gap-2 mt-2 md:mt-0">
             <span>Built for Rural India</span>
-            <span className="text-red-500">❤️</span>
+            <span style={{ color: '#ef4444' }}>❤️</span>
           </div>
         </div>
       </footer>

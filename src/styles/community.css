@@ -45,8 +45,8 @@
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   box-shadow: var(--glass-shadow);
-  
-  -webkit-
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   margin-bottom: var(--spacing-xl);
   transition: transform var(--transition-normal);
 }

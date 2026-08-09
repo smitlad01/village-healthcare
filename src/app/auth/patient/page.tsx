@@ -52,7 +52,7 @@ export default function PatientLogin() {
       <div className="glass-card auth-card">
         <div className="auth-header">
           <Activity size={48} className="text-accent mx-auto mb-4" style={{color: 'var(--accent-blue)'}} />
-          <h1 className="auth-title">V-HAIN</h1>
+          <h1 className="auth-title">U-HAIN</h1>
           <p className="auth-subtitle">Patient Portal</p>
         </div>
 

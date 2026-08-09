@@ -24,7 +24,7 @@ export default function PatientsDirectory() {
   return (
     <div className="worker-container">
       <div className="worker-header">
-        <h1 className="worker-title">My Village Patients</h1>
+        <h1 className="worker-title">My Zone Patients</h1>
         <div className="flex gap-4 bg-slate-800/50 p-2 rounded-xl border border-slate-700">
           <button 
             className={`px-4 py-2 rounded-lg flex items-center gap-2 ${view === 'list' ? 'bg-blue-500 text-white' : 'text-slate-400'}`}

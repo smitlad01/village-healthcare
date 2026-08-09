@@ -107,7 +107,7 @@ export default function RegisterWizard() {
               </div>
               <div className="grid-2">
                 <div className="input-group">
-                  <label>Village Name</label>
+                  <label>Zone Name</label>
                   <input type="text" className="auth-input" />
                 </div>
                 <div className="input-group">
@@ -256,7 +256,7 @@ export default function RegisterWizard() {
             <>
               <div className="consent-box">
                 <h4 style={{ color: 'white', marginBottom: '0.5rem' }}>Data Privacy & Usage Policy</h4>
-                <p>Welcome to V-HAIN. By registering, you agree that your health data will be collected, stored securely, and used to provide telemedicine and healthcare services.</p>
+                <p>Welcome to U-HAIN. By registering, you agree that your health data will be collected, stored securely, and used to provide telemedicine and healthcare services.</p>
                 <p>Your data may be accessed by authorized ASHA workers, doctors, and government officials for your treatment and public health monitoring.</p>
                 <p>AI algorithms may analyze your anonymized data to provide predictive health insights. You have the right to request deletion of your records subject to government regulations.</p>
               </div>
@@ -288,7 +288,7 @@ export default function RegisterWizard() {
               <div className="health-card-preview">
                 <div className="health-card-header">
                   <div className="health-card-logo">
-                    <User size={20} className="text-accent" /> V-HAIN
+                    <User size={20} className="text-accent" /> U-HAIN
                   </div>
                   <div className="blood-group-badge">O+</div>
                 </div>
@@ -301,7 +301,7 @@ export default function RegisterWizard() {
                     <div className="patient-meta">
                       <div>DOB: <span>12/05/1980</span></div>
                       <div>Gender: <span>Male</span></div>
-                      <div>Village: <span>Palampur</span></div>
+                      <div>Zone: <span>Palampur</span></div>
                       <div>State: <span>HP</span></div>
                     </div>
                   </div>

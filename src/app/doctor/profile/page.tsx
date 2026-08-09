@@ -93,7 +93,7 @@ export default function DoctorProfile() {
           <div className="panel">
             <h2 className="panel-title">About Me</h2>
             <p style={{ lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-              Dr. Priya Sharma is a senior cardiologist with over 10 years of experience in diagnosing and treating cardiovascular diseases. Dedicated to bringing high-quality rural healthcare through the V-HAIN network, she specializes in hypertension management, heart failure, and preventive cardiology.
+              Dr. Priya Sharma is a senior cardiologist with over 10 years of experience in diagnosing and treating cardiovascular diseases. Dedicated to bringing high-quality rural healthcare through the U-HAIN network, she specializes in hypertension management, heart failure, and preventive cardiology.
             </p>
           </div>
         </div>

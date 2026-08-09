@@ -87,7 +87,7 @@ export default function WorkerDashboard() {
           </div>
 
           <div className="worker-glass-panel">
-            <h2 className="text-xl font-semibold mb-4">Village Health Map</h2>
+            <h2 className="text-xl font-semibold mb-4">Universal Health Map</h2>
             <div className="map-container">
               <div className="map-dot" style={{ top: '20%', left: '30%', color: '#10b981' }}></div>
               <div className="map-dot" style={{ top: '40%', left: '50%', color: '#10b981' }}></div>

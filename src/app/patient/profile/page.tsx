@@ -61,7 +61,7 @@ export default function PatientProfile() {
               <span className="info-value font-mono">XXXX XXXX 4523</span>
             </div>
             <div className="info-item" style={{ gridColumn: 'span 2' }}>
-              <span className="info-label">V-HAIN Health Card ID</span>
+              <span className="info-label">U-HAIN Health Card ID</span>
               <span className="info-value font-mono text-primary">VHAIN-MH-2024-00847</span>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function PatientProfile() {
             <div className="w-full">
               <div className="text-xs text-primary font-bold mb-1 uppercase tracking-wider">Assigned ASHA Worker</div>
               <h4 className="text-lg font-bold">Meera Devi</h4>
-              <p className="text-secondary text-sm mb-3">Village: Nashik</p>
+              <p className="text-secondary text-sm mb-3">Zone: Nashik</p>
               
               <div className="flex gap-2 w-full">
                 <button className="btn btn-outline flex-1 py-2"><Phone size={16} /> Call</button>

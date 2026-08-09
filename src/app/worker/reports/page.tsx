@@ -74,7 +74,7 @@ export default function ReportsGenerator() {
             
             <div className="grid grid-cols-2 gap-4 mb-8 text-sm">
               <div><strong>Name of ASHA:</strong> Meera Devi</div>
-              <div><strong>Village/Ward:</strong> Nashik, Cluster A</div>
+              <div><strong>Zone/Ward:</strong> Nashik, Cluster A</div>
               <div><strong>Reporting Month:</strong> August 2024</div>
               <div><strong>Population Covered:</strong> 1,245</div>
             </div>

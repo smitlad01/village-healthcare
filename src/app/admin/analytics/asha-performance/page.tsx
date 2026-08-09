@@ -25,7 +25,7 @@ import '../../../../styles/admin.css';
 interface Worker {
   rank: number;
   name: string;
-  village: string;
+  zone: string;
   checkups: number;
   maternalFollowups: string;
   satisfaction: number;
@@ -38,19 +38,19 @@ interface Worker {
 
 export default function AshaPerformancePage() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedVillage, setSelectedVillage] = useState('All');
+  const [selectedZone, setSelectedZone] = useState('All');
   const [disbursedIds, setDisbursedIds] = useState<number[]>([]);
 
   const primaryBtnStyle = { background: 'linear-gradient(135deg, #156d78, #2993a1)', color: '#fff', border: 'none', borderRadius: '9999px', padding: '0.5rem 1.25rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer' };
 
   const workers: Worker[] = [
-    { rank: 1, name: 'Meera Devi', village: 'Nashik Village', checkups: 48, maternalFollowups: '98%', satisfaction: 4.9, score: 96, incentiveEarned: 8500, pendingPayout: 1200, badge: '🥇', status: 'Top Performer' },
-    { rank: 2, name: 'Anita Kumari', village: 'Deoli Block', checkups: 45, maternalFollowups: '94%', satisfaction: 4.8, score: 93, incentiveEarned: 7800, pendingPayout: 950, badge: '🥈', status: 'Top Performer' },
-    { rank: 3, name: 'Sunita Yadav', village: 'Borgaon Cluster', checkups: 42, maternalFollowups: '90%', satisfaction: 4.7, score: 89, incentiveEarned: 7200, pendingPayout: 800, badge: '🥉', status: 'Top Performer' },
-    { rank: 4, name: 'Priya Sharma', village: 'Hinganghat East', checkups: 39, maternalFollowups: '85%', satisfaction: 4.5, score: 85, incentiveEarned: 6400, pendingPayout: 600, badge: '⭐', status: 'Active' },
-    { rank: 5, name: 'Lata Mangeshkar', village: 'Arvi Sector', checkups: 35, maternalFollowups: '82%', satisfaction: 4.4, score: 82, incentiveEarned: 5800, pendingPayout: 500, badge: '⭐', status: 'Active' },
-    { rank: 6, name: 'Kamala Bai', village: 'Ashti South', checkups: 22, maternalFollowups: '68%', satisfaction: 3.9, score: 64, incentiveEarned: 3200, pendingPayout: 400, badge: '⚠️', status: 'Requires Support' },
-    { rank: 7, name: 'Rekha Patil', village: 'Seloo West', checkups: 38, maternalFollowups: '88%', satisfaction: 4.6, score: 87, incentiveEarned: 6600, pendingPayout: 700, badge: '⭐', status: 'Active' }
+    { rank: 1, name: 'Meera Devi', zone: 'Nashik Zone', checkups: 48, maternalFollowups: '98%', satisfaction: 4.9, score: 96, incentiveEarned: 8500, pendingPayout: 1200, badge: '🥇', status: 'Top Performer' },
+    { rank: 2, name: 'Anita Kumari', zone: 'Deoli Block', checkups: 45, maternalFollowups: '94%', satisfaction: 4.8, score: 93, incentiveEarned: 7800, pendingPayout: 950, badge: '🥈', status: 'Top Performer' },
+    { rank: 3, name: 'Sunita Yadav', zone: 'Borgaon Cluster', checkups: 42, maternalFollowups: '90%', satisfaction: 4.7, score: 89, incentiveEarned: 7200, pendingPayout: 800, badge: '🥉', status: 'Top Performer' },
+    { rank: 4, name: 'Priya Sharma', zone: 'Hinganghat East', checkups: 39, maternalFollowups: '85%', satisfaction: 4.5, score: 85, incentiveEarned: 6400, pendingPayout: 600, badge: '⭐', status: 'Active' },
+    { rank: 5, name: 'Lata Mangeshkar', zone: 'Arvi Sector', checkups: 35, maternalFollowups: '82%', satisfaction: 4.4, score: 82, incentiveEarned: 5800, pendingPayout: 500, badge: '⭐', status: 'Active' },
+    { rank: 6, name: 'Kamala Bai', zone: 'Ashti South', checkups: 22, maternalFollowups: '68%', satisfaction: 3.9, score: 64, incentiveEarned: 3200, pendingPayout: 400, badge: '⚠️', status: 'Requires Support' },
+    { rank: 7, name: 'Rekha Patil', zone: 'Seloo West', checkups: 38, maternalFollowups: '88%', satisfaction: 4.6, score: 87, incentiveEarned: 6600, pendingPayout: 700, badge: '⭐', status: 'Active' }
   ];
 
   const handleDisburseDBT = (rank: number) => {
@@ -60,9 +60,9 @@ export default function AshaPerformancePage() {
   };
 
   const filteredWorkers = workers.filter(w => {
-    const matchesSearch = w.name.toLowerCase().includes(searchTerm.toLowerCase()) || w.village.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesVillage = selectedVillage === 'All' || w.village.includes(selectedVillage);
-    return matchesSearch && matchesVillage;
+    const matchesSearch = w.name.toLowerCase().includes(searchTerm.toLowerCase()) || w.zone.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesZone = selectedZone === 'All' || w.zone.includes(selectedZone);
+    return matchesSearch && matchesZone;
   });
 
   return (
@@ -110,7 +110,7 @@ export default function AshaPerformancePage() {
               #1 District Champion
             </span>
             <h3 className="text-2xl font-black mb-1" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>Meera Devi</h3>
-            <p className="text-sm mb-4" style={{ color: '#d1d5db' }}>Nashik Village Cluster</p>
+            <p className="text-sm mb-4" style={{ color: '#d1d5db' }}>Nashik Zone Cluster</p>
 
             <div className="mb-6 flex" style={{ flexDirection: 'column', gap: '0.5rem' }}>
               <div className="flex justify-between text-xs" style={{ color: '#d1d5db' }}>
@@ -269,7 +269,7 @@ export default function AshaPerformancePage() {
               <Search size={16} style={{ color: '#9ca3af' }} />
               <input 
                 type="text" 
-                placeholder="Search ASHA or village..." 
+                placeholder="Search ASHA or zone..." 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="text-sm"
@@ -280,12 +280,12 @@ export default function AshaPerformancePage() {
             <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid var(--border)' }}>
               <Filter size={16} style={{ color: '#9ca3af' }} />
               <select 
-                value={selectedVillage}
-                onChange={(e) => setSelectedVillage(e.target.value)}
+                value={selectedZone}
+                onChange={(e) => setSelectedZone(e.target.value)}
                 className="text-xs"
                 style={{ background: 'transparent', color: 'var(--text-primary)', outline: 'none', border: 'none', cursor: 'pointer' }}
               >
-                <option value="All" style={{ background: 'var(--background)' }}>All Villages</option>
+                <option value="All" style={{ background: 'var(--background)' }}>All Zones</option>
                 <option value="Nashik" style={{ background: 'var(--background)' }}>Nashik</option>
                 <option value="Deoli" style={{ background: 'var(--background)' }}>Deoli</option>
                 <option value="Borgaon" style={{ background: 'var(--background)' }}>Borgaon</option>
@@ -303,7 +303,7 @@ export default function AshaPerformancePage() {
               <tr className="text-xs" style={{ borderBottom: '1px solid var(--border)', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Rank</th>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>ASHA Worker Name</th>
-                <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Village / Cluster</th>
+                <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Zone / Cluster</th>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Monthly Visits</th>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Maternal Care %</th>
                 <th style={{ paddingBottom: '0.75rem', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>Patient Rating</th>
@@ -323,7 +323,7 @@ export default function AshaPerformancePage() {
                       {w.name}
                     </td>
                     <td style={{ padding: '1rem 0.75rem', color: '#d1d5db' }}>
-                      {w.village}
+                      {w.zone}
                     </td>
                     <td className="font-bold" style={{ padding: '1rem 0.75rem', color: 'var(--text-primary)' }}>
                       {w.checkups} checkups

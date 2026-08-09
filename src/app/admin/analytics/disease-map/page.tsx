@@ -125,7 +125,7 @@ export default function DiseaseMapPage() {
       ashaTeams: 7, 
       foggingStatus: 'Surveillance Mode', 
       vectorScore: 12, 
-      recentLocation: 'Village Panchayat' 
+      recentLocation: 'Zone Panchayat' 
     }
   ];
 

@@ -178,12 +178,12 @@ export default function PatientSettingsPage() {
 
           {activeTab === 'About' && (
             <div className="settings-section">
-              <h2 className="settings-section-title">About V-HAIN</h2>
+              <h2 className="settings-section-title">About U-HAIN</h2>
               <div style={{ textAlign: 'center', padding: '2rem 0' }}>
                 <div style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, var(--primary-color) 0%, #a29bfe 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  V-HAIN
+                  U-HAIN
                 </div>
-                <p className="text-secondary">Village Health AI Network</p>
+                <p className="text-secondary">Universal Health AI Network</p>
                 <div style={{ margin: '2rem 0' }}>
                   <p>Version: 6.0.0 (Prototype)</p>
                   <p>License: MIT</p>

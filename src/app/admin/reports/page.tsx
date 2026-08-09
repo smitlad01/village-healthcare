@@ -27,7 +27,7 @@ export default function ReportsPage() {
               <select style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid var(--border)', borderRadius: '0.5rem', padding: '0.75rem', color: 'var(--text-primary)' }}>
                 <option>District (Nashik)</option>
                 <option>Block Level</option>
-                <option>Village Level</option>
+                <option>Zone Level</option>
               </select>
             </div>
             <div>

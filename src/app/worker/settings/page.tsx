@@ -9,7 +9,7 @@ export default function WorkerSettingsPage() {
 
   const tabs = [
     { id: 'Offline Data', icon: Database },
-    { id: 'Village Info', icon: MapPin },
+    { id: 'Zone Info', icon: MapPin },
     { id: 'Language', icon: Globe },
     { id: 'Notifications', icon: Bell },
     { id: 'Privacy', icon: Shield },
@@ -85,12 +85,12 @@ export default function WorkerSettingsPage() {
             </div>
           )}
 
-          {activeTab === 'Village Info' && (
+          {activeTab === 'Zone Info' && (
             <div className="settings-section">
-              <h2 className="settings-section-title">Assigned Village Information</h2>
+              <h2 className="settings-section-title">Assigned Zone Information</h2>
               
               <div className="mh-card" style={{ padding: '1.5rem', marginBottom: '1.5rem' }}>
-                <h3 style={{ margin: '0 0 1rem 0' }}>Nashik Village</h3>
+                <h3 style={{ margin: '0 0 1rem 0' }}>Nashik Zone</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', color: 'var(--text-secondary)' }}>
                   <div>
                     <strong>Total Households:</strong> 450

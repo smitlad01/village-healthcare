@@ -16,7 +16,7 @@ export default function GovernmentSchemes() {
     { title: 'Pradhan Mantri Surakshit Matritva Abhiyan', desc: 'Free antenatal care on 9th of every month.', target: 'All pregnant women', link: 'Find Center' },
     { title: 'Rashtriya Bal Swasthya Karyakram', desc: 'Free child health screening & early intervention.', target: '0-18 years', link: 'Learn More' },
     { title: 'National TB Elimination Programme', desc: 'Free TB treatment + ₹500/month nutrition support.', target: 'TB patients', link: 'Register' },
-    { title: 'Ayushman Bharat Health Infrastructure', desc: 'Upgrades for PHCs and CHCs in rural areas.', target: 'Villages', link: 'View Facilities' },
+    { title: 'Ayushman Bharat Health Infrastructure', desc: 'Upgrades for PHCs and CHCs in rural areas.', target: 'Zones', link: 'View Facilities' },
   ];
 
   const handleSend = () => {

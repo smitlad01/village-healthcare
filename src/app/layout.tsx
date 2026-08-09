@@ -19,8 +19,8 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'V-HAIN | Village Health AI Network',
-  description: 'AI-powered healthcare for every village in India. Access your health records, manage village health, consult patients, and track district analytics.',
+  title: 'U-HAIN | Universal Health AI Network',
+  description: 'AI-powered healthcare for every zone in India. Access your health records, manage zone health, consult patients, and track district analytics.',
 };
 
 export default function RootLayout({
@@ -96,7 +96,7 @@ export default function RootLayout({
                 color: 'var(--text-primary)',
               }}
             >
-              V-HAIN
+              U-HAIN
             </span>
           </div>
           

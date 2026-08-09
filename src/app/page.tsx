@@ -57,7 +57,7 @@ const roles = [
 ];
 
 const stats = [
-  { label: 'Villages Covered', value: '15,000+', icon: MapPin },
+  { label: 'Zones Covered', value: '15,000+', icon: MapPin },
   { label: 'Active Patients', value: '2M+', icon: User },
   { label: 'Health Workers', value: '50,000+', icon: HeartPulse },
   { label: 'Specialist Doctors', value: '10,000+', icon: Stethoscope },
@@ -73,9 +73,9 @@ const features = [
 ];
 
 const testimonials = [
-  { name: 'Ramesh Kumar', role: 'Patient, Nashik District', quote: 'I used to travel 30km to see a doctor. Now I consult them from my village center through V-HAIN. It saved my time and money.' },
-  { name: 'Sunita Devi', role: 'ASHA Worker, Maharashtra', quote: 'The app works even when there is no network. It helps me track all pregnancies and vaccinations in my village effortlessly.' },
-  { name: 'Dr. Ananya Sharma', role: 'Cardiologist, Delhi', quote: 'V-HAIN allows me to provide specialist care to remote areas. The AI pre-screening reports are incredibly accurate and save time.' }
+  { name: 'Ramesh Kumar', role: 'Patient, Nashik District', quote: 'I used to travel 30km to see a doctor. Now I consult them from my zone center through U-HAIN. It saved my time and money.' },
+  { name: 'Sunita Devi', role: 'ASHA Worker, Maharashtra', quote: 'The app works even when there is no network. It helps me track all pregnancies and vaccinations in my zone effortlessly.' },
+  { name: 'Dr. Ananya Sharma', role: 'Cardiologist, Delhi', quote: 'U-HAIN allows me to provide specialist care to remote areas. The AI pre-screening reports are incredibly accurate and save time.' }
 ];
 
 export default function LandingPage() {
@@ -103,7 +103,7 @@ export default function LandingPage() {
               <span className="absolute flex h-full w-full rounded-full" style={{ backgroundColor: '#34d399', opacity: 0.75, animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite' }}></span>
               <span className="relative flex rounded-full h-full w-full" style={{ backgroundColor: '#34d399' }}></span>
             </span>
-            Live Operational Network Across 15,000+ Indian Villages
+            Live Operational Network Across 15,000+ Indian Zones
           </div>
 
           {/* Main Brand Heading */}
@@ -114,7 +114,7 @@ export default function LandingPage() {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              V-HAIN
+              U-HAIN
             </span>
           </h1>
           
@@ -124,12 +124,12 @@ export default function LandingPage() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            Village Health AI Network
+            Universal Health AI Network
           </h2>
           
           {/* Subheadline (High Contrast & Readable) */}
           <p className="text-sm sm:text-lg font-medium mx-auto mb-5" style={{ color: '#e5e7eb', lineHeight: '1.625', maxWidth: '42rem' }}>
-            AI-powered, offline-first healthcare platform bringing specialist care, diagnostics, and district surveillance to every village.
+            AI-powered, offline-first healthcare platform bringing specialist care, diagnostics, and district surveillance to every zone.
           </p>
 
           {/* ── Refined Mode Toggle Switch ── */}
@@ -342,8 +342,8 @@ export default function LandingPage() {
       <section className="p-6" style={{ paddingBottom: '4rem', paddingTop: '4rem', background: 'linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6))', borderTop: '1px solid var(--border)' }}>
         <div className="mx-auto" style={{ maxWidth: '80rem' }}>
           <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Voices from the Villages</h2>
-            <p className="text-sm" style={{ color: '#d1d5db' }}>How V-HAIN is transforming healthcare access across India.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Voices from the Zones</h2>
+            <p className="text-sm" style={{ color: '#d1d5db' }}>How U-HAIN is transforming healthcare access across India.</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -374,7 +374,7 @@ export default function LandingPage() {
                 <HeartPulse size={20} />
               </div>
               <span className="font-black text-xl" style={{ letterSpacing: '0.05em', color: 'var(--text-primary)' }}>
-                V-HAIN
+                U-HAIN
               </span>
             </div>
             <p className="text-xs mb-4" style={{ color: '#9ca3af', maxWidth: '24rem' }}>
@@ -413,7 +413,7 @@ export default function LandingPage() {
         </div>
         
         <div className="mx-auto flex flex-col md:flex-row justify-between items-center text-xs" style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)', color: '#6b7280', maxWidth: '80rem' }}>
-          <p>© 2026 V-HAIN (Village Health AI Network). All rights reserved.</p>
+          <p>© 2026 U-HAIN (Universal Health AI Network). All rights reserved.</p>
           <div className="flex items-center gap-2 mt-2 md:mt-0">
             <span>Built for Rural India</span>
             <span style={{ color: '#ef4444' }}>❤️</span>

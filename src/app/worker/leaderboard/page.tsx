@@ -7,11 +7,11 @@ import { Trophy, Star, Gift, Download, TrendingUp, Award } from 'lucide-react';
 
 export default function LeaderboardPage() {
   const leaderboard = [
-    { rank: 1, name: 'Kavita Sharma', village: 'Deoli', checkups: 112, score: 5600, badge: '🥇 Gold' },
-    { rank: 2, name: 'Sunita Patil', village: 'Hinganghat', checkups: 98, score: 4900, badge: '🥈 Silver' },
-    { rank: 3, name: 'Anita Desai', village: 'Arvi', checkups: 85, score: 4250, badge: '🥉 Bronze' },
-    { rank: 4, name: 'Meera Devi', village: 'Nashik', checkups: 69, score: 3450, badge: '⭐ Champion', isMe: true },
-    { rank: 5, name: 'Lata Mangeshkar', village: 'Ashti', checkups: 65, score: 3250, badge: '⭐ Champion' },
+    { rank: 1, name: 'Kavita Sharma', zone: 'Deoli', checkups: 112, score: 5600, badge: '🥇 Gold' },
+    { rank: 2, name: 'Sunita Patil', zone: 'Hinganghat', checkups: 98, score: 4900, badge: '🥈 Silver' },
+    { rank: 3, name: 'Anita Desai', zone: 'Arvi', checkups: 85, score: 4250, badge: '🥉 Bronze' },
+    { rank: 4, name: 'Meera Devi', zone: 'Nashik', checkups: 69, score: 3450, badge: '⭐ Champion', isMe: true },
+    { rank: 5, name: 'Lata Mangeshkar', zone: 'Ashti', checkups: 65, score: 3250, badge: '⭐ Champion' },
   ];
 
   return (
@@ -36,7 +36,7 @@ export default function LeaderboardPage() {
                 <tr>
                   <th>Rank</th>
                   <th>Name</th>
-                  <th>Village</th>
+                  <th>Zone</th>
                   <th>Checkups</th>
                   <th>Score (XP)</th>
                   <th>Badge</th>
@@ -49,7 +49,7 @@ export default function LeaderboardPage() {
                     <td className="font-semibold flex items-center gap-2">
                       {worker.name} {worker.isMe && <span className="text-xs bg-blue-500 text-white px-2 py-0.5 rounded ml-2">YOU</span>}
                     </td>
-                    <td>{worker.village}</td>
+                    <td>{worker.zone}</td>
                     <td>{worker.checkups}</td>
                     <td className="font-bold text-blue-400">{worker.score.toLocaleString()}</td>
                     <td>{worker.badge}</td>

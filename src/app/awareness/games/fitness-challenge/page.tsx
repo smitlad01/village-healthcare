@@ -87,10 +87,10 @@ export default function FitnessChallenge() {
           
           <div className="glass-panel border-warning">
             <h2 className="text-xl font-bold mb-2 flex items-center gap-2 text-warning"><Trophy size={20}/> Leaderboard</h2>
-            <p className="text-sm text-text-secondary mb-4">Village VS Village</p>
+            <p className="text-sm text-text-secondary mb-4">Zone VS Zone</p>
             <div className="space-y-3">
               <div className="flex justify-between items-center p-3 bg-surface rounded">
-                <span className="font-bold">1. Seloo Village</span>
+                <span className="font-bold">1. Seloo Zone</span>
                 <span className="text-primary font-bold">12,450 pts</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-primary/20 border border-primary rounded">
@@ -98,7 +98,7 @@ export default function FitnessChallenge() {
                 <span className="text-primary font-bold">11,200 pts</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-surface rounded">
-                <span className="font-bold">3. Arvi Village</span>
+                <span className="font-bold">3. Arvi Zone</span>
                 <span className="text-primary font-bold">9,850 pts</span>
               </div>
             </div>

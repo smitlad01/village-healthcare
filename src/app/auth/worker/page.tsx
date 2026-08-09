@@ -69,7 +69,7 @@ export default function WorkerLogin() {
                 <span style={{ fontWeight: 600 }}>Assigned Region Confirmed</span>
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Village: Palampur<br />
+                Zone: Palampur<br />
                 Block: Kangra<br />
                 State: Himachal Pradesh
               </div>

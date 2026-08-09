@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { 
   Users, Activity, AlertTriangle, UserCheck, Syringe, HeartPulse,
   Map as MapIcon, Award, FileText, Package

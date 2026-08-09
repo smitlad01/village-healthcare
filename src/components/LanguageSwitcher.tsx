@@ -11,7 +11,7 @@ const languages = [
   { code: 'bn', name: 'Bengali', script: 'বাংলা' },
   { code: 'ta', name: 'Tamil', script: 'தமிழ்' },
   { code: 'te', name: 'Telugu', script: 'తెలుగు' },
-  { code: 'kn', name: 'Kannada', script: 'ಕನ್ನಡ' },
+  { code: 'kn', name: 'Kannada', script: 'कन्नड' },
   { code: 'gu', name: 'Gujarati', script: 'ગુજરાતી' },
 ];
 
@@ -48,12 +48,13 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-full glass-panel hover:bg-white/10 transition-colors border border-white/5"
+        className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white font-bold text-sm shadow-md transition-all backdrop-blur-md cursor-pointer"
+        aria-label="Select Language"
       >
-        <Globe className="w-4 h-4 text-[var(--accent)]" />
-        <span className="text-sm font-medium hidden sm:inline">{selected.script}</span>
-        <span className="text-sm font-medium sm:hidden">{selected.code.toUpperCase()}</span>
-        <ChevronDown className="w-4 h-4 text-[var(--text-secondary)]" />
+        <Globe className="w-4 h-4 text-[#7ebf1a]" />
+        <span className="text-sm font-bold text-white hidden sm:inline">{selected.script}</span>
+        <span className="text-sm font-bold text-white sm:hidden">{selected.code.toUpperCase()}</span>
+        <ChevronDown className="w-4 h-4 text-gray-200" />
       </button>
 
       <AnimatePresence>
@@ -63,18 +64,18 @@ export default function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 top-full mt-2 w-48 glass-panel overflow-hidden z-50 flex flex-col"
+            className="absolute right-0 top-full mt-2 w-48 bg-[#072529] border border-white/20 rounded-2xl shadow-2xl overflow-hidden z-50 flex flex-col"
           >
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => selectLanguage(lang)}
-                className={`text-left px-4 py-3 hover:bg-white/10 transition-colors flex items-center justify-between
-                  ${selected.code === lang.code ? 'bg-[var(--accent)]/10 text-[var(--accent)]' : 'text-[var(--text-primary)]'}
+                className={`text-left px-4 py-3 hover:bg-white/15 transition-colors flex items-center justify-between
+                  ${selected.code === lang.code ? 'bg-[#7ebf1a]/20 text-[#7ebf1a] font-bold' : 'text-white'}
                 `}
               >
-                <span>{lang.script}</span>
-                <span className="text-xs text-[var(--text-muted)]">{lang.name}</span>
+                <span className="font-semibold">{lang.script}</span>
+                <span className="text-xs text-gray-400">{lang.name}</span>
               </button>
             ))}
           </motion.div>

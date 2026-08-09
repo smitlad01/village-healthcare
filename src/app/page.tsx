@@ -68,7 +68,7 @@ const roles = [
     gradient: 'linear-gradient(to bottom right, #f43f5e, #be123c)',
     borderColor: 'rgba(244, 63, 94, 0.4)',
     description: 'Monitor hospital KPIs, manage inventory, and track medical diagnostic reports in real-time.',
-    href: '/auth/hospital'
+    href: '#hospital-dashboard'
   }
 ];
 
@@ -238,7 +238,7 @@ export default function LandingPage() {
                     ? (role.title === 'Patient Portal' ? '/patient/dashboard' 
                       : role.title === 'Doctor Console' ? '/doctor/dashboard'
                       : role.title === 'Government Admin' ? '/admin/dashboard'
-                      : role.title === 'Hospital Administration' ? '/hospital/dashboard'
+                      : role.title === 'Hospital Administration' ? '#hospital-dashboard'
                       : '/worker/dashboard')
                     : role.href
                 } 
@@ -403,7 +403,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── Embedded Hospital Dashboard ── */}
-      <section className="p-6 mx-auto w-full" style={{ paddingBottom: '4rem', paddingTop: '4rem', maxWidth: '80rem', borderTop: '1px solid var(--border)' }}>
+      <section id="hospital-dashboard" className="p-6 mx-auto w-full" style={{ paddingBottom: '4rem', paddingTop: '4rem', maxWidth: '80rem', borderTop: '1px solid var(--border)' }}>
         <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>

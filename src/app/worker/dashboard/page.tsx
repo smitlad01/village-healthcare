@@ -45,6 +45,38 @@ export default function WorkerDashboard() {
         <Sun size={24} />
         <span>Weather Advisory: 🌡️ Heat Wave Alert. Ensure elderly patients stay hydrated today.</span>
       </div>
+      <div className="worker-glass-panel" style={{ margin: '1.5rem 0', background: 'linear-gradient(to right, rgba(21, 109, 120, 0.15), rgba(21, 109, 120, 0.05))', borderColor: '#156d78' }}>
+        <h2 className="text-xl font-bold flex items-center gap-2 mb-4" style={{ color: 'var(--text-primary)' }}>
+          <Activity size={24} color="#7ebf1a" /> ASHA Copilot
+        </h2>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ background: 'var(--background)', padding: '1.25rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
+            <h3 className="font-semibold text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>Before visiting:</h3>
+            <p className="font-bold text-lg mb-4" style={{ color: 'var(--text-primary)' }}>Today: 17 households</p>
+            <div className="flex flex-col gap-2">
+              <span className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-primary)' }}><span style={{width: 10, height: 10, borderRadius: '50%', background: '#ef4444'}}></span> 3 high-risk</span>
+              <span className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-primary)' }}><span style={{width: 10, height: 10, borderRadius: '50%', background: '#f59e0b'}}></span> 6 follow-ups</span>
+              <span className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-primary)' }}><span style={{width: 10, height: 10, borderRadius: '50%', background: '#10b981'}}></span> 8 routine</span>
+            </div>
+          </div>
+          
+          <div style={{ background: 'var(--background)', padding: '1.25rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
+            <h3 className="font-semibold text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>During visit:</h3>
+            <div style={{ paddingLeft: '12px', borderLeft: '4px solid #f59e0b', color: 'var(--text-primary)', fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.5' }}>
+              "Patient's BP increased 18% from last visit."
+            </div>
+          </div>
+          
+          <div style={{ background: 'var(--background)', padding: '1.25rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
+            <h3 className="font-semibold text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>After visit:</h3>
+            <div style={{ paddingLeft: '12px', borderLeft: '4px solid #10b981', color: 'var(--text-primary)', fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.5' }}>
+              "Follow-up required in 7 days."
+            </div>
+            <p className="text-xs mt-4" style={{ color: '#10b981', fontWeight: 600 }}>Action scheduled automatically.</p>
+          </div>
+        </div>
+      </div>
 
       <div className="dashboard-grid">
         <div className="worker-glass-panel">

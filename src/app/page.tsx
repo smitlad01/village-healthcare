@@ -53,6 +53,15 @@ const roles = [
     borderColor: 'rgba(168, 85, 247, 0.4)',
     description: 'Monitor GIS disease maps, track ASHA performance, and manage PHC medicine stock.',
     href: '/auth/admin'
+  },
+  {
+    title: 'Hospital Administration',
+    roleTag: 'Facility Management',
+    icon: Activity,
+    gradient: 'linear-gradient(to bottom right, #f43f5e, #be123c)',
+    borderColor: 'rgba(244, 63, 94, 0.4)',
+    description: 'Monitor hospital KPIs, manage inventory, and track medical diagnostic reports in real-time.',
+    href: '/auth/hospital'
   }
 ];
 
@@ -185,7 +194,7 @@ export default function LandingPage() {
 
       {/* ── Role Gateway Section (Pulled Up Above the Fold) ── */}
       <section className="p-4 mx-auto w-full relative z-10" style={{ maxWidth: '80rem' }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {roles.map((role, idx) => (
             <motion.div
               key={role.title}
@@ -199,6 +208,7 @@ export default function LandingPage() {
                     ? (role.title === 'Patient Portal' ? '/patient/dashboard' 
                       : role.title === 'Doctor Console' ? '/doctor/dashboard'
                       : role.title === 'Government Admin' ? '/admin/dashboard'
+                      : role.title === 'Hospital Administration' ? '/hospital/dashboard'
                       : '/worker/dashboard')
                     : role.href
                 } 

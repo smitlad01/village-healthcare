@@ -114,28 +114,35 @@ export default function PatientSettingsPage() {
 
           {activeTab === 'Privacy' && (
             <div className="settings-section">
-              <h2 className="settings-section-title">Privacy & Data</h2>
+              <h2 className="settings-section-title">Privacy & Consent</h2>
               
-              <div className="setting-item">
-                <div className="setting-info">
-                  <h4>Share Data with ASHA Worker</h4>
-                  <p>Allow local health workers to view your health records to provide better care.</p>
+              <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+                   <h3 style={{ fontSize: '1.1rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}><Shield size={18} color="#156d78" /> Trust & Data Access</h3>
+                   <span style={{ fontSize: '0.8rem', padding: '4px 8px', background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b', borderRadius: '12px', border: '1px solid rgba(245, 158, 11, 0.2)' }}>Demo / Simulated Data</span>
                 </div>
-                <label className="toggle-switch">
-                  <input type="checkbox" defaultChecked={true} />
-                  <span className="toggle-slider"></span>
-                </label>
-              </div>
-
-              <div className="setting-item">
-                <div className="setting-info">
-                  <h4>Share Data with Government</h4>
-                  <p>Anonymously share health data for public health planning.</p>
+                
+                <div style={{ padding: '1.25rem', background: 'var(--background)', borderRadius: '8px', border: '1px solid var(--border)', width: '100%' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontFamily: 'monospace', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                    <div>Patient</div>
+                    <div>↓</div>
+                    <div>Consent</div>
+                    <div>↓</div>
+                    <div>What data?</div>
+                    <div>↓</div>
+                    <div>Who can access?</div>
+                    <div>↓</div>
+                    <div>For what purpose?</div>
+                    <div>↓</div>
+                    <div>Audit trail</div>
+                  </div>
                 </div>
-                <label className="toggle-switch">
-                  <input type="checkbox" defaultChecked={true} />
-                  <span className="toggle-slider"></span>
-                </label>
+                
+                <div style={{ marginTop: '0.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
+                   <p><strong style={{color: 'var(--text-primary)'}}>Doctor</strong> sees medical data.</p>
+                   <p><strong style={{color: 'var(--text-primary)'}}>ASHA</strong> sees the information necessary for her role.</p>
+                   <p><strong style={{color: 'var(--text-primary)'}}>District administrator</strong> sees aggregated information rather than unnecessary personal details.</p>
+                </div>
               </div>
 
               <div className="setting-item" style={{ marginTop: '2rem', borderTop: '1px solid rgba(231,76,60,0.3)', paddingTop: '2rem' }}>

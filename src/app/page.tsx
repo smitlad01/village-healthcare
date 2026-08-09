@@ -14,7 +14,14 @@ import {
   Award, 
   Siren, 
   MapPin,
-  ChevronRight
+  ChevronRight,
+  BedDouble, 
+  Users, 
+  FileText, 
+  Pill, 
+  Package, 
+  ShoppingCart, 
+  CheckCircle2
 } from 'lucide-react';
 
 const roles = [
@@ -90,6 +97,29 @@ const testimonials = [
 export default function LandingPage() {
   const [isDemoMode, setIsDemoMode] = useState(true);
   const [hoveredRole, setHoveredRole] = useState<string | null>(null);
+  const [hospitalTab, setHospitalTab] = useState('Overview');
+  const [reordered, setReordered] = useState(false);
+
+  const handleReorder = () => {
+    setReordered(true);
+    setTimeout(() => setReordered(false), 3000);
+  };
+
+  const kpis = [
+    { title: 'Doctors Available', value: '45', icon: Stethoscope, color: '#3b82f6', href: '/hospital/doctors' },
+    { title: 'Workers Available', value: '120', icon: Users, color: '#10b981', href: '/hospital/workers' },
+    { title: 'Appointments Booked', value: '350', icon: Activity, color: '#8b5cf6', href: '/hospital/appointments' },
+    { title: 'Beds Occupied', value: '425 / 500', icon: BedDouble, color: '#f59e0b', href: null },
+    { title: 'Ambulances Available', value: '12', icon: Siren, color: '#ef4444', href: '/hospital/ambulances' },
+  ];
+
+  const reports = [
+    { name: 'BPM / Vitals', count: 340, color: '#3b82f6' },
+    { name: 'Diabetes Screening', count: 210, color: '#10b981' },
+    { name: 'X-Ray', count: 45, color: '#f59e0b' },
+    { name: 'Sonography', count: 28, color: '#ec4899' },
+    { name: 'MRI Scan', count: 15, color: '#8b5cf6' },
+  ];
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--background)' }}>
@@ -370,6 +400,131 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ── Embedded Hospital Dashboard ── */}
+      <section className="p-6 mx-auto w-full" style={{ paddingBottom: '4rem', paddingTop: '4rem', maxWidth: '80rem', borderTop: '1px solid var(--border)' }}>
+        <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+              <Activity size={28} color="#f43f5e" /> Hospital Live Dashboard
+            </h2>
+            <p className="text-sm" style={{ color: '#d1d5db' }}>Central Zone Facility Overview & Diagnostics Portal</p>
+          </div>
+          
+          <div className="mt-4 md:mt-0 flex gap-2 overflow-x-auto">
+            {['Overview', 'Medical Diagnostics', 'Inventory'].map(tab => (
+              <button 
+                key={tab}
+                onClick={() => setHospitalTab(tab)}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '99px',
+                  fontWeight: 600,
+                  fontSize: '0.85rem',
+                  background: hospitalTab === tab ? '#f43f5e' : 'rgba(255, 255, 255, 0.05)',
+                  color: hospitalTab === tab ? '#fff' : 'var(--text-secondary)',
+                  border: `1px solid ${hospitalTab === tab ? '#f43f5e' : 'var(--border)'}`,
+                  transition: 'all 0.2s',
+                  cursor: 'pointer'
+                }}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {hospitalTab === 'Overview' && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {kpis.map((kpi, idx) => (
+              kpi.href ? (
+                <Link key={idx} href={kpi.href} style={{ textDecoration: 'none' }}>
+                  <div className="p-4 rounded-xl flex items-center gap-4 hover:opacity-80 transition-opacity" style={{ background: 'var(--surface)', border: '1px solid var(--border)', cursor: 'pointer' }}>
+                    <div style={{ padding: '12px', borderRadius: '12px', background: `${kpi.color}15`, color: kpi.color }}>
+                      <kpi.icon size={24} />
+                    </div>
+                    <div>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', fontWeight: 600 }}>{kpi.title}</p>
+                      <p style={{ color: 'var(--text-primary)', fontSize: '1.25rem', fontWeight: 800 }}>{kpi.value}</p>
+                    </div>
+                  </div>
+                </Link>
+              ) : (
+                <div key={idx} className="p-4 rounded-xl flex items-center gap-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+                  <div style={{ padding: '12px', borderRadius: '12px', background: `${kpi.color}15`, color: kpi.color }}>
+                    <kpi.icon size={24} />
+                  </div>
+                  <div>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', fontWeight: 600 }}>{kpi.title}</p>
+                    <p style={{ color: 'var(--text-primary)', fontSize: '1.25rem', fontWeight: 800 }}>{kpi.value}</p>
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
+        )}
+
+        {hospitalTab === 'Medical Diagnostics' && (
+          <div className="p-6 rounded-2xl" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+                <FileText color="#3b82f6" /> Diagnostics Reports Today
+              </h3>
+              <Link href="/hospital/reports">
+                <button className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6', border: '1px solid rgba(59, 130, 246, 0.2)' }}>View Full Details</button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {reports.map((report, idx) => (
+                <div key={idx} style={{ background: 'var(--background)', padding: '1.25rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
+                  <span style={{ fontWeight: 600, color: 'var(--text-secondary)', fontSize: '0.85rem', display: 'block', marginBottom: '8px' }}>{report.name}</span>
+                  <span style={{ fontWeight: 800, fontSize: '1.5rem', color: report.color }}>{report.count}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {hospitalTab === 'Inventory' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col items-center text-center justify-center p-8 rounded-2xl" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+              <div style={{ padding: '1.5rem', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', marginBottom: '1rem' }}>
+                <Pill size={40} />
+              </div>
+              <h3 style={{ color: 'var(--text-secondary)', fontWeight: 600, fontSize: '0.9rem' }}>Medicines in Stock</h3>
+              <p style={{ color: 'var(--text-primary)', fontSize: '2rem', fontWeight: 800 }}>12,450 <span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>units</span></p>
+            </div>
+
+            <div className="flex flex-col items-center text-center justify-center p-8 rounded-2xl" style={{ background: 'var(--surface)', border: '1px solid rgba(239, 68, 68, 0.3)' }}>
+              <div style={{ padding: '1.5rem', borderRadius: '50%', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', marginBottom: '1rem' }}>
+                <Package size={40} />
+              </div>
+              <h3 style={{ color: 'var(--text-secondary)', fontWeight: 600, fontSize: '0.9rem' }}>Critical Materials Required</h3>
+              <p style={{ color: '#ef4444', fontSize: '2rem', fontWeight: 800 }}>45 <span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>items</span></p>
+              
+              <button 
+                onClick={handleReorder}
+                style={{
+                  marginTop: '1.5rem',
+                  padding: '0.75rem 2rem',
+                  background: reordered ? '#10b981' : '#f43f5e',
+                  color: '#fff',
+                  borderRadius: '99px',
+                  border: 'none',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
+                }}
+              >
+                {reordered ? <><CheckCircle2 size={18} /> Order Placed Successfully!</> : <><ShoppingCart size={18} /> 1-Click Reorder</>}
+              </button>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* ── Footer ── */}

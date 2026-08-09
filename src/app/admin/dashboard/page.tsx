@@ -50,19 +50,19 @@ export default function AdminDashboard() {
           <h1 className="text-2xl font-bold">District Health Command Center — Nashik</h1>
           <p className="text-secondary mt-1">{currentDate} | Admin: Dr. Rajesh Kumar</p>
         </div>
-        <div className="flex gap-4">
-          <button className="btn btn-secondary flex items-center gap-2">
-            <MapIcon size={18} /> View Disease Map
-          </button>
-          <button className="btn btn-secondary flex items-center gap-2">
-            <Award size={18} /> ASHA Performance
-          </button>
-          <button className="btn btn-secondary flex items-center gap-2">
-            <FileText size={18} /> Generate Report
-          </button>
-          <button className="btn btn-primary flex items-center gap-2">
-            <Package size={18} /> Inventory Check
-          </button>
+        <div className="flex flex-wrap items-center gap-3">
+          <Link href="/admin/analytics/disease-map" className="btn btn-secondary flex items-center gap-2 text-xs">
+            <MapIcon size={16} /> View Disease Map
+          </Link>
+          <Link href="/admin/analytics/asha-performance" className="btn btn-secondary flex items-center gap-2 text-xs">
+            <Award size={16} /> ASHA Performance
+          </Link>
+          <Link href="/admin/reports" className="btn btn-secondary flex items-center gap-2 text-xs">
+            <FileText size={16} /> Reports
+          </Link>
+          <Link href="/admin/inventory" className="btn btn-primary flex items-center gap-2 text-xs">
+            <Package size={16} /> Inventory Check
+          </Link>
         </div>
       </header>
 

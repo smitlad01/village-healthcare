@@ -58,30 +58,28 @@ Keep your answers concise, highly professional, and formatted in short bullet po
 
     try {
       const genAI = new GoogleGenerativeAI(API_KEY);
-      // Initialize with system instructions for Gemini 1.5
-      const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
-        systemInstruction: getSystemPrompt(role)
-      });
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      // Prepare chat history
-      const history = messages.slice(1).map(m => ({
-        role: m.sender === 'bot' ? 'model' : 'user',
-        parts: [{ text: m.text }],
-      }));
+      // Prepare chat history with system prompt injected as the first interaction
+      const history = [
+        { role: 'user', parts: [{ text: getSystemPrompt(role) }] },
+        { role: 'model', parts: [{ text: 'Understood. I am ready to assist as Jarvis and generate realistic sample data.' }] },
+        ...messages.slice(1).map(m => ({
+          role: m.sender === 'bot' ? 'model' : 'user',
+          parts: [{ text: m.text }],
+        }))
+      ];
 
-      const chat = model.startChat({
-        history,
-      });
+      const chat = model.startChat({ history });
 
       const result = await chat.sendMessage(text);
       const response = await result.response;
       const botText = response.text();
 
       setMessages(prev => [...prev, { text: botText, sender: 'bot' }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Chat error:', error);
-      setMessages(prev => [...prev, { text: "I'm sorry, I encountered an error connecting to the database.", sender: 'bot' }]);
+      setMessages(prev => [...prev, { text: `Error connecting to AI: ${error?.message || 'Unknown error. Check API key or console.'}`, sender: 'bot' }]);
     } finally {
       setIsLoading(false);
     }

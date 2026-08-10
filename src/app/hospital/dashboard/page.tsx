@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import '@/styles/globals.css';
 import '@/styles/worker.css';
-import { Activity, Users, Stethoscope, BedDouble, Siren, FileText, Pill, Package, ShoppingCart, CheckCircle2, ChevronLeft } from 'lucide-react';
+import { Activity, Users, Stethoscope, BedDouble, Siren, FileText, Pill, Package, ShoppingCart, CheckCircle2, ChevronLeft, MessageSquareWarning } from 'lucide-react';
 
 export default function HospitalDashboard() {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -21,6 +21,7 @@ export default function HospitalDashboard() {
     { title: 'Appointments Booked', value: '350', icon: Activity, color: '#8b5cf6', href: '/hospital/appointments' },
     { title: 'Beds Occupied', value: '425 / 500', icon: BedDouble, color: '#f59e0b', href: null },
     { title: 'Ambulances Available', value: '12', icon: Siren, color: '#ef4444', href: '/hospital/ambulances' },
+    { title: 'Patient Complaints', value: '12', icon: MessageSquareWarning, color: '#ef4444', href: '/hospital/complaints' },
   ];
 
   const reports = [

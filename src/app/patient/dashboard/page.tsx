@@ -272,9 +272,9 @@ export default function PatientDashboard() {
               <div className="action-icon-circle"><FileText size={20} /></div>
               <span>Records</span>
             </Link>
-            <Link href="/awareness/games" className="action-card-item">
-              <div className="action-icon-circle"><Gamepad2 size={20} /></div>
-              <span>Games</span>
+            <Link href="/patient/complaints" className="action-card-item">
+              <div className="action-icon-circle" style={{ color: '#ef4444' }}><AlertTriangle size={20} /></div>
+              <span>Complaints</span>
             </Link>
             <Link href="/rewards" className="action-card-item">
               <div className="action-icon-circle"><Award size={20} /></div>

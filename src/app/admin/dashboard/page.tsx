@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { 
   Users, Activity, AlertTriangle, UserCheck, Syringe, HeartPulse,
-  Map as MapIcon, Award, FileText, Package
+  Map as MapIcon, Award, FileText, Package, MessageSquareWarning
 } from 'lucide-react';
 import {
   Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend
@@ -60,6 +60,9 @@ export default function AdminDashboard() {
           </Link>
           <Link href="/admin/reports" className="btn btn-secondary flex items-center text-xs" style={{ gap: '0.5rem' }}>
             <FileText size={16} /> Reports
+          </Link>
+          <Link href="/admin/complaints" className="btn btn-secondary flex items-center text-xs" style={{ gap: '0.5rem' }}>
+            <MessageSquareWarning size={16} /> Complaints
           </Link>
           <Link href="/admin/inventory" className="btn btn-primary flex items-center text-xs" style={{ gap: '0.5rem' }}>
             <Package size={16} /> Inventory Check

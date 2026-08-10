@@ -58,7 +58,7 @@ Keep your answers concise, highly professional, and formatted in short bullet po
 
     try {
       const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
       // Prepare chat history with system prompt injected as the first interaction
       const history = [
